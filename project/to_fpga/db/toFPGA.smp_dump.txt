@@ -1,0 +1,24 @@
+
+State Machine - |toFPGA|arquitetura:U0|scheduler_interface:scheduler_0|Scheduler:Scheduler_block|s_state
+Name s_state.reset s_state.getid s_state.pregetid s_state.reset_time s_state.acknowledge_int s_state.exit_error s_state.exit_ok s_state.remove s_state.insert s_state.preinsert s_state.destroy s_state.idle 
+s_state.idle 0 0 0 0 0 0 0 0 0 0 0 0 
+s_state.destroy 0 0 0 0 0 0 0 0 0 0 1 1 
+s_state.preinsert 0 0 0 0 0 0 0 0 0 1 0 1 
+s_state.insert 0 0 0 0 0 0 0 0 1 0 0 1 
+s_state.remove 0 0 0 0 0 0 0 1 0 0 0 1 
+s_state.exit_ok 0 0 0 0 0 0 1 0 0 0 0 1 
+s_state.exit_error 0 0 0 0 0 1 0 0 0 0 0 1 
+s_state.acknowledge_int 0 0 0 0 1 0 0 0 0 0 0 1 
+s_state.reset_time 0 0 0 1 0 0 0 0 0 0 0 1 
+s_state.pregetid 0 0 1 0 0 0 0 0 0 0 0 1 
+s_state.getid 0 1 0 0 0 0 0 0 0 0 0 1 
+s_state.reset 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_nios2_oci:the_arquitetura_nios2_qsys_0_nios2_oci|arquitetura_nios2_qsys_0_jtag_debug_module_wrapper:the_arquitetura_nios2_qsys_0_jtag_debug_module_wrapper|arquitetura_nios2_qsys_0_jtag_debug_module_tck:the_arquitetura_nios2_qsys_0_jtag_debug_module_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 

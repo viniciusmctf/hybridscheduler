@@ -1,0 +1,1503 @@
+TimeQuest Timing Analyzer report for Scheduler
+Mon Oct 31 11:02:27 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clock'
+ 12. Slow Model Hold: 'clock'
+ 13. Slow Model Minimum Pulse Width: 'clock'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clock'
+ 24. Fast Model Hold: 'clock'
+ 25. Fast Model Minimum Pulse Width: 'clock'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Scheduler                                                         ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 144.09 MHz ; 144.09 MHz      ; clock      ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -5.940 ; -2985.641     ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.380 ; -848.380              ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock'                                                                                                                                                   ;
++--------+-----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -5.940 ; Scheduler:Scheduler_block|s_found_tid[1]      ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.976      ;
+; -5.940 ; Scheduler:Scheduler_block|s_found_tid[1]      ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.976      ;
+; -5.940 ; Scheduler:Scheduler_block|s_found_tid[1]      ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.976      ;
+; -5.940 ; Scheduler:Scheduler_block|s_found_tid[1]      ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.976      ;
+; -5.800 ; Scheduler:Scheduler_block|s_found_tid[0]      ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.836      ;
+; -5.800 ; Scheduler:Scheduler_block|s_found_tid[0]      ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.836      ;
+; -5.800 ; Scheduler:Scheduler_block|s_found_tid[0]      ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.836      ;
+; -5.800 ; Scheduler:Scheduler_block|s_found_tid[0]      ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.836      ;
+; -5.754 ; Scheduler:Scheduler_block|s_running_tid[0]    ; Scheduler:Scheduler_block|s_reschedule       ; clock        ; clock       ; 1.000        ; 0.008      ; 6.798      ;
+; -5.711 ; Scheduler:Scheduler_block|s_stid_found[0]     ; Scheduler:Scheduler_block|s_stid_found[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.747      ;
+; -5.711 ; Scheduler:Scheduler_block|s_stid_found[0]     ; Scheduler:Scheduler_block|s_stid_found[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.747      ;
+; -5.711 ; Scheduler:Scheduler_block|s_stid_found[0]     ; Scheduler:Scheduler_block|s_stid_found[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.747      ;
+; -5.711 ; Scheduler:Scheduler_block|s_stid_found[0]     ; Scheduler:Scheduler_block|s_stid_found[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.747      ;
+; -5.625 ; Scheduler:Scheduler_block|s_order_table[5][2] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; -0.004     ; 6.657      ;
+; -5.625 ; Scheduler:Scheduler_block|s_order_table[5][2] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; -0.004     ; 6.657      ;
+; -5.625 ; Scheduler:Scheduler_block|s_order_table[5][2] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; -0.004     ; 6.657      ;
+; -5.625 ; Scheduler:Scheduler_block|s_order_table[5][2] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; -0.004     ; 6.657      ;
+; -5.617 ; Scheduler:Scheduler_block|s_running_tid[1]    ; Scheduler:Scheduler_block|s_reschedule       ; clock        ; clock       ; 1.000        ; 0.008      ; 6.661      ;
+; -5.612 ; Scheduler:Scheduler_block|s_stid_found[1]     ; Scheduler:Scheduler_block|s_stid_found[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.648      ;
+; -5.612 ; Scheduler:Scheduler_block|s_stid_found[1]     ; Scheduler:Scheduler_block|s_stid_found[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.648      ;
+; -5.612 ; Scheduler:Scheduler_block|s_stid_found[1]     ; Scheduler:Scheduler_block|s_stid_found[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.648      ;
+; -5.612 ; Scheduler:Scheduler_block|s_stid_found[1]     ; Scheduler:Scheduler_block|s_stid_found[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.648      ;
+; -5.605 ; Scheduler:Scheduler_block|s_found_tid[2]      ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.641      ;
+; -5.605 ; Scheduler:Scheduler_block|s_found_tid[2]      ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.641      ;
+; -5.605 ; Scheduler:Scheduler_block|s_found_tid[2]      ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.641      ;
+; -5.605 ; Scheduler:Scheduler_block|s_found_tid[2]      ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; 0.000      ; 6.641      ;
+; -5.581 ; Scheduler:Scheduler_block|s_head_tid[1]       ; Scheduler:Scheduler_block|s_reschedule       ; clock        ; clock       ; 1.000        ; 0.003      ; 6.620      ;
+; -5.580 ; Scheduler:Scheduler_block|s_order_table[7][2] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.621      ;
+; -5.580 ; Scheduler:Scheduler_block|s_order_table[7][2] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.621      ;
+; -5.580 ; Scheduler:Scheduler_block|s_order_table[7][2] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.621      ;
+; -5.580 ; Scheduler:Scheduler_block|s_order_table[7][2] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.621      ;
+; -5.558 ; Scheduler:Scheduler_block|s_order_table[4][1] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; -0.004     ; 6.590      ;
+; -5.558 ; Scheduler:Scheduler_block|s_order_table[4][1] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; -0.004     ; 6.590      ;
+; -5.558 ; Scheduler:Scheduler_block|s_order_table[4][1] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; -0.004     ; 6.590      ;
+; -5.558 ; Scheduler:Scheduler_block|s_order_table[4][1] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; -0.004     ; 6.590      ;
+; -5.548 ; Scheduler:Scheduler_block|s_order_table[7][1] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.589      ;
+; -5.548 ; Scheduler:Scheduler_block|s_order_table[7][1] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.589      ;
+; -5.548 ; Scheduler:Scheduler_block|s_order_table[7][1] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.589      ;
+; -5.548 ; Scheduler:Scheduler_block|s_order_table[7][1] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.589      ;
+; -5.540 ; Scheduler:Scheduler_block|s_order_table[2][0] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.568      ;
+; -5.540 ; Scheduler:Scheduler_block|s_order_table[2][0] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.568      ;
+; -5.540 ; Scheduler:Scheduler_block|s_order_table[2][0] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.568      ;
+; -5.540 ; Scheduler:Scheduler_block|s_order_table[2][0] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.568      ;
+; -5.538 ; Scheduler:Scheduler_block|s_order_table[0][0] ; Scheduler:Scheduler_block|s_reschedule       ; clock        ; clock       ; 1.000        ; 0.016      ; 6.590      ;
+; -5.512 ; Scheduler:Scheduler_block|s_head_tid[0]       ; Scheduler:Scheduler_block|s_reschedule       ; clock        ; clock       ; 1.000        ; 0.003      ; 6.551      ;
+; -5.496 ; Scheduler:Scheduler_block|s_order_table[7][6] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.537      ;
+; -5.496 ; Scheduler:Scheduler_block|s_order_table[7][6] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.537      ;
+; -5.496 ; Scheduler:Scheduler_block|s_order_table[7][6] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.537      ;
+; -5.496 ; Scheduler:Scheduler_block|s_order_table[7][6] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.537      ;
+; -5.472 ; Scheduler:Scheduler_block|s_order_table[3][0] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.500      ;
+; -5.472 ; Scheduler:Scheduler_block|s_order_table[3][0] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.500      ;
+; -5.472 ; Scheduler:Scheduler_block|s_order_table[3][0] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.500      ;
+; -5.472 ; Scheduler:Scheduler_block|s_order_table[3][0] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.500      ;
+; -5.470 ; Scheduler:Scheduler_block|s_obj_table[7][29]  ; Scheduler:Scheduler_block|s_stid_found[2]    ; clock        ; clock       ; 1.000        ; -0.018     ; 6.488      ;
+; -5.470 ; Scheduler:Scheduler_block|s_obj_table[7][29]  ; Scheduler:Scheduler_block|s_stid_found[3]    ; clock        ; clock       ; 1.000        ; -0.018     ; 6.488      ;
+; -5.470 ; Scheduler:Scheduler_block|s_obj_table[7][29]  ; Scheduler:Scheduler_block|s_stid_found[1]    ; clock        ; clock       ; 1.000        ; -0.018     ; 6.488      ;
+; -5.470 ; Scheduler:Scheduler_block|s_obj_table[7][29]  ; Scheduler:Scheduler_block|s_stid_found[0]    ; clock        ; clock       ; 1.000        ; -0.018     ; 6.488      ;
+; -5.467 ; Scheduler:Scheduler_block|s_order_table[7][7] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.508      ;
+; -5.467 ; Scheduler:Scheduler_block|s_order_table[7][7] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.508      ;
+; -5.467 ; Scheduler:Scheduler_block|s_order_table[7][7] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.508      ;
+; -5.467 ; Scheduler:Scheduler_block|s_order_table[7][7] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.508      ;
+; -5.457 ; Scheduler:Scheduler_block|s_order_table[5][0] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; -0.004     ; 6.489      ;
+; -5.457 ; Scheduler:Scheduler_block|s_order_table[5][0] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; -0.004     ; 6.489      ;
+; -5.457 ; Scheduler:Scheduler_block|s_order_table[5][0] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; -0.004     ; 6.489      ;
+; -5.457 ; Scheduler:Scheduler_block|s_order_table[5][0] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; -0.004     ; 6.489      ;
+; -5.419 ; Scheduler:Scheduler_block|s_prev_table[7][0]  ; Scheduler:Scheduler_block|s_next_table[7][3] ; clock        ; clock       ; 1.000        ; 0.002      ; 6.457      ;
+; -5.415 ; Scheduler:Scheduler_block|s_order_table[0][2] ; Scheduler:Scheduler_block|s_reschedule       ; clock        ; clock       ; 1.000        ; 0.009      ; 6.460      ;
+; -5.405 ; Scheduler:Scheduler_block|s_order_table[7][5] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.446      ;
+; -5.405 ; Scheduler:Scheduler_block|s_order_table[7][5] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.446      ;
+; -5.405 ; Scheduler:Scheduler_block|s_order_table[7][5] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.446      ;
+; -5.405 ; Scheduler:Scheduler_block|s_order_table[7][5] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; 0.005      ; 6.446      ;
+; -5.398 ; Scheduler:Scheduler_block|s_obj_table[6][4]   ; Scheduler:Scheduler_block|s_stid_found[2]    ; clock        ; clock       ; 1.000        ; -0.026     ; 6.408      ;
+; -5.398 ; Scheduler:Scheduler_block|s_obj_table[6][4]   ; Scheduler:Scheduler_block|s_stid_found[3]    ; clock        ; clock       ; 1.000        ; -0.026     ; 6.408      ;
+; -5.398 ; Scheduler:Scheduler_block|s_obj_table[6][4]   ; Scheduler:Scheduler_block|s_stid_found[1]    ; clock        ; clock       ; 1.000        ; -0.026     ; 6.408      ;
+; -5.398 ; Scheduler:Scheduler_block|s_obj_table[6][4]   ; Scheduler:Scheduler_block|s_stid_found[0]    ; clock        ; clock       ; 1.000        ; -0.026     ; 6.408      ;
+; -5.389 ; Scheduler:Scheduler_block|s_order_table[3][4] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.417      ;
+; -5.389 ; Scheduler:Scheduler_block|s_order_table[3][4] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.417      ;
+; -5.389 ; Scheduler:Scheduler_block|s_order_table[3][4] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.417      ;
+; -5.389 ; Scheduler:Scheduler_block|s_order_table[3][4] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.417      ;
+; -5.385 ; Scheduler:Scheduler_block|s_order_table[5][1] ; Scheduler:Scheduler_block|s_reschedule       ; clock        ; clock       ; 1.000        ; -0.004     ; 6.417      ;
+; -5.366 ; Scheduler:Scheduler_block|s_order_table[2][1] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; -0.011     ; 6.391      ;
+; -5.366 ; Scheduler:Scheduler_block|s_order_table[2][1] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; -0.011     ; 6.391      ;
+; -5.366 ; Scheduler:Scheduler_block|s_order_table[2][1] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; -0.011     ; 6.391      ;
+; -5.366 ; Scheduler:Scheduler_block|s_order_table[2][1] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; -0.011     ; 6.391      ;
+; -5.366 ; Scheduler:Scheduler_block|s_order_table[5][6] ; Scheduler:Scheduler_block|s_reschedule       ; clock        ; clock       ; 1.000        ; 0.004      ; 6.406      ;
+; -5.353 ; Scheduler:Scheduler_block|s_order_table[3][7] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.381      ;
+; -5.353 ; Scheduler:Scheduler_block|s_order_table[3][7] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.381      ;
+; -5.353 ; Scheduler:Scheduler_block|s_order_table[3][7] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.381      ;
+; -5.353 ; Scheduler:Scheduler_block|s_order_table[3][7] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.381      ;
+; -5.344 ; Scheduler:Scheduler_block|s_found_tid[1]      ; Scheduler:Scheduler_block|s_next_table[2][0] ; clock        ; clock       ; 1.000        ; 0.001      ; 6.381      ;
+; -5.341 ; Scheduler:Scheduler_block|s_order_table[2][7] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.369      ;
+; -5.341 ; Scheduler:Scheduler_block|s_order_table[2][7] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.369      ;
+; -5.341 ; Scheduler:Scheduler_block|s_order_table[2][7] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.369      ;
+; -5.341 ; Scheduler:Scheduler_block|s_order_table[2][7] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.369      ;
+; -5.333 ; Scheduler:Scheduler_block|s_order_table[2][3] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.361      ;
+; -5.333 ; Scheduler:Scheduler_block|s_order_table[2][3] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.361      ;
+; -5.333 ; Scheduler:Scheduler_block|s_order_table[2][3] ; Scheduler:Scheduler_block|s_found_tid[1]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.361      ;
+; -5.333 ; Scheduler:Scheduler_block|s_order_table[2][3] ; Scheduler:Scheduler_block|s_found_tid[0]     ; clock        ; clock       ; 1.000        ; -0.008     ; 6.361      ;
+; -5.331 ; Scheduler:Scheduler_block|s_order_table[0][1] ; Scheduler:Scheduler_block|s_found_tid[3]     ; clock        ; clock       ; 1.000        ; -0.011     ; 6.356      ;
+; -5.331 ; Scheduler:Scheduler_block|s_order_table[0][1] ; Scheduler:Scheduler_block|s_found_tid[2]     ; clock        ; clock       ; 1.000        ; -0.011     ; 6.356      ;
++--------+-----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock'                                                                                                                                                            ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                         ; To Node                                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; Scheduler:Scheduler_block|s_search_reset          ; Scheduler:Scheduler_block|s_search_reset          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_tid_bitmap[2]         ; Scheduler:Scheduler_block|s_tid_bitmap[2]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_tid_bitmap[4]         ; Scheduler:Scheduler_block|s_tid_bitmap[4]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_tid_bitmap[1]         ; Scheduler:Scheduler_block|s_tid_bitmap[1]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_tid_bitmap[6]         ; Scheduler:Scheduler_block|s_tid_bitmap[6]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_tid_bitmap[5]         ; Scheduler:Scheduler_block|s_tid_bitmap[5]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_tid_bitmap[3]         ; Scheduler:Scheduler_block|s_tid_bitmap[3]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_state.pregetid        ; Scheduler:Scheduler_block|s_state.pregetid        ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_stid_found[1]         ; Scheduler:Scheduler_block|s_stid_found[1]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_stid_found[0]         ; Scheduler:Scheduler_block|s_stid_found[0]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_state.getid           ; Scheduler:Scheduler_block|s_state.getid           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_state.destroy         ; Scheduler:Scheduler_block|s_state.destroy         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_tid_bitmap[7]         ; Scheduler:Scheduler_block|s_tid_bitmap[7]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_tid_bitmap[0]         ; Scheduler:Scheduler_block|s_tid_bitmap[0]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_free_tid[3]           ; Scheduler:Scheduler_block|s_free_tid[3]           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_prev_table[7][2]      ; Scheduler:Scheduler_block|s_prev_table[7][2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_prev_table[2][0]      ; Scheduler:Scheduler_block|s_prev_table[2][0]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_prev_table[0][0]      ; Scheduler:Scheduler_block|s_prev_table[0][0]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_state.insert          ; Scheduler:Scheduler_block|s_state.insert          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_enqueue_bitmap[7]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[7]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_enqueue_bitmap[6]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[6]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_enqueue_bitmap[5]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[5]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_enqueue_bitmap[4]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[4]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_enqueue_bitmap[3]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[3]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_enqueue_bitmap[2]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[2]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_enqueue_bitmap[1]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[1]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_enqueue_bitmap[0]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[0]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_state.reset_time      ; Scheduler:Scheduler_block|s_state.reset_time      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_state.acknowledge_int ; Scheduler:Scheduler_block|s_state.acknowledge_int ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_state.idle            ; Scheduler:Scheduler_block|s_state.idle            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_int_ack               ; Scheduler:Scheduler_block|s_int_ack               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_time_reset            ; Scheduler:Scheduler_block|s_time_reset            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_reschedule            ; Scheduler:Scheduler_block|s_reschedule            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_schedule_enabled      ; Scheduler:Scheduler_block|s_schedule_enabled      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_error                 ; Scheduler:Scheduler_block|s_error                 ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_size[0]               ; Scheduler:Scheduler_block|s_size[0]               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_size[1]               ; Scheduler:Scheduler_block|s_size[1]               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_done                  ; Scheduler:Scheduler_block|s_done                  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Scheduler:Scheduler_block|s_size[3]               ; Scheduler:Scheduler_block|s_size[3]               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.514 ; scheduler_adapter:Adapter_block|reg_parameter[19] ; scheduler_adapter:Adapter_block|i_parameter[19]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.780      ;
+; 0.515 ; scheduler_adapter:Adapter_block|i_priority[19]    ; Scheduler:Scheduler_block|s_search_order[19]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.781      ;
+; 0.517 ; scheduler_adapter:Adapter_block|reg_priority[31]  ; scheduler_adapter:Adapter_block|i_priority[31]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.783      ;
+; 0.517 ; scheduler_adapter:Adapter_block|reg_priority[21]  ; scheduler_adapter:Adapter_block|i_priority[21]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.783      ;
+; 0.517 ; scheduler_adapter:Adapter_block|reg_parameter[8]  ; scheduler_adapter:Adapter_block|i_parameter[8]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.783      ;
+; 0.517 ; scheduler_adapter:Adapter_block|reg_parameter[3]  ; scheduler_adapter:Adapter_block|i_parameter[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.783      ;
+; 0.519 ; scheduler_adapter:Adapter_block|reg_priority[30]  ; scheduler_adapter:Adapter_block|i_priority[30]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.785      ;
+; 0.519 ; scheduler_adapter:Adapter_block|reg_parameter[18] ; scheduler_adapter:Adapter_block|i_parameter[18]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.785      ;
+; 0.520 ; scheduler_adapter:Adapter_block|reg_priority[23]  ; scheduler_adapter:Adapter_block|i_priority[23]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.786      ;
+; 0.520 ; scheduler_adapter:Adapter_block|reg_parameter[14] ; scheduler_adapter:Adapter_block|i_parameter[14]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.786      ;
+; 0.520 ; scheduler_adapter:Adapter_block|reg_parameter[28] ; scheduler_adapter:Adapter_block|i_parameter[28]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.786      ;
+; 0.520 ; scheduler_adapter:Adapter_block|reg_parameter[31] ; scheduler_adapter:Adapter_block|i_parameter[31]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.786      ;
+; 0.521 ; scheduler_adapter:Adapter_block|reg_priority[22]  ; scheduler_adapter:Adapter_block|i_priority[22]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.787      ;
+; 0.521 ; scheduler_adapter:Adapter_block|reg_parameter[10] ; scheduler_adapter:Adapter_block|i_parameter[10]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.787      ;
+; 0.522 ; scheduler_adapter:Adapter_block|reg_priority[24]  ; scheduler_adapter:Adapter_block|i_priority[24]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.788      ;
+; 0.522 ; scheduler_adapter:Adapter_block|reg_parameter[22] ; scheduler_adapter:Adapter_block|i_parameter[22]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.788      ;
+; 0.522 ; scheduler_adapter:Adapter_block|i_priority[9]     ; Scheduler:Scheduler_block|s_search_order[9]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.788      ;
+; 0.529 ; scheduler_adapter:Adapter_block|i_priority[6]     ; Scheduler:Scheduler_block|s_search_order[6]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.795      ;
+; 0.531 ; scheduler_adapter:Adapter_block|i_priority[1]     ; Scheduler:Scheduler_block|s_search_order[1]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.797      ;
+; 0.531 ; scheduler_adapter:Adapter_block|i_priority[8]     ; Scheduler:Scheduler_block|s_search_order[8]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.797      ;
+; 0.531 ; Scheduler:Scheduler_block|s_counter[31]           ; Scheduler:Scheduler_block|s_counter[31]           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.797      ;
+; 0.549 ; Scheduler:Scheduler_block|s_state.idle            ; Scheduler:Scheduler_block|s_return[4]             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.815      ;
+; 0.642 ; scheduler_adapter:Adapter_block|reg_priority[26]  ; scheduler_adapter:Adapter_block|i_priority[26]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.908      ;
+; 0.646 ; scheduler_adapter:Adapter_block|reg_priority[28]  ; scheduler_adapter:Adapter_block|i_priority[28]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.912      ;
+; 0.649 ; scheduler_adapter:Adapter_block|reg_priority[29]  ; scheduler_adapter:Adapter_block|i_priority[29]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.915      ;
+; 0.651 ; scheduler_adapter:Adapter_block|reg_priority[16]  ; scheduler_adapter:Adapter_block|i_priority[16]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.917      ;
+; 0.654 ; scheduler_adapter:Adapter_block|i_priority[16]    ; Scheduler:Scheduler_block|s_search_order[16]      ; clock        ; clock       ; 0.000        ; 0.001      ; 0.921      ;
+; 0.655 ; scheduler_adapter:Adapter_block|reg_parameter[9]  ; scheduler_adapter:Adapter_block|i_parameter[9]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.921      ;
+; 0.655 ; scheduler_adapter:Adapter_block|reg_parameter[21] ; scheduler_adapter:Adapter_block|i_parameter[21]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.921      ;
+; 0.662 ; scheduler_adapter:Adapter_block|reg_parameter[7]  ; scheduler_adapter:Adapter_block|i_parameter[7]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.928      ;
+; 0.663 ; scheduler_adapter:Adapter_block|reg_parameter[15] ; scheduler_adapter:Adapter_block|i_parameter[15]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.929      ;
+; 0.663 ; scheduler_adapter:Adapter_block|i_priority[5]     ; Scheduler:Scheduler_block|s_search_order[5]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.929      ;
+; 0.664 ; scheduler_adapter:Adapter_block|reg_priority[19]  ; scheduler_adapter:Adapter_block|i_priority[19]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.930      ;
+; 0.664 ; scheduler_adapter:Adapter_block|i_priority[15]    ; Scheduler:Scheduler_block|s_search_order[15]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.930      ;
+; 0.666 ; scheduler_adapter:Adapter_block|i_priority[4]     ; Scheduler:Scheduler_block|s_search_order[4]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.932      ;
+; 0.668 ; scheduler_adapter:Adapter_block|i_priority[21]    ; Scheduler:Scheduler_block|s_search_order[21]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.934      ;
+; 0.694 ; scheduler_adapter:Adapter_block|reg_parameter[13] ; scheduler_adapter:Adapter_block|i_parameter[13]   ; clock        ; clock       ; 0.000        ; 0.029      ; 0.989      ;
+; 0.695 ; scheduler_adapter:Adapter_block|i_priority[29]    ; Scheduler:Scheduler_block|s_search_order[29]      ; clock        ; clock       ; 0.000        ; 0.001      ; 0.962      ;
+; 0.697 ; scheduler_adapter:Adapter_block|reg_parameter[29] ; scheduler_adapter:Adapter_block|i_parameter[29]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.963      ;
+; 0.699 ; scheduler_adapter:Adapter_block|reg_priority[25]  ; scheduler_adapter:Adapter_block|i_priority[25]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.965      ;
+; 0.700 ; scheduler_adapter:Adapter_block|reg_parameter[24] ; scheduler_adapter:Adapter_block|i_parameter[24]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.966      ;
+; 0.700 ; scheduler_adapter:Adapter_block|reg_priority[7]   ; scheduler_adapter:Adapter_block|i_priority[7]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.966      ;
+; 0.702 ; scheduler_adapter:Adapter_block|i_priority[24]    ; Scheduler:Scheduler_block|s_search_order[24]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.968      ;
+; 0.702 ; scheduler_adapter:Adapter_block|i_priority[22]    ; Scheduler:Scheduler_block|s_search_order[22]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.968      ;
+; 0.703 ; scheduler_adapter:Adapter_block|i_priority[31]    ; Scheduler:Scheduler_block|s_search_order[31]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.969      ;
+; 0.703 ; scheduler_adapter:Adapter_block|i_priority[20]    ; Scheduler:Scheduler_block|s_search_order[20]      ; clock        ; clock       ; 0.000        ; 0.001      ; 0.970      ;
+; 0.703 ; scheduler_adapter:Adapter_block|reg_parameter[20] ; scheduler_adapter:Adapter_block|i_parameter[20]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.969      ;
+; 0.703 ; scheduler_adapter:Adapter_block|reg_parameter[26] ; scheduler_adapter:Adapter_block|i_parameter[26]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.969      ;
+; 0.705 ; scheduler_adapter:Adapter_block|reg_parameter[30] ; scheduler_adapter:Adapter_block|i_parameter[30]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.971      ;
+; 0.706 ; scheduler_adapter:Adapter_block|i_priority[28]    ; Scheduler:Scheduler_block|s_search_order[28]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.972      ;
+; 0.710 ; scheduler_adapter:Adapter_block|i_priority[17]    ; Scheduler:Scheduler_block|s_search_order[17]      ; clock        ; clock       ; 0.000        ; 0.001      ; 0.977      ;
+; 0.724 ; scheduler_adapter:Adapter_block|reg_priority[13]  ; scheduler_adapter:Adapter_block|i_priority[13]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.990      ;
+; 0.724 ; scheduler_adapter:Adapter_block|reg_priority[14]  ; scheduler_adapter:Adapter_block|i_priority[14]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.990      ;
+; 0.733 ; scheduler_adapter:Adapter_block|reg_parameter[2]  ; scheduler_adapter:Adapter_block|i_parameter[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.999      ;
+; 0.737 ; scheduler_adapter:Adapter_block|reg_priority[0]   ; scheduler_adapter:Adapter_block|i_priority[0]     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.003      ;
+; 0.748 ; scheduler_adapter:Adapter_block|reg_parameter[11] ; scheduler_adapter:Adapter_block|i_parameter[11]   ; clock        ; clock       ; 0.000        ; 0.000      ; 1.014      ;
+; 0.760 ; scheduler_adapter:Adapter_block|reg_parameter[16] ; scheduler_adapter:Adapter_block|i_parameter[16]   ; clock        ; clock       ; 0.000        ; 0.000      ; 1.026      ;
+; 0.769 ; scheduler_adapter:Adapter_block|reg_priority[18]  ; scheduler_adapter:Adapter_block|i_priority[18]    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.035      ;
+; 0.770 ; scheduler_adapter:Adapter_block|reg_priority[17]  ; scheduler_adapter:Adapter_block|i_priority[17]    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.036      ;
+; 0.771 ; scheduler_adapter:Adapter_block|reg_priority[27]  ; scheduler_adapter:Adapter_block|i_priority[27]    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.037      ;
+; 0.772 ; scheduler_adapter:Adapter_block|reg_priority[20]  ; scheduler_adapter:Adapter_block|i_priority[20]    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.038      ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock'                                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                        ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[20]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[20]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[21]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[21]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[22]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[22]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[23]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[23]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[24]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[24]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[25]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[25]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[26]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[26]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[27]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[27]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[28]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[28]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[29]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[29]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[30]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[30]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[31]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[31]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_done              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_done              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[7] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[7] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_error             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_error             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[3]      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; address[*]     ; clock      ; 6.747 ; 6.747 ; Rise       ; clock           ;
+;  address[0]    ; clock      ; 6.088 ; 6.088 ; Rise       ; clock           ;
+;  address[1]    ; clock      ; 6.747 ; 6.747 ; Rise       ; clock           ;
+;  address[2]    ; clock      ; 6.654 ; 6.654 ; Rise       ; clock           ;
+; chipselect     ; clock      ; 6.247 ; 6.247 ; Rise       ; clock           ;
+; read           ; clock      ; 6.289 ; 6.289 ; Rise       ; clock           ;
+; resetn         ; clock      ; 4.218 ; 4.218 ; Rise       ; clock           ;
+; write          ; clock      ; 6.411 ; 6.411 ; Rise       ; clock           ;
+; writedata[*]   ; clock      ; 4.676 ; 4.676 ; Rise       ; clock           ;
+;  writedata[0]  ; clock      ; 3.617 ; 3.617 ; Rise       ; clock           ;
+;  writedata[1]  ; clock      ; 3.645 ; 3.645 ; Rise       ; clock           ;
+;  writedata[2]  ; clock      ; 3.805 ; 3.805 ; Rise       ; clock           ;
+;  writedata[3]  ; clock      ; 4.676 ; 4.676 ; Rise       ; clock           ;
+;  writedata[4]  ; clock      ; 4.371 ; 4.371 ; Rise       ; clock           ;
+;  writedata[5]  ; clock      ; 3.772 ; 3.772 ; Rise       ; clock           ;
+;  writedata[6]  ; clock      ; 3.896 ; 3.896 ; Rise       ; clock           ;
+;  writedata[7]  ; clock      ; 4.098 ; 4.098 ; Rise       ; clock           ;
+;  writedata[8]  ; clock      ; 3.642 ; 3.642 ; Rise       ; clock           ;
+;  writedata[9]  ; clock      ; 4.155 ; 4.155 ; Rise       ; clock           ;
+;  writedata[10] ; clock      ; 3.557 ; 3.557 ; Rise       ; clock           ;
+;  writedata[11] ; clock      ; 3.924 ; 3.924 ; Rise       ; clock           ;
+;  writedata[12] ; clock      ; 3.854 ; 3.854 ; Rise       ; clock           ;
+;  writedata[13] ; clock      ; 3.600 ; 3.600 ; Rise       ; clock           ;
+;  writedata[14] ; clock      ; 3.908 ; 3.908 ; Rise       ; clock           ;
+;  writedata[15] ; clock      ; 3.892 ; 3.892 ; Rise       ; clock           ;
+;  writedata[16] ; clock      ; 4.206 ; 4.206 ; Rise       ; clock           ;
+;  writedata[17] ; clock      ; 4.135 ; 4.135 ; Rise       ; clock           ;
+;  writedata[18] ; clock      ; 4.225 ; 4.225 ; Rise       ; clock           ;
+;  writedata[19] ; clock      ; 4.251 ; 4.251 ; Rise       ; clock           ;
+;  writedata[20] ; clock      ; 4.065 ; 4.065 ; Rise       ; clock           ;
+;  writedata[21] ; clock      ; 4.066 ; 4.066 ; Rise       ; clock           ;
+;  writedata[22] ; clock      ; 4.189 ; 4.189 ; Rise       ; clock           ;
+;  writedata[23] ; clock      ; 4.232 ; 4.232 ; Rise       ; clock           ;
+;  writedata[24] ; clock      ; 3.938 ; 3.938 ; Rise       ; clock           ;
+;  writedata[25] ; clock      ; 4.177 ; 4.177 ; Rise       ; clock           ;
+;  writedata[26] ; clock      ; 4.408 ; 4.408 ; Rise       ; clock           ;
+;  writedata[27] ; clock      ; 3.998 ; 3.998 ; Rise       ; clock           ;
+;  writedata[28] ; clock      ; 3.971 ; 3.971 ; Rise       ; clock           ;
+;  writedata[29] ; clock      ; 4.378 ; 4.378 ; Rise       ; clock           ;
+;  writedata[30] ; clock      ; 4.424 ; 4.424 ; Rise       ; clock           ;
+;  writedata[31] ; clock      ; 3.788 ; 3.788 ; Rise       ; clock           ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; address[*]     ; clock      ; -3.519 ; -3.519 ; Rise       ; clock           ;
+;  address[0]    ; clock      ; -4.845 ; -4.845 ; Rise       ; clock           ;
+;  address[1]    ; clock      ; -5.079 ; -5.079 ; Rise       ; clock           ;
+;  address[2]    ; clock      ; -3.519 ; -3.519 ; Rise       ; clock           ;
+; chipselect     ; clock      ; -3.950 ; -3.950 ; Rise       ; clock           ;
+; read           ; clock      ; -4.637 ; -4.637 ; Rise       ; clock           ;
+; resetn         ; clock      ; -0.159 ; -0.159 ; Rise       ; clock           ;
+; write          ; clock      ; -4.324 ; -4.324 ; Rise       ; clock           ;
+; writedata[*]   ; clock      ; -3.249 ; -3.249 ; Rise       ; clock           ;
+;  writedata[0]  ; clock      ; -3.364 ; -3.364 ; Rise       ; clock           ;
+;  writedata[1]  ; clock      ; -3.397 ; -3.397 ; Rise       ; clock           ;
+;  writedata[2]  ; clock      ; -3.562 ; -3.562 ; Rise       ; clock           ;
+;  writedata[3]  ; clock      ; -3.633 ; -3.633 ; Rise       ; clock           ;
+;  writedata[4]  ; clock      ; -4.139 ; -4.139 ; Rise       ; clock           ;
+;  writedata[5]  ; clock      ; -3.539 ; -3.539 ; Rise       ; clock           ;
+;  writedata[6]  ; clock      ; -3.665 ; -3.665 ; Rise       ; clock           ;
+;  writedata[7]  ; clock      ; -3.865 ; -3.865 ; Rise       ; clock           ;
+;  writedata[8]  ; clock      ; -3.358 ; -3.358 ; Rise       ; clock           ;
+;  writedata[9]  ; clock      ; -3.908 ; -3.908 ; Rise       ; clock           ;
+;  writedata[10] ; clock      ; -3.249 ; -3.249 ; Rise       ; clock           ;
+;  writedata[11] ; clock      ; -3.691 ; -3.691 ; Rise       ; clock           ;
+;  writedata[12] ; clock      ; -3.621 ; -3.621 ; Rise       ; clock           ;
+;  writedata[13] ; clock      ; -3.370 ; -3.370 ; Rise       ; clock           ;
+;  writedata[14] ; clock      ; -3.401 ; -3.401 ; Rise       ; clock           ;
+;  writedata[15] ; clock      ; -3.659 ; -3.659 ; Rise       ; clock           ;
+;  writedata[16] ; clock      ; -3.830 ; -3.830 ; Rise       ; clock           ;
+;  writedata[17] ; clock      ; -3.888 ; -3.888 ; Rise       ; clock           ;
+;  writedata[18] ; clock      ; -3.905 ; -3.905 ; Rise       ; clock           ;
+;  writedata[19] ; clock      ; -3.860 ; -3.860 ; Rise       ; clock           ;
+;  writedata[20] ; clock      ; -3.793 ; -3.793 ; Rise       ; clock           ;
+;  writedata[21] ; clock      ; -3.732 ; -3.732 ; Rise       ; clock           ;
+;  writedata[22] ; clock      ; -3.942 ; -3.942 ; Rise       ; clock           ;
+;  writedata[23] ; clock      ; -3.845 ; -3.845 ; Rise       ; clock           ;
+;  writedata[24] ; clock      ; -3.372 ; -3.372 ; Rise       ; clock           ;
+;  writedata[25] ; clock      ; -3.943 ; -3.943 ; Rise       ; clock           ;
+;  writedata[26] ; clock      ; -3.945 ; -3.945 ; Rise       ; clock           ;
+;  writedata[27] ; clock      ; -3.631 ; -3.631 ; Rise       ; clock           ;
+;  writedata[28] ; clock      ; -3.719 ; -3.719 ; Rise       ; clock           ;
+;  writedata[29] ; clock      ; -3.799 ; -3.799 ; Rise       ; clock           ;
+;  writedata[30] ; clock      ; -4.072 ; -4.072 ; Rise       ; clock           ;
+;  writedata[31] ; clock      ; -3.544 ; -3.544 ; Rise       ; clock           ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; interrupt     ; clock      ; 8.985 ; 8.985 ; Rise       ; clock           ;
+; readdata[*]   ; clock      ; 7.602 ; 7.602 ; Rise       ; clock           ;
+;  readdata[0]  ; clock      ; 7.080 ; 7.080 ; Rise       ; clock           ;
+;  readdata[1]  ; clock      ; 7.110 ; 7.110 ; Rise       ; clock           ;
+;  readdata[2]  ; clock      ; 6.882 ; 6.882 ; Rise       ; clock           ;
+;  readdata[3]  ; clock      ; 6.641 ; 6.641 ; Rise       ; clock           ;
+;  readdata[4]  ; clock      ; 7.323 ; 7.323 ; Rise       ; clock           ;
+;  readdata[5]  ; clock      ; 7.345 ; 7.345 ; Rise       ; clock           ;
+;  readdata[6]  ; clock      ; 7.328 ; 7.328 ; Rise       ; clock           ;
+;  readdata[7]  ; clock      ; 6.890 ; 6.890 ; Rise       ; clock           ;
+;  readdata[8]  ; clock      ; 6.625 ; 6.625 ; Rise       ; clock           ;
+;  readdata[9]  ; clock      ; 6.884 ; 6.884 ; Rise       ; clock           ;
+;  readdata[10] ; clock      ; 6.432 ; 6.432 ; Rise       ; clock           ;
+;  readdata[11] ; clock      ; 6.434 ; 6.434 ; Rise       ; clock           ;
+;  readdata[12] ; clock      ; 6.431 ; 6.431 ; Rise       ; clock           ;
+;  readdata[13] ; clock      ; 6.846 ; 6.846 ; Rise       ; clock           ;
+;  readdata[14] ; clock      ; 6.864 ; 6.864 ; Rise       ; clock           ;
+;  readdata[15] ; clock      ; 6.438 ; 6.438 ; Rise       ; clock           ;
+;  readdata[16] ; clock      ; 7.110 ; 7.110 ; Rise       ; clock           ;
+;  readdata[17] ; clock      ; 6.644 ; 6.644 ; Rise       ; clock           ;
+;  readdata[18] ; clock      ; 7.602 ; 7.602 ; Rise       ; clock           ;
+;  readdata[19] ; clock      ; 6.653 ; 6.653 ; Rise       ; clock           ;
+;  readdata[20] ; clock      ; 7.088 ; 7.088 ; Rise       ; clock           ;
+;  readdata[21] ; clock      ; 6.438 ; 6.438 ; Rise       ; clock           ;
+;  readdata[22] ; clock      ; 7.091 ; 7.091 ; Rise       ; clock           ;
+;  readdata[23] ; clock      ; 6.849 ; 6.849 ; Rise       ; clock           ;
+;  readdata[24] ; clock      ; 7.094 ; 7.094 ; Rise       ; clock           ;
+;  readdata[25] ; clock      ; 7.136 ; 7.136 ; Rise       ; clock           ;
+;  readdata[26] ; clock      ; 7.148 ; 7.148 ; Rise       ; clock           ;
+;  readdata[27] ; clock      ; 7.139 ; 7.139 ; Rise       ; clock           ;
+;  readdata[28] ; clock      ; 7.105 ; 7.105 ; Rise       ; clock           ;
+;  readdata[29] ; clock      ; 7.590 ; 7.590 ; Rise       ; clock           ;
+;  readdata[30] ; clock      ; 6.644 ; 6.644 ; Rise       ; clock           ;
+;  readdata[31] ; clock      ; 7.385 ; 7.385 ; Rise       ; clock           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; interrupt     ; clock      ; 8.531 ; 8.531 ; Rise       ; clock           ;
+; readdata[*]   ; clock      ; 6.431 ; 6.431 ; Rise       ; clock           ;
+;  readdata[0]  ; clock      ; 7.080 ; 7.080 ; Rise       ; clock           ;
+;  readdata[1]  ; clock      ; 7.110 ; 7.110 ; Rise       ; clock           ;
+;  readdata[2]  ; clock      ; 6.882 ; 6.882 ; Rise       ; clock           ;
+;  readdata[3]  ; clock      ; 6.641 ; 6.641 ; Rise       ; clock           ;
+;  readdata[4]  ; clock      ; 7.323 ; 7.323 ; Rise       ; clock           ;
+;  readdata[5]  ; clock      ; 7.345 ; 7.345 ; Rise       ; clock           ;
+;  readdata[6]  ; clock      ; 7.328 ; 7.328 ; Rise       ; clock           ;
+;  readdata[7]  ; clock      ; 6.890 ; 6.890 ; Rise       ; clock           ;
+;  readdata[8]  ; clock      ; 6.625 ; 6.625 ; Rise       ; clock           ;
+;  readdata[9]  ; clock      ; 6.884 ; 6.884 ; Rise       ; clock           ;
+;  readdata[10] ; clock      ; 6.432 ; 6.432 ; Rise       ; clock           ;
+;  readdata[11] ; clock      ; 6.434 ; 6.434 ; Rise       ; clock           ;
+;  readdata[12] ; clock      ; 6.431 ; 6.431 ; Rise       ; clock           ;
+;  readdata[13] ; clock      ; 6.846 ; 6.846 ; Rise       ; clock           ;
+;  readdata[14] ; clock      ; 6.864 ; 6.864 ; Rise       ; clock           ;
+;  readdata[15] ; clock      ; 6.438 ; 6.438 ; Rise       ; clock           ;
+;  readdata[16] ; clock      ; 7.110 ; 7.110 ; Rise       ; clock           ;
+;  readdata[17] ; clock      ; 6.644 ; 6.644 ; Rise       ; clock           ;
+;  readdata[18] ; clock      ; 7.602 ; 7.602 ; Rise       ; clock           ;
+;  readdata[19] ; clock      ; 6.653 ; 6.653 ; Rise       ; clock           ;
+;  readdata[20] ; clock      ; 7.088 ; 7.088 ; Rise       ; clock           ;
+;  readdata[21] ; clock      ; 6.438 ; 6.438 ; Rise       ; clock           ;
+;  readdata[22] ; clock      ; 7.091 ; 7.091 ; Rise       ; clock           ;
+;  readdata[23] ; clock      ; 6.849 ; 6.849 ; Rise       ; clock           ;
+;  readdata[24] ; clock      ; 7.094 ; 7.094 ; Rise       ; clock           ;
+;  readdata[25] ; clock      ; 7.136 ; 7.136 ; Rise       ; clock           ;
+;  readdata[26] ; clock      ; 7.148 ; 7.148 ; Rise       ; clock           ;
+;  readdata[27] ; clock      ; 7.139 ; 7.139 ; Rise       ; clock           ;
+;  readdata[28] ; clock      ; 7.105 ; 7.105 ; Rise       ; clock           ;
+;  readdata[29] ; clock      ; 7.590 ; 7.590 ; Rise       ; clock           ;
+;  readdata[30] ; clock      ; 6.644 ; 6.644 ; Rise       ; clock           ;
+;  readdata[31] ; clock      ; 7.385 ; 7.385 ; Rise       ; clock           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -2.187 ; -989.314      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.380 ; -848.380              ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock'                                                                                                                                                  ;
++--------+-----------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.187 ; Scheduler:Scheduler_block|s_found_tid[1]      ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.219      ;
+; -2.187 ; Scheduler:Scheduler_block|s_found_tid[1]      ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.219      ;
+; -2.187 ; Scheduler:Scheduler_block|s_found_tid[1]      ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.219      ;
+; -2.187 ; Scheduler:Scheduler_block|s_found_tid[1]      ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.219      ;
+; -2.164 ; Scheduler:Scheduler_block|s_stid_found[0]     ; Scheduler:Scheduler_block|s_stid_found[2]   ; clock        ; clock       ; 1.000        ; 0.000      ; 3.196      ;
+; -2.164 ; Scheduler:Scheduler_block|s_stid_found[0]     ; Scheduler:Scheduler_block|s_stid_found[3]   ; clock        ; clock       ; 1.000        ; 0.000      ; 3.196      ;
+; -2.164 ; Scheduler:Scheduler_block|s_stid_found[0]     ; Scheduler:Scheduler_block|s_stid_found[1]   ; clock        ; clock       ; 1.000        ; 0.000      ; 3.196      ;
+; -2.164 ; Scheduler:Scheduler_block|s_stid_found[0]     ; Scheduler:Scheduler_block|s_stid_found[0]   ; clock        ; clock       ; 1.000        ; 0.000      ; 3.196      ;
+; -2.127 ; Scheduler:Scheduler_block|s_found_tid[0]      ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.159      ;
+; -2.127 ; Scheduler:Scheduler_block|s_found_tid[0]      ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.159      ;
+; -2.127 ; Scheduler:Scheduler_block|s_found_tid[0]      ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.159      ;
+; -2.127 ; Scheduler:Scheduler_block|s_found_tid[0]      ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.159      ;
+; -2.077 ; Scheduler:Scheduler_block|s_stid_found[1]     ; Scheduler:Scheduler_block|s_stid_found[2]   ; clock        ; clock       ; 1.000        ; 0.000      ; 3.109      ;
+; -2.077 ; Scheduler:Scheduler_block|s_stid_found[1]     ; Scheduler:Scheduler_block|s_stid_found[3]   ; clock        ; clock       ; 1.000        ; 0.000      ; 3.109      ;
+; -2.077 ; Scheduler:Scheduler_block|s_stid_found[1]     ; Scheduler:Scheduler_block|s_stid_found[1]   ; clock        ; clock       ; 1.000        ; 0.000      ; 3.109      ;
+; -2.077 ; Scheduler:Scheduler_block|s_stid_found[1]     ; Scheduler:Scheduler_block|s_stid_found[0]   ; clock        ; clock       ; 1.000        ; 0.000      ; 3.109      ;
+; -2.043 ; Scheduler:Scheduler_block|s_found_tid[2]      ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.075      ;
+; -2.043 ; Scheduler:Scheduler_block|s_found_tid[2]      ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.075      ;
+; -2.043 ; Scheduler:Scheduler_block|s_found_tid[2]      ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.075      ;
+; -2.043 ; Scheduler:Scheduler_block|s_found_tid[2]      ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 3.075      ;
+; -2.037 ; Scheduler:Scheduler_block|s_order_table[4][1] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; -0.005     ; 3.064      ;
+; -2.037 ; Scheduler:Scheduler_block|s_order_table[4][1] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; -0.005     ; 3.064      ;
+; -2.037 ; Scheduler:Scheduler_block|s_order_table[4][1] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; -0.005     ; 3.064      ;
+; -2.037 ; Scheduler:Scheduler_block|s_order_table[4][1] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; -0.005     ; 3.064      ;
+; -2.030 ; Scheduler:Scheduler_block|s_order_table[5][2] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; -0.004     ; 3.058      ;
+; -2.030 ; Scheduler:Scheduler_block|s_order_table[5][2] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; -0.004     ; 3.058      ;
+; -2.030 ; Scheduler:Scheduler_block|s_order_table[5][2] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; -0.004     ; 3.058      ;
+; -2.030 ; Scheduler:Scheduler_block|s_order_table[5][2] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; -0.004     ; 3.058      ;
+; -2.023 ; Scheduler:Scheduler_block|s_obj_table[7][29]  ; Scheduler:Scheduler_block|s_stid_found[2]   ; clock        ; clock       ; 1.000        ; -0.017     ; 3.038      ;
+; -2.023 ; Scheduler:Scheduler_block|s_obj_table[7][29]  ; Scheduler:Scheduler_block|s_stid_found[3]   ; clock        ; clock       ; 1.000        ; -0.017     ; 3.038      ;
+; -2.023 ; Scheduler:Scheduler_block|s_obj_table[7][29]  ; Scheduler:Scheduler_block|s_stid_found[1]   ; clock        ; clock       ; 1.000        ; -0.017     ; 3.038      ;
+; -2.023 ; Scheduler:Scheduler_block|s_obj_table[7][29]  ; Scheduler:Scheduler_block|s_stid_found[0]   ; clock        ; clock       ; 1.000        ; -0.017     ; 3.038      ;
+; -2.016 ; Scheduler:Scheduler_block|s_order_table[3][0] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; -0.007     ; 3.041      ;
+; -2.016 ; Scheduler:Scheduler_block|s_order_table[3][0] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; -0.007     ; 3.041      ;
+; -2.016 ; Scheduler:Scheduler_block|s_order_table[3][0] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; -0.007     ; 3.041      ;
+; -2.016 ; Scheduler:Scheduler_block|s_order_table[3][0] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; -0.007     ; 3.041      ;
+; -2.015 ; Scheduler:Scheduler_block|s_running_tid[0]    ; Scheduler:Scheduler_block|s_reschedule      ; clock        ; clock       ; 1.000        ; 0.007      ; 3.054      ;
+; -2.010 ; Scheduler:Scheduler_block|s_order_table[2][0] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; -0.007     ; 3.035      ;
+; -2.010 ; Scheduler:Scheduler_block|s_order_table[2][0] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; -0.007     ; 3.035      ;
+; -2.010 ; Scheduler:Scheduler_block|s_order_table[2][0] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; -0.007     ; 3.035      ;
+; -2.010 ; Scheduler:Scheduler_block|s_order_table[2][0] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; -0.007     ; 3.035      ;
+; -1.999 ; Scheduler:Scheduler_block|s_order_table[7][1] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; 0.005      ; 3.036      ;
+; -1.999 ; Scheduler:Scheduler_block|s_order_table[7][1] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; 0.005      ; 3.036      ;
+; -1.999 ; Scheduler:Scheduler_block|s_order_table[7][1] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; 0.005      ; 3.036      ;
+; -1.999 ; Scheduler:Scheduler_block|s_order_table[7][1] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; 0.005      ; 3.036      ;
+; -1.992 ; Scheduler:Scheduler_block|s_order_table[7][2] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; 0.005      ; 3.029      ;
+; -1.992 ; Scheduler:Scheduler_block|s_order_table[7][2] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; 0.005      ; 3.029      ;
+; -1.992 ; Scheduler:Scheduler_block|s_order_table[7][2] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; 0.005      ; 3.029      ;
+; -1.992 ; Scheduler:Scheduler_block|s_order_table[7][2] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; 0.005      ; 3.029      ;
+; -1.983 ; Scheduler:Scheduler_block|s_head_tid[1]       ; Scheduler:Scheduler_block|s_reschedule      ; clock        ; clock       ; 1.000        ; 0.002      ; 3.017      ;
+; -1.983 ; Scheduler:Scheduler_block|s_running_tid[1]    ; Scheduler:Scheduler_block|s_reschedule      ; clock        ; clock       ; 1.000        ; 0.007      ; 3.022      ;
+; -1.972 ; Scheduler:Scheduler_block|s_order_table[5][0] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; -0.004     ; 3.000      ;
+; -1.972 ; Scheduler:Scheduler_block|s_order_table[5][0] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; -0.004     ; 3.000      ;
+; -1.972 ; Scheduler:Scheduler_block|s_order_table[5][0] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; -0.004     ; 3.000      ;
+; -1.972 ; Scheduler:Scheduler_block|s_order_table[5][0] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; -0.004     ; 3.000      ;
+; -1.959 ; Scheduler:Scheduler_block|s_order_table[7][6] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; 0.005      ; 2.996      ;
+; -1.959 ; Scheduler:Scheduler_block|s_order_table[7][6] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; 0.005      ; 2.996      ;
+; -1.959 ; Scheduler:Scheduler_block|s_order_table[7][6] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; 0.005      ; 2.996      ;
+; -1.959 ; Scheduler:Scheduler_block|s_order_table[7][6] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; 0.005      ; 2.996      ;
+; -1.950 ; Scheduler:Scheduler_block|s_order_table[0][0] ; Scheduler:Scheduler_block|s_reschedule      ; clock        ; clock       ; 1.000        ; 0.014      ; 2.996      ;
+; -1.944 ; Scheduler:Scheduler_block|s_head_tid[0]       ; Scheduler:Scheduler_block|s_reschedule      ; clock        ; clock       ; 1.000        ; 0.002      ; 2.978      ;
+; -1.938 ; Scheduler:Scheduler_block|s_obj_table[6][4]   ; Scheduler:Scheduler_block|s_stid_found[2]   ; clock        ; clock       ; 1.000        ; -0.022     ; 2.948      ;
+; -1.938 ; Scheduler:Scheduler_block|s_obj_table[6][4]   ; Scheduler:Scheduler_block|s_stid_found[3]   ; clock        ; clock       ; 1.000        ; -0.022     ; 2.948      ;
+; -1.938 ; Scheduler:Scheduler_block|s_obj_table[6][4]   ; Scheduler:Scheduler_block|s_stid_found[1]   ; clock        ; clock       ; 1.000        ; -0.022     ; 2.948      ;
+; -1.938 ; Scheduler:Scheduler_block|s_obj_table[6][4]   ; Scheduler:Scheduler_block|s_stid_found[0]   ; clock        ; clock       ; 1.000        ; -0.022     ; 2.948      ;
+; -1.927 ; Scheduler:Scheduler_block|s_order_table[3][4] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; -0.007     ; 2.952      ;
+; -1.927 ; Scheduler:Scheduler_block|s_order_table[3][4] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; -0.007     ; 2.952      ;
+; -1.927 ; Scheduler:Scheduler_block|s_order_table[3][4] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; -0.007     ; 2.952      ;
+; -1.927 ; Scheduler:Scheduler_block|s_order_table[3][4] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; -0.007     ; 2.952      ;
+; -1.923 ; Scheduler:Scheduler_block|s_order_table[7][7] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; 0.005      ; 2.960      ;
+; -1.923 ; Scheduler:Scheduler_block|s_order_table[7][7] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; 0.005      ; 2.960      ;
+; -1.923 ; Scheduler:Scheduler_block|s_order_table[7][7] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; 0.005      ; 2.960      ;
+; -1.923 ; Scheduler:Scheduler_block|s_order_table[7][7] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; 0.005      ; 2.960      ;
+; -1.922 ; Scheduler:Scheduler_block|s_order_table[7][5] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; 0.005      ; 2.959      ;
+; -1.922 ; Scheduler:Scheduler_block|s_order_table[7][5] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; 0.005      ; 2.959      ;
+; -1.922 ; Scheduler:Scheduler_block|s_order_table[7][5] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; 0.005      ; 2.959      ;
+; -1.922 ; Scheduler:Scheduler_block|s_order_table[7][5] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; 0.005      ; 2.959      ;
+; -1.920 ; Scheduler:Scheduler_block|s_order_table[2][1] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; -0.010     ; 2.942      ;
+; -1.920 ; Scheduler:Scheduler_block|s_order_table[2][1] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; -0.010     ; 2.942      ;
+; -1.920 ; Scheduler:Scheduler_block|s_order_table[2][1] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; -0.010     ; 2.942      ;
+; -1.920 ; Scheduler:Scheduler_block|s_order_table[2][1] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; -0.010     ; 2.942      ;
+; -1.912 ; Scheduler:Scheduler_block|s_order_table[0][1] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; -0.010     ; 2.934      ;
+; -1.912 ; Scheduler:Scheduler_block|s_order_table[0][1] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; -0.010     ; 2.934      ;
+; -1.912 ; Scheduler:Scheduler_block|s_order_table[0][1] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; -0.010     ; 2.934      ;
+; -1.912 ; Scheduler:Scheduler_block|s_order_table[0][1] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; -0.010     ; 2.934      ;
+; -1.900 ; Scheduler:Scheduler_block|s_order_table[7][0] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; -0.004     ; 2.928      ;
+; -1.900 ; Scheduler:Scheduler_block|s_order_table[7][0] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; -0.004     ; 2.928      ;
+; -1.900 ; Scheduler:Scheduler_block|s_order_table[7][0] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; -0.004     ; 2.928      ;
+; -1.900 ; Scheduler:Scheduler_block|s_order_table[7][0] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; -0.004     ; 2.928      ;
+; -1.896 ; scheduler_adapter:Adapter_block|i_command[0]  ; Scheduler:Scheduler_block|s_obj_table[4][5] ; clock        ; clock       ; 1.000        ; -0.011     ; 2.917      ;
+; -1.896 ; scheduler_adapter:Adapter_block|i_command[0]  ; Scheduler:Scheduler_block|s_obj_table[4][2] ; clock        ; clock       ; 1.000        ; -0.011     ; 2.917      ;
+; -1.896 ; scheduler_adapter:Adapter_block|i_command[0]  ; Scheduler:Scheduler_block|s_obj_table[4][1] ; clock        ; clock       ; 1.000        ; -0.011     ; 2.917      ;
+; -1.895 ; Scheduler:Scheduler_block|s_order_table[2][2] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; -0.007     ; 2.920      ;
+; -1.895 ; Scheduler:Scheduler_block|s_order_table[2][2] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; -0.007     ; 2.920      ;
+; -1.895 ; Scheduler:Scheduler_block|s_order_table[2][2] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; -0.007     ; 2.920      ;
+; -1.895 ; Scheduler:Scheduler_block|s_order_table[2][2] ; Scheduler:Scheduler_block|s_found_tid[0]    ; clock        ; clock       ; 1.000        ; -0.007     ; 2.920      ;
+; -1.890 ; Scheduler:Scheduler_block|s_stid_found[0]     ; Scheduler:Scheduler_block|s_stid_done       ; clock        ; clock       ; 1.000        ; 0.000      ; 2.922      ;
+; -1.890 ; Scheduler:Scheduler_block|s_order_table[3][7] ; Scheduler:Scheduler_block|s_found_tid[3]    ; clock        ; clock       ; 1.000        ; -0.007     ; 2.915      ;
+; -1.890 ; Scheduler:Scheduler_block|s_order_table[3][7] ; Scheduler:Scheduler_block|s_found_tid[2]    ; clock        ; clock       ; 1.000        ; -0.007     ; 2.915      ;
+; -1.890 ; Scheduler:Scheduler_block|s_order_table[3][7] ; Scheduler:Scheduler_block|s_found_tid[1]    ; clock        ; clock       ; 1.000        ; -0.007     ; 2.915      ;
++--------+-----------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock'                                                                                                                                                            ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                         ; To Node                                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; Scheduler:Scheduler_block|s_search_reset          ; Scheduler:Scheduler_block|s_search_reset          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_tid_bitmap[2]         ; Scheduler:Scheduler_block|s_tid_bitmap[2]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_tid_bitmap[4]         ; Scheduler:Scheduler_block|s_tid_bitmap[4]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_tid_bitmap[1]         ; Scheduler:Scheduler_block|s_tid_bitmap[1]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_tid_bitmap[6]         ; Scheduler:Scheduler_block|s_tid_bitmap[6]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_tid_bitmap[5]         ; Scheduler:Scheduler_block|s_tid_bitmap[5]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_tid_bitmap[3]         ; Scheduler:Scheduler_block|s_tid_bitmap[3]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_state.pregetid        ; Scheduler:Scheduler_block|s_state.pregetid        ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_stid_found[1]         ; Scheduler:Scheduler_block|s_stid_found[1]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_stid_found[0]         ; Scheduler:Scheduler_block|s_stid_found[0]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_state.getid           ; Scheduler:Scheduler_block|s_state.getid           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_state.destroy         ; Scheduler:Scheduler_block|s_state.destroy         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_tid_bitmap[7]         ; Scheduler:Scheduler_block|s_tid_bitmap[7]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_tid_bitmap[0]         ; Scheduler:Scheduler_block|s_tid_bitmap[0]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_free_tid[3]           ; Scheduler:Scheduler_block|s_free_tid[3]           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_prev_table[7][2]      ; Scheduler:Scheduler_block|s_prev_table[7][2]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_prev_table[2][0]      ; Scheduler:Scheduler_block|s_prev_table[2][0]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_prev_table[0][0]      ; Scheduler:Scheduler_block|s_prev_table[0][0]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_state.insert          ; Scheduler:Scheduler_block|s_state.insert          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_enqueue_bitmap[7]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[7]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_enqueue_bitmap[6]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[6]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_enqueue_bitmap[5]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[5]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_enqueue_bitmap[4]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[4]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_enqueue_bitmap[3]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[3]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_enqueue_bitmap[2]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[2]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_enqueue_bitmap[1]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[1]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_enqueue_bitmap[0]     ; Scheduler:Scheduler_block|s_enqueue_bitmap[0]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_state.reset_time      ; Scheduler:Scheduler_block|s_state.reset_time      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_state.acknowledge_int ; Scheduler:Scheduler_block|s_state.acknowledge_int ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_state.idle            ; Scheduler:Scheduler_block|s_state.idle            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_int_ack               ; Scheduler:Scheduler_block|s_int_ack               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_time_reset            ; Scheduler:Scheduler_block|s_time_reset            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_reschedule            ; Scheduler:Scheduler_block|s_reschedule            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_schedule_enabled      ; Scheduler:Scheduler_block|s_schedule_enabled      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_error                 ; Scheduler:Scheduler_block|s_error                 ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_size[0]               ; Scheduler:Scheduler_block|s_size[0]               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_size[1]               ; Scheduler:Scheduler_block|s_size[1]               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_done                  ; Scheduler:Scheduler_block|s_done                  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Scheduler:Scheduler_block|s_size[3]               ; Scheduler:Scheduler_block|s_size[3]               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.236 ; scheduler_adapter:Adapter_block|i_priority[19]    ; Scheduler:Scheduler_block|s_search_order[19]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.388      ;
+; 0.237 ; scheduler_adapter:Adapter_block|reg_priority[31]  ; scheduler_adapter:Adapter_block|i_priority[31]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; scheduler_adapter:Adapter_block|reg_parameter[19] ; scheduler_adapter:Adapter_block|i_parameter[19]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.389      ;
+; 0.238 ; scheduler_adapter:Adapter_block|reg_priority[21]  ; scheduler_adapter:Adapter_block|i_priority[21]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; scheduler_adapter:Adapter_block|reg_parameter[8]  ; scheduler_adapter:Adapter_block|i_parameter[8]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; scheduler_adapter:Adapter_block|reg_parameter[3]  ; scheduler_adapter:Adapter_block|i_parameter[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; scheduler_adapter:Adapter_block|i_priority[9]     ; Scheduler:Scheduler_block|s_search_order[9]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.390      ;
+; 0.239 ; scheduler_adapter:Adapter_block|reg_priority[30]  ; scheduler_adapter:Adapter_block|i_priority[30]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; scheduler_adapter:Adapter_block|reg_parameter[14] ; scheduler_adapter:Adapter_block|i_parameter[14]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; scheduler_adapter:Adapter_block|reg_parameter[18] ; scheduler_adapter:Adapter_block|i_parameter[18]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; scheduler_adapter:Adapter_block|reg_parameter[31] ; scheduler_adapter:Adapter_block|i_parameter[31]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.391      ;
+; 0.240 ; scheduler_adapter:Adapter_block|reg_priority[22]  ; scheduler_adapter:Adapter_block|i_priority[22]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; scheduler_adapter:Adapter_block|reg_priority[23]  ; scheduler_adapter:Adapter_block|i_priority[23]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; scheduler_adapter:Adapter_block|reg_parameter[10] ; scheduler_adapter:Adapter_block|i_parameter[10]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; scheduler_adapter:Adapter_block|reg_parameter[28] ; scheduler_adapter:Adapter_block|i_parameter[28]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.392      ;
+; 0.241 ; scheduler_adapter:Adapter_block|reg_parameter[22] ; scheduler_adapter:Adapter_block|i_parameter[22]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.393      ;
+; 0.242 ; scheduler_adapter:Adapter_block|reg_priority[24]  ; scheduler_adapter:Adapter_block|i_priority[24]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.394      ;
+; 0.243 ; scheduler_adapter:Adapter_block|i_priority[6]     ; Scheduler:Scheduler_block|s_search_order[6]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; Scheduler:Scheduler_block|s_counter[31]           ; Scheduler:Scheduler_block|s_counter[31]           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.395      ;
+; 0.245 ; scheduler_adapter:Adapter_block|i_priority[1]     ; Scheduler:Scheduler_block|s_search_order[1]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.397      ;
+; 0.245 ; scheduler_adapter:Adapter_block|i_priority[8]     ; Scheduler:Scheduler_block|s_search_order[8]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.397      ;
+; 0.253 ; Scheduler:Scheduler_block|s_state.idle            ; Scheduler:Scheduler_block|s_return[4]             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.405      ;
+; 0.307 ; scheduler_adapter:Adapter_block|i_priority[16]    ; Scheduler:Scheduler_block|s_search_order[16]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.459      ;
+; 0.309 ; scheduler_adapter:Adapter_block|reg_parameter[13] ; scheduler_adapter:Adapter_block|i_parameter[13]   ; clock        ; clock       ; 0.000        ; 0.024      ; 0.485      ;
+; 0.310 ; scheduler_adapter:Adapter_block|reg_parameter[7]  ; scheduler_adapter:Adapter_block|i_parameter[7]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.462      ;
+; 0.311 ; scheduler_adapter:Adapter_block|reg_priority[19]  ; scheduler_adapter:Adapter_block|i_priority[19]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.463      ;
+; 0.312 ; scheduler_adapter:Adapter_block|reg_priority[28]  ; scheduler_adapter:Adapter_block|i_priority[28]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.464      ;
+; 0.312 ; scheduler_adapter:Adapter_block|reg_priority[26]  ; scheduler_adapter:Adapter_block|i_priority[26]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.464      ;
+; 0.312 ; scheduler_adapter:Adapter_block|reg_parameter[15] ; scheduler_adapter:Adapter_block|i_parameter[15]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.464      ;
+; 0.313 ; scheduler_adapter:Adapter_block|i_priority[21]    ; Scheduler:Scheduler_block|s_search_order[21]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.465      ;
+; 0.314 ; scheduler_adapter:Adapter_block|reg_priority[29]  ; scheduler_adapter:Adapter_block|i_priority[29]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.466      ;
+; 0.317 ; scheduler_adapter:Adapter_block|reg_priority[16]  ; scheduler_adapter:Adapter_block|i_priority[16]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.469      ;
+; 0.317 ; scheduler_adapter:Adapter_block|i_priority[29]    ; Scheduler:Scheduler_block|s_search_order[29]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.469      ;
+; 0.317 ; scheduler_adapter:Adapter_block|reg_priority[25]  ; scheduler_adapter:Adapter_block|i_priority[25]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.469      ;
+; 0.317 ; scheduler_adapter:Adapter_block|reg_parameter[9]  ; scheduler_adapter:Adapter_block|i_parameter[9]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.469      ;
+; 0.317 ; scheduler_adapter:Adapter_block|reg_parameter[21] ; scheduler_adapter:Adapter_block|i_parameter[21]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.469      ;
+; 0.318 ; scheduler_adapter:Adapter_block|reg_parameter[29] ; scheduler_adapter:Adapter_block|i_parameter[29]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.470      ;
+; 0.319 ; scheduler_adapter:Adapter_block|i_priority[22]    ; Scheduler:Scheduler_block|s_search_order[22]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.471      ;
+; 0.319 ; scheduler_adapter:Adapter_block|reg_parameter[24] ; scheduler_adapter:Adapter_block|i_parameter[24]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.471      ;
+; 0.320 ; scheduler_adapter:Adapter_block|i_priority[24]    ; Scheduler:Scheduler_block|s_search_order[24]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.472      ;
+; 0.320 ; scheduler_adapter:Adapter_block|i_priority[20]    ; Scheduler:Scheduler_block|s_search_order[20]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.472      ;
+; 0.320 ; scheduler_adapter:Adapter_block|reg_priority[7]   ; scheduler_adapter:Adapter_block|i_priority[7]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.472      ;
+; 0.321 ; scheduler_adapter:Adapter_block|i_priority[31]    ; Scheduler:Scheduler_block|s_search_order[31]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.473      ;
+; 0.322 ; scheduler_adapter:Adapter_block|reg_parameter[20] ; scheduler_adapter:Adapter_block|i_parameter[20]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.474      ;
+; 0.322 ; scheduler_adapter:Adapter_block|reg_parameter[26] ; scheduler_adapter:Adapter_block|i_parameter[26]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.474      ;
+; 0.323 ; scheduler_adapter:Adapter_block|i_priority[28]    ; Scheduler:Scheduler_block|s_search_order[28]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.475      ;
+; 0.323 ; scheduler_adapter:Adapter_block|reg_parameter[30] ; scheduler_adapter:Adapter_block|i_parameter[30]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.475      ;
+; 0.325 ; scheduler_adapter:Adapter_block|i_priority[5]     ; Scheduler:Scheduler_block|s_search_order[5]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.477      ;
+; 0.326 ; scheduler_adapter:Adapter_block|i_priority[15]    ; Scheduler:Scheduler_block|s_search_order[15]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.478      ;
+; 0.328 ; scheduler_adapter:Adapter_block|i_priority[17]    ; Scheduler:Scheduler_block|s_search_order[17]      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.480      ;
+; 0.329 ; scheduler_adapter:Adapter_block|i_priority[4]     ; Scheduler:Scheduler_block|s_search_order[4]       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.481      ;
+; 0.333 ; scheduler_adapter:Adapter_block|reg_priority[14]  ; scheduler_adapter:Adapter_block|i_priority[14]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.485      ;
+; 0.334 ; scheduler_adapter:Adapter_block|reg_priority[13]  ; scheduler_adapter:Adapter_block|i_priority[13]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.486      ;
+; 0.339 ; scheduler_adapter:Adapter_block|reg_parameter[2]  ; scheduler_adapter:Adapter_block|i_parameter[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.491      ;
+; 0.342 ; scheduler_adapter:Adapter_block|reg_priority[0]   ; scheduler_adapter:Adapter_block|i_priority[0]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.494      ;
+; 0.355 ; scheduler_adapter:Adapter_block|reg_parameter[16] ; scheduler_adapter:Adapter_block|i_parameter[16]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; Scheduler:Scheduler_block|s_counter[0]            ; Scheduler:Scheduler_block|s_counter[0]            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; Scheduler:Scheduler_block|s_counter[16]           ; Scheduler:Scheduler_block|s_counter[16]           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.507      ;
+; 0.356 ; scheduler_adapter:Adapter_block|i_parameter[13]   ; Scheduler:Scheduler_block|s_quantum_ticks[13]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.508      ;
+; 0.356 ; scheduler_adapter:Adapter_block|i_parameter[24]   ; Scheduler:Scheduler_block|s_quantum_ticks[24]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.508      ;
+; 0.357 ; scheduler_adapter:Adapter_block|i_parameter[29]   ; Scheduler:Scheduler_block|s_quantum_ticks[29]     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.509      ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock'                                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                        ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_command_tid[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[20]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[20]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[21]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[21]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[22]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[22]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[23]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[23]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[24]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[24]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[25]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[25]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[26]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[26]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[27]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[27]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[28]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[28]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[29]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[29]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[30]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[30]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[31]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[31]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_counter[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_done              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_done              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[7] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_enqueue_bitmap[7] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_error             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_error             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; Scheduler:Scheduler_block|s_found_tid[3]      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; address[*]     ; clock      ; 3.495 ; 3.495 ; Rise       ; clock           ;
+;  address[0]    ; clock      ; 3.166 ; 3.166 ; Rise       ; clock           ;
+;  address[1]    ; clock      ; 3.489 ; 3.489 ; Rise       ; clock           ;
+;  address[2]    ; clock      ; 3.495 ; 3.495 ; Rise       ; clock           ;
+; chipselect     ; clock      ; 3.271 ; 3.271 ; Rise       ; clock           ;
+; read           ; clock      ; 3.323 ; 3.323 ; Rise       ; clock           ;
+; resetn         ; clock      ; 1.750 ; 1.750 ; Rise       ; clock           ;
+; write          ; clock      ; 3.349 ; 3.349 ; Rise       ; clock           ;
+; writedata[*]   ; clock      ; 2.518 ; 2.518 ; Rise       ; clock           ;
+;  writedata[0]  ; clock      ; 1.969 ; 1.969 ; Rise       ; clock           ;
+;  writedata[1]  ; clock      ; 1.987 ; 1.987 ; Rise       ; clock           ;
+;  writedata[2]  ; clock      ; 2.085 ; 2.085 ; Rise       ; clock           ;
+;  writedata[3]  ; clock      ; 2.518 ; 2.518 ; Rise       ; clock           ;
+;  writedata[4]  ; clock      ; 2.453 ; 2.453 ; Rise       ; clock           ;
+;  writedata[5]  ; clock      ; 2.064 ; 2.064 ; Rise       ; clock           ;
+;  writedata[6]  ; clock      ; 2.123 ; 2.123 ; Rise       ; clock           ;
+;  writedata[7]  ; clock      ; 2.197 ; 2.197 ; Rise       ; clock           ;
+;  writedata[8]  ; clock      ; 1.987 ; 1.987 ; Rise       ; clock           ;
+;  writedata[9]  ; clock      ; 2.257 ; 2.257 ; Rise       ; clock           ;
+;  writedata[10] ; clock      ; 1.920 ; 1.920 ; Rise       ; clock           ;
+;  writedata[11] ; clock      ; 2.147 ; 2.147 ; Rise       ; clock           ;
+;  writedata[12] ; clock      ; 2.086 ; 2.086 ; Rise       ; clock           ;
+;  writedata[13] ; clock      ; 1.966 ; 1.966 ; Rise       ; clock           ;
+;  writedata[14] ; clock      ; 2.115 ; 2.115 ; Rise       ; clock           ;
+;  writedata[15] ; clock      ; 2.107 ; 2.107 ; Rise       ; clock           ;
+;  writedata[16] ; clock      ; 2.280 ; 2.280 ; Rise       ; clock           ;
+;  writedata[17] ; clock      ; 2.235 ; 2.235 ; Rise       ; clock           ;
+;  writedata[18] ; clock      ; 2.335 ; 2.335 ; Rise       ; clock           ;
+;  writedata[19] ; clock      ; 2.317 ; 2.317 ; Rise       ; clock           ;
+;  writedata[20] ; clock      ; 2.149 ; 2.149 ; Rise       ; clock           ;
+;  writedata[21] ; clock      ; 2.193 ; 2.193 ; Rise       ; clock           ;
+;  writedata[22] ; clock      ; 2.274 ; 2.274 ; Rise       ; clock           ;
+;  writedata[23] ; clock      ; 2.309 ; 2.309 ; Rise       ; clock           ;
+;  writedata[24] ; clock      ; 2.131 ; 2.131 ; Rise       ; clock           ;
+;  writedata[25] ; clock      ; 2.288 ; 2.288 ; Rise       ; clock           ;
+;  writedata[26] ; clock      ; 2.367 ; 2.367 ; Rise       ; clock           ;
+;  writedata[27] ; clock      ; 2.172 ; 2.172 ; Rise       ; clock           ;
+;  writedata[28] ; clock      ; 2.157 ; 2.157 ; Rise       ; clock           ;
+;  writedata[29] ; clock      ; 2.342 ; 2.342 ; Rise       ; clock           ;
+;  writedata[30] ; clock      ; 2.372 ; 2.372 ; Rise       ; clock           ;
+;  writedata[31] ; clock      ; 2.020 ; 2.020 ; Rise       ; clock           ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; address[*]     ; clock      ; -1.922 ; -1.922 ; Rise       ; clock           ;
+;  address[0]    ; clock      ; -2.479 ; -2.479 ; Rise       ; clock           ;
+;  address[1]    ; clock      ; -2.602 ; -2.602 ; Rise       ; clock           ;
+;  address[2]    ; clock      ; -1.922 ; -1.922 ; Rise       ; clock           ;
+; chipselect     ; clock      ; -2.128 ; -2.128 ; Rise       ; clock           ;
+; read           ; clock      ; -2.440 ; -2.440 ; Rise       ; clock           ;
+; resetn         ; clock      ; 0.129  ; 0.129  ; Rise       ; clock           ;
+; write          ; clock      ; -2.315 ; -2.315 ; Rise       ; clock           ;
+; writedata[*]   ; clock      ; -1.754 ; -1.754 ; Rise       ; clock           ;
+;  writedata[0]  ; clock      ; -1.835 ; -1.835 ; Rise       ; clock           ;
+;  writedata[1]  ; clock      ; -1.853 ; -1.853 ; Rise       ; clock           ;
+;  writedata[2]  ; clock      ; -1.958 ; -1.958 ; Rise       ; clock           ;
+;  writedata[3]  ; clock      ; -1.961 ; -1.961 ; Rise       ; clock           ;
+;  writedata[4]  ; clock      ; -2.331 ; -2.331 ; Rise       ; clock           ;
+;  writedata[5]  ; clock      ; -1.941 ; -1.941 ; Rise       ; clock           ;
+;  writedata[6]  ; clock      ; -2.002 ; -2.002 ; Rise       ; clock           ;
+;  writedata[7]  ; clock      ; -2.074 ; -2.074 ; Rise       ; clock           ;
+;  writedata[8]  ; clock      ; -1.858 ; -1.858 ; Rise       ; clock           ;
+;  writedata[9]  ; clock      ; -2.128 ; -2.128 ; Rise       ; clock           ;
+;  writedata[10] ; clock      ; -1.754 ; -1.754 ; Rise       ; clock           ;
+;  writedata[11] ; clock      ; -2.025 ; -2.025 ; Rise       ; clock           ;
+;  writedata[12] ; clock      ; -1.963 ; -1.963 ; Rise       ; clock           ;
+;  writedata[13] ; clock      ; -1.846 ; -1.846 ; Rise       ; clock           ;
+;  writedata[14] ; clock      ; -1.874 ; -1.874 ; Rise       ; clock           ;
+;  writedata[15] ; clock      ; -1.986 ; -1.986 ; Rise       ; clock           ;
+;  writedata[16] ; clock      ; -2.069 ; -2.069 ; Rise       ; clock           ;
+;  writedata[17] ; clock      ; -2.105 ; -2.105 ; Rise       ; clock           ;
+;  writedata[18] ; clock      ; -2.156 ; -2.156 ; Rise       ; clock           ;
+;  writedata[19] ; clock      ; -2.093 ; -2.093 ; Rise       ; clock           ;
+;  writedata[20] ; clock      ; -2.004 ; -2.004 ; Rise       ; clock           ;
+;  writedata[21] ; clock      ; -2.015 ; -2.015 ; Rise       ; clock           ;
+;  writedata[22] ; clock      ; -2.139 ; -2.139 ; Rise       ; clock           ;
+;  writedata[23] ; clock      ; -2.085 ; -2.085 ; Rise       ; clock           ;
+;  writedata[24] ; clock      ; -1.859 ; -1.859 ; Rise       ; clock           ;
+;  writedata[25] ; clock      ; -2.164 ; -2.164 ; Rise       ; clock           ;
+;  writedata[26] ; clock      ; -2.149 ; -2.149 ; Rise       ; clock           ;
+;  writedata[27] ; clock      ; -1.968 ; -1.968 ; Rise       ; clock           ;
+;  writedata[28] ; clock      ; -2.021 ; -2.021 ; Rise       ; clock           ;
+;  writedata[29] ; clock      ; -2.047 ; -2.047 ; Rise       ; clock           ;
+;  writedata[30] ; clock      ; -2.176 ; -2.176 ; Rise       ; clock           ;
+;  writedata[31] ; clock      ; -1.886 ; -1.886 ; Rise       ; clock           ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; interrupt     ; clock      ; 4.863 ; 4.863 ; Rise       ; clock           ;
+; readdata[*]   ; clock      ; 4.219 ; 4.219 ; Rise       ; clock           ;
+;  readdata[0]  ; clock      ; 4.004 ; 4.004 ; Rise       ; clock           ;
+;  readdata[1]  ; clock      ; 3.985 ; 3.985 ; Rise       ; clock           ;
+;  readdata[2]  ; clock      ; 3.887 ; 3.887 ; Rise       ; clock           ;
+;  readdata[3]  ; clock      ; 3.772 ; 3.772 ; Rise       ; clock           ;
+;  readdata[4]  ; clock      ; 4.112 ; 4.112 ; Rise       ; clock           ;
+;  readdata[5]  ; clock      ; 4.092 ; 4.092 ; Rise       ; clock           ;
+;  readdata[6]  ; clock      ; 4.080 ; 4.080 ; Rise       ; clock           ;
+;  readdata[7]  ; clock      ; 3.893 ; 3.893 ; Rise       ; clock           ;
+;  readdata[8]  ; clock      ; 3.761 ; 3.761 ; Rise       ; clock           ;
+;  readdata[9]  ; clock      ; 3.881 ; 3.881 ; Rise       ; clock           ;
+;  readdata[10] ; clock      ; 3.687 ; 3.687 ; Rise       ; clock           ;
+;  readdata[11] ; clock      ; 3.688 ; 3.688 ; Rise       ; clock           ;
+;  readdata[12] ; clock      ; 3.685 ; 3.685 ; Rise       ; clock           ;
+;  readdata[13] ; clock      ; 3.850 ; 3.850 ; Rise       ; clock           ;
+;  readdata[14] ; clock      ; 3.869 ; 3.869 ; Rise       ; clock           ;
+;  readdata[15] ; clock      ; 3.694 ; 3.694 ; Rise       ; clock           ;
+;  readdata[16] ; clock      ; 3.982 ; 3.982 ; Rise       ; clock           ;
+;  readdata[17] ; clock      ; 3.771 ; 3.771 ; Rise       ; clock           ;
+;  readdata[18] ; clock      ; 4.219 ; 4.219 ; Rise       ; clock           ;
+;  readdata[19] ; clock      ; 3.782 ; 3.782 ; Rise       ; clock           ;
+;  readdata[20] ; clock      ; 3.969 ; 3.969 ; Rise       ; clock           ;
+;  readdata[21] ; clock      ; 3.683 ; 3.683 ; Rise       ; clock           ;
+;  readdata[22] ; clock      ; 3.970 ; 3.970 ; Rise       ; clock           ;
+;  readdata[23] ; clock      ; 3.857 ; 3.857 ; Rise       ; clock           ;
+;  readdata[24] ; clock      ; 3.972 ; 3.972 ; Rise       ; clock           ;
+;  readdata[25] ; clock      ; 4.044 ; 4.044 ; Rise       ; clock           ;
+;  readdata[26] ; clock      ; 4.039 ; 4.039 ; Rise       ; clock           ;
+;  readdata[27] ; clock      ; 4.003 ; 4.003 ; Rise       ; clock           ;
+;  readdata[28] ; clock      ; 3.981 ; 3.981 ; Rise       ; clock           ;
+;  readdata[29] ; clock      ; 4.211 ; 4.211 ; Rise       ; clock           ;
+;  readdata[30] ; clock      ; 3.774 ; 3.774 ; Rise       ; clock           ;
+;  readdata[31] ; clock      ; 4.125 ; 4.125 ; Rise       ; clock           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; interrupt     ; clock      ; 4.612 ; 4.612 ; Rise       ; clock           ;
+; readdata[*]   ; clock      ; 3.683 ; 3.683 ; Rise       ; clock           ;
+;  readdata[0]  ; clock      ; 4.004 ; 4.004 ; Rise       ; clock           ;
+;  readdata[1]  ; clock      ; 3.985 ; 3.985 ; Rise       ; clock           ;
+;  readdata[2]  ; clock      ; 3.887 ; 3.887 ; Rise       ; clock           ;
+;  readdata[3]  ; clock      ; 3.772 ; 3.772 ; Rise       ; clock           ;
+;  readdata[4]  ; clock      ; 4.112 ; 4.112 ; Rise       ; clock           ;
+;  readdata[5]  ; clock      ; 4.092 ; 4.092 ; Rise       ; clock           ;
+;  readdata[6]  ; clock      ; 4.080 ; 4.080 ; Rise       ; clock           ;
+;  readdata[7]  ; clock      ; 3.893 ; 3.893 ; Rise       ; clock           ;
+;  readdata[8]  ; clock      ; 3.761 ; 3.761 ; Rise       ; clock           ;
+;  readdata[9]  ; clock      ; 3.881 ; 3.881 ; Rise       ; clock           ;
+;  readdata[10] ; clock      ; 3.687 ; 3.687 ; Rise       ; clock           ;
+;  readdata[11] ; clock      ; 3.688 ; 3.688 ; Rise       ; clock           ;
+;  readdata[12] ; clock      ; 3.685 ; 3.685 ; Rise       ; clock           ;
+;  readdata[13] ; clock      ; 3.850 ; 3.850 ; Rise       ; clock           ;
+;  readdata[14] ; clock      ; 3.869 ; 3.869 ; Rise       ; clock           ;
+;  readdata[15] ; clock      ; 3.694 ; 3.694 ; Rise       ; clock           ;
+;  readdata[16] ; clock      ; 3.982 ; 3.982 ; Rise       ; clock           ;
+;  readdata[17] ; clock      ; 3.771 ; 3.771 ; Rise       ; clock           ;
+;  readdata[18] ; clock      ; 4.219 ; 4.219 ; Rise       ; clock           ;
+;  readdata[19] ; clock      ; 3.782 ; 3.782 ; Rise       ; clock           ;
+;  readdata[20] ; clock      ; 3.969 ; 3.969 ; Rise       ; clock           ;
+;  readdata[21] ; clock      ; 3.683 ; 3.683 ; Rise       ; clock           ;
+;  readdata[22] ; clock      ; 3.970 ; 3.970 ; Rise       ; clock           ;
+;  readdata[23] ; clock      ; 3.857 ; 3.857 ; Rise       ; clock           ;
+;  readdata[24] ; clock      ; 3.972 ; 3.972 ; Rise       ; clock           ;
+;  readdata[25] ; clock      ; 4.044 ; 4.044 ; Rise       ; clock           ;
+;  readdata[26] ; clock      ; 4.039 ; 4.039 ; Rise       ; clock           ;
+;  readdata[27] ; clock      ; 4.003 ; 4.003 ; Rise       ; clock           ;
+;  readdata[28] ; clock      ; 3.981 ; 3.981 ; Rise       ; clock           ;
+;  readdata[29] ; clock      ; 4.211 ; 4.211 ; Rise       ; clock           ;
+;  readdata[30] ; clock      ; 3.774 ; 3.774 ; Rise       ; clock           ;
+;  readdata[31] ; clock      ; 4.125 ; 4.125 ; Rise       ; clock           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -5.940    ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  clock           ; -5.940    ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -2985.641 ; 0.0   ; 0.0      ; 0.0     ; -848.38             ;
+;  clock           ; -2985.641 ; 0.000 ; N/A      ; N/A     ; -848.380            ;
++------------------+-----------+-------+----------+---------+---------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; address[*]     ; clock      ; 6.747 ; 6.747 ; Rise       ; clock           ;
+;  address[0]    ; clock      ; 6.088 ; 6.088 ; Rise       ; clock           ;
+;  address[1]    ; clock      ; 6.747 ; 6.747 ; Rise       ; clock           ;
+;  address[2]    ; clock      ; 6.654 ; 6.654 ; Rise       ; clock           ;
+; chipselect     ; clock      ; 6.247 ; 6.247 ; Rise       ; clock           ;
+; read           ; clock      ; 6.289 ; 6.289 ; Rise       ; clock           ;
+; resetn         ; clock      ; 4.218 ; 4.218 ; Rise       ; clock           ;
+; write          ; clock      ; 6.411 ; 6.411 ; Rise       ; clock           ;
+; writedata[*]   ; clock      ; 4.676 ; 4.676 ; Rise       ; clock           ;
+;  writedata[0]  ; clock      ; 3.617 ; 3.617 ; Rise       ; clock           ;
+;  writedata[1]  ; clock      ; 3.645 ; 3.645 ; Rise       ; clock           ;
+;  writedata[2]  ; clock      ; 3.805 ; 3.805 ; Rise       ; clock           ;
+;  writedata[3]  ; clock      ; 4.676 ; 4.676 ; Rise       ; clock           ;
+;  writedata[4]  ; clock      ; 4.371 ; 4.371 ; Rise       ; clock           ;
+;  writedata[5]  ; clock      ; 3.772 ; 3.772 ; Rise       ; clock           ;
+;  writedata[6]  ; clock      ; 3.896 ; 3.896 ; Rise       ; clock           ;
+;  writedata[7]  ; clock      ; 4.098 ; 4.098 ; Rise       ; clock           ;
+;  writedata[8]  ; clock      ; 3.642 ; 3.642 ; Rise       ; clock           ;
+;  writedata[9]  ; clock      ; 4.155 ; 4.155 ; Rise       ; clock           ;
+;  writedata[10] ; clock      ; 3.557 ; 3.557 ; Rise       ; clock           ;
+;  writedata[11] ; clock      ; 3.924 ; 3.924 ; Rise       ; clock           ;
+;  writedata[12] ; clock      ; 3.854 ; 3.854 ; Rise       ; clock           ;
+;  writedata[13] ; clock      ; 3.600 ; 3.600 ; Rise       ; clock           ;
+;  writedata[14] ; clock      ; 3.908 ; 3.908 ; Rise       ; clock           ;
+;  writedata[15] ; clock      ; 3.892 ; 3.892 ; Rise       ; clock           ;
+;  writedata[16] ; clock      ; 4.206 ; 4.206 ; Rise       ; clock           ;
+;  writedata[17] ; clock      ; 4.135 ; 4.135 ; Rise       ; clock           ;
+;  writedata[18] ; clock      ; 4.225 ; 4.225 ; Rise       ; clock           ;
+;  writedata[19] ; clock      ; 4.251 ; 4.251 ; Rise       ; clock           ;
+;  writedata[20] ; clock      ; 4.065 ; 4.065 ; Rise       ; clock           ;
+;  writedata[21] ; clock      ; 4.066 ; 4.066 ; Rise       ; clock           ;
+;  writedata[22] ; clock      ; 4.189 ; 4.189 ; Rise       ; clock           ;
+;  writedata[23] ; clock      ; 4.232 ; 4.232 ; Rise       ; clock           ;
+;  writedata[24] ; clock      ; 3.938 ; 3.938 ; Rise       ; clock           ;
+;  writedata[25] ; clock      ; 4.177 ; 4.177 ; Rise       ; clock           ;
+;  writedata[26] ; clock      ; 4.408 ; 4.408 ; Rise       ; clock           ;
+;  writedata[27] ; clock      ; 3.998 ; 3.998 ; Rise       ; clock           ;
+;  writedata[28] ; clock      ; 3.971 ; 3.971 ; Rise       ; clock           ;
+;  writedata[29] ; clock      ; 4.378 ; 4.378 ; Rise       ; clock           ;
+;  writedata[30] ; clock      ; 4.424 ; 4.424 ; Rise       ; clock           ;
+;  writedata[31] ; clock      ; 3.788 ; 3.788 ; Rise       ; clock           ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; address[*]     ; clock      ; -1.922 ; -1.922 ; Rise       ; clock           ;
+;  address[0]    ; clock      ; -2.479 ; -2.479 ; Rise       ; clock           ;
+;  address[1]    ; clock      ; -2.602 ; -2.602 ; Rise       ; clock           ;
+;  address[2]    ; clock      ; -1.922 ; -1.922 ; Rise       ; clock           ;
+; chipselect     ; clock      ; -2.128 ; -2.128 ; Rise       ; clock           ;
+; read           ; clock      ; -2.440 ; -2.440 ; Rise       ; clock           ;
+; resetn         ; clock      ; 0.129  ; 0.129  ; Rise       ; clock           ;
+; write          ; clock      ; -2.315 ; -2.315 ; Rise       ; clock           ;
+; writedata[*]   ; clock      ; -1.754 ; -1.754 ; Rise       ; clock           ;
+;  writedata[0]  ; clock      ; -1.835 ; -1.835 ; Rise       ; clock           ;
+;  writedata[1]  ; clock      ; -1.853 ; -1.853 ; Rise       ; clock           ;
+;  writedata[2]  ; clock      ; -1.958 ; -1.958 ; Rise       ; clock           ;
+;  writedata[3]  ; clock      ; -1.961 ; -1.961 ; Rise       ; clock           ;
+;  writedata[4]  ; clock      ; -2.331 ; -2.331 ; Rise       ; clock           ;
+;  writedata[5]  ; clock      ; -1.941 ; -1.941 ; Rise       ; clock           ;
+;  writedata[6]  ; clock      ; -2.002 ; -2.002 ; Rise       ; clock           ;
+;  writedata[7]  ; clock      ; -2.074 ; -2.074 ; Rise       ; clock           ;
+;  writedata[8]  ; clock      ; -1.858 ; -1.858 ; Rise       ; clock           ;
+;  writedata[9]  ; clock      ; -2.128 ; -2.128 ; Rise       ; clock           ;
+;  writedata[10] ; clock      ; -1.754 ; -1.754 ; Rise       ; clock           ;
+;  writedata[11] ; clock      ; -2.025 ; -2.025 ; Rise       ; clock           ;
+;  writedata[12] ; clock      ; -1.963 ; -1.963 ; Rise       ; clock           ;
+;  writedata[13] ; clock      ; -1.846 ; -1.846 ; Rise       ; clock           ;
+;  writedata[14] ; clock      ; -1.874 ; -1.874 ; Rise       ; clock           ;
+;  writedata[15] ; clock      ; -1.986 ; -1.986 ; Rise       ; clock           ;
+;  writedata[16] ; clock      ; -2.069 ; -2.069 ; Rise       ; clock           ;
+;  writedata[17] ; clock      ; -2.105 ; -2.105 ; Rise       ; clock           ;
+;  writedata[18] ; clock      ; -2.156 ; -2.156 ; Rise       ; clock           ;
+;  writedata[19] ; clock      ; -2.093 ; -2.093 ; Rise       ; clock           ;
+;  writedata[20] ; clock      ; -2.004 ; -2.004 ; Rise       ; clock           ;
+;  writedata[21] ; clock      ; -2.015 ; -2.015 ; Rise       ; clock           ;
+;  writedata[22] ; clock      ; -2.139 ; -2.139 ; Rise       ; clock           ;
+;  writedata[23] ; clock      ; -2.085 ; -2.085 ; Rise       ; clock           ;
+;  writedata[24] ; clock      ; -1.859 ; -1.859 ; Rise       ; clock           ;
+;  writedata[25] ; clock      ; -2.164 ; -2.164 ; Rise       ; clock           ;
+;  writedata[26] ; clock      ; -2.149 ; -2.149 ; Rise       ; clock           ;
+;  writedata[27] ; clock      ; -1.968 ; -1.968 ; Rise       ; clock           ;
+;  writedata[28] ; clock      ; -2.021 ; -2.021 ; Rise       ; clock           ;
+;  writedata[29] ; clock      ; -2.047 ; -2.047 ; Rise       ; clock           ;
+;  writedata[30] ; clock      ; -2.176 ; -2.176 ; Rise       ; clock           ;
+;  writedata[31] ; clock      ; -1.886 ; -1.886 ; Rise       ; clock           ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; interrupt     ; clock      ; 8.985 ; 8.985 ; Rise       ; clock           ;
+; readdata[*]   ; clock      ; 7.602 ; 7.602 ; Rise       ; clock           ;
+;  readdata[0]  ; clock      ; 7.080 ; 7.080 ; Rise       ; clock           ;
+;  readdata[1]  ; clock      ; 7.110 ; 7.110 ; Rise       ; clock           ;
+;  readdata[2]  ; clock      ; 6.882 ; 6.882 ; Rise       ; clock           ;
+;  readdata[3]  ; clock      ; 6.641 ; 6.641 ; Rise       ; clock           ;
+;  readdata[4]  ; clock      ; 7.323 ; 7.323 ; Rise       ; clock           ;
+;  readdata[5]  ; clock      ; 7.345 ; 7.345 ; Rise       ; clock           ;
+;  readdata[6]  ; clock      ; 7.328 ; 7.328 ; Rise       ; clock           ;
+;  readdata[7]  ; clock      ; 6.890 ; 6.890 ; Rise       ; clock           ;
+;  readdata[8]  ; clock      ; 6.625 ; 6.625 ; Rise       ; clock           ;
+;  readdata[9]  ; clock      ; 6.884 ; 6.884 ; Rise       ; clock           ;
+;  readdata[10] ; clock      ; 6.432 ; 6.432 ; Rise       ; clock           ;
+;  readdata[11] ; clock      ; 6.434 ; 6.434 ; Rise       ; clock           ;
+;  readdata[12] ; clock      ; 6.431 ; 6.431 ; Rise       ; clock           ;
+;  readdata[13] ; clock      ; 6.846 ; 6.846 ; Rise       ; clock           ;
+;  readdata[14] ; clock      ; 6.864 ; 6.864 ; Rise       ; clock           ;
+;  readdata[15] ; clock      ; 6.438 ; 6.438 ; Rise       ; clock           ;
+;  readdata[16] ; clock      ; 7.110 ; 7.110 ; Rise       ; clock           ;
+;  readdata[17] ; clock      ; 6.644 ; 6.644 ; Rise       ; clock           ;
+;  readdata[18] ; clock      ; 7.602 ; 7.602 ; Rise       ; clock           ;
+;  readdata[19] ; clock      ; 6.653 ; 6.653 ; Rise       ; clock           ;
+;  readdata[20] ; clock      ; 7.088 ; 7.088 ; Rise       ; clock           ;
+;  readdata[21] ; clock      ; 6.438 ; 6.438 ; Rise       ; clock           ;
+;  readdata[22] ; clock      ; 7.091 ; 7.091 ; Rise       ; clock           ;
+;  readdata[23] ; clock      ; 6.849 ; 6.849 ; Rise       ; clock           ;
+;  readdata[24] ; clock      ; 7.094 ; 7.094 ; Rise       ; clock           ;
+;  readdata[25] ; clock      ; 7.136 ; 7.136 ; Rise       ; clock           ;
+;  readdata[26] ; clock      ; 7.148 ; 7.148 ; Rise       ; clock           ;
+;  readdata[27] ; clock      ; 7.139 ; 7.139 ; Rise       ; clock           ;
+;  readdata[28] ; clock      ; 7.105 ; 7.105 ; Rise       ; clock           ;
+;  readdata[29] ; clock      ; 7.590 ; 7.590 ; Rise       ; clock           ;
+;  readdata[30] ; clock      ; 6.644 ; 6.644 ; Rise       ; clock           ;
+;  readdata[31] ; clock      ; 7.385 ; 7.385 ; Rise       ; clock           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; interrupt     ; clock      ; 4.612 ; 4.612 ; Rise       ; clock           ;
+; readdata[*]   ; clock      ; 3.683 ; 3.683 ; Rise       ; clock           ;
+;  readdata[0]  ; clock      ; 4.004 ; 4.004 ; Rise       ; clock           ;
+;  readdata[1]  ; clock      ; 3.985 ; 3.985 ; Rise       ; clock           ;
+;  readdata[2]  ; clock      ; 3.887 ; 3.887 ; Rise       ; clock           ;
+;  readdata[3]  ; clock      ; 3.772 ; 3.772 ; Rise       ; clock           ;
+;  readdata[4]  ; clock      ; 4.112 ; 4.112 ; Rise       ; clock           ;
+;  readdata[5]  ; clock      ; 4.092 ; 4.092 ; Rise       ; clock           ;
+;  readdata[6]  ; clock      ; 4.080 ; 4.080 ; Rise       ; clock           ;
+;  readdata[7]  ; clock      ; 3.893 ; 3.893 ; Rise       ; clock           ;
+;  readdata[8]  ; clock      ; 3.761 ; 3.761 ; Rise       ; clock           ;
+;  readdata[9]  ; clock      ; 3.881 ; 3.881 ; Rise       ; clock           ;
+;  readdata[10] ; clock      ; 3.687 ; 3.687 ; Rise       ; clock           ;
+;  readdata[11] ; clock      ; 3.688 ; 3.688 ; Rise       ; clock           ;
+;  readdata[12] ; clock      ; 3.685 ; 3.685 ; Rise       ; clock           ;
+;  readdata[13] ; clock      ; 3.850 ; 3.850 ; Rise       ; clock           ;
+;  readdata[14] ; clock      ; 3.869 ; 3.869 ; Rise       ; clock           ;
+;  readdata[15] ; clock      ; 3.694 ; 3.694 ; Rise       ; clock           ;
+;  readdata[16] ; clock      ; 3.982 ; 3.982 ; Rise       ; clock           ;
+;  readdata[17] ; clock      ; 3.771 ; 3.771 ; Rise       ; clock           ;
+;  readdata[18] ; clock      ; 4.219 ; 4.219 ; Rise       ; clock           ;
+;  readdata[19] ; clock      ; 3.782 ; 3.782 ; Rise       ; clock           ;
+;  readdata[20] ; clock      ; 3.969 ; 3.969 ; Rise       ; clock           ;
+;  readdata[21] ; clock      ; 3.683 ; 3.683 ; Rise       ; clock           ;
+;  readdata[22] ; clock      ; 3.970 ; 3.970 ; Rise       ; clock           ;
+;  readdata[23] ; clock      ; 3.857 ; 3.857 ; Rise       ; clock           ;
+;  readdata[24] ; clock      ; 3.972 ; 3.972 ; Rise       ; clock           ;
+;  readdata[25] ; clock      ; 4.044 ; 4.044 ; Rise       ; clock           ;
+;  readdata[26] ; clock      ; 4.039 ; 4.039 ; Rise       ; clock           ;
+;  readdata[27] ; clock      ; 4.003 ; 4.003 ; Rise       ; clock           ;
+;  readdata[28] ; clock      ; 3.981 ; 3.981 ; Rise       ; clock           ;
+;  readdata[29] ; clock      ; 4.211 ; 4.211 ; Rise       ; clock           ;
+;  readdata[30] ; clock      ; 3.774 ; 3.774 ; Rise       ; clock           ;
+;  readdata[31] ; clock      ; 4.125 ; 4.125 ; Rise       ; clock           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 37414    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 37414    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 39    ; 39   ;
+; Unconstrained Input Port Paths  ; 1410  ; 1410 ;
+; Unconstrained Output Ports      ; 33    ; 33   ;
+; Unconstrained Output Port Paths ; 35    ; 35   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Oct 31 11:02:26 2016
+Info: Command: quartus_sta Scheduler -c Scheduler
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Scheduler.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -5.940
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.940     -2985.641 clock 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -848.380 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.187
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.187      -989.314 clock 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -848.380 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 422 megabytes
+    Info: Processing ended: Mon Oct 31 11:02:27 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

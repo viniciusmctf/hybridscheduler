@@ -1,0 +1,54 @@
+\section{Validação em Software}
+\label{sec:testes}
+Nesta seção serão apresentados os trabalhos desenvolvidos em \textit{software} para controlar o Escalonador. Foram desenvolvidos testes 
+de unidade para comprovar o funcionamento de cada comando e, uma vez validado o projeto, foi implementado um escalonador em C++ seguindo 
+o modelo dessa mesma classe no EPOS. 
+
+\subsection{Testes de Unidade}
+Foi elaborado um conjunto com um total de 26 testes de unidade. As funções mais básicas foram verificadas primeiro, para posteriormente serem usadas 
+em testes envolvendo operações mais complexas. A Figura \ref{img:testes} ilustra alguns fluxos de testes executados para o comando \textit{remove}. As 
+operações envolvendo controle de tempo e interrupções foram implementadas, mas não há nenhum mecanismo formal para verificação delas. O principal 
+motivo para isso é que a arquitetura não foi projetada viabilizando testes de caixa cinza e, portanto, não permite a verificação parcial de sinais 
+internos como contadores do \textit{timer}.
+
+A classe \textit{scheduler} foi desenvolvida após a compravação do funcionamento de todas as operações que o escalonador executa. 
+Uma vez que cada comando foi verificado com testes de unidade e corrigido, toda a implementação da classe foi feita sem que qualquer 
+erro de funcionalidade se manifestasse.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\textwidth]{./figures/remove.pdf}
+  \label{img:testes} \caption{Exemplo de fluxo dos testes de \textit{Remove}} 
+\end{figure}
+
+\subsection{Escalonador do EPOS}
+
+ Os métodos dessa classe e suas respectivas assinaturas seguem o mesmo padrão do escalonador do EPOS. Apesar das modificações necessárias para poder 
+ lidar com as características do \textit{hardware}, toda a comunicação feita diretamente com o componente é isolada em um único método chamado de 
+ ``\textit{execute\_cmd}''. Tal implementação permite que, mesmo com outra interface de comunicação, seja simples desenvolver novo código para outras plataformas. 
+ A implementação foi feita com base naquela apresentada por Marcondes para o \textit{scheduler}, mas a mesma organização não foi observada em 
+ outros códigos disponíveis no mesmo trabalho.
+ 
+ O Escalonador apresenta os seguintes métodos:
+ \begin{itemize}
+   \item \textit{Chosen}: retorna endereço da thread executando
+   \item \textit{Insert}: insere uma nova thread no escalonador
+   \item \textit{Remove}: remove thread do escalonador
+   \item \textit{Suspend}: coloca thread na fila de espera
+   \item \textit{Resume}: atualiza por prioridade qual é a thread em execução
+   \item \textit{Choose}: Coloca a thread de maior prioridade ou escolhida para executar
+   \item \textit{Choose Another}: força que outra thread substitua a que está executando
+ \end{itemize}
+
+Quase todos os métodos apresentados não podem ser mapeados diretamente para um comando específico do bloco em \textit{hardware}, 
+sendo necessário usar uma sequência de vários deles para executar a operação necessária. Existe ainda um método que é assinalado 
+para tratar as interrupções do bloco~\cite{IT}. No EPOS, o tratador chama um método da classe Thread, mas como não há como realizar essa 
+operação, adotou-se a implementação do método ``\textit{Choose Another}'' para quando uma interrupção ocorre.
+
+Durante a execução de um comando há a necessidade de fazer espera ocupada, esperando pelo status de pronto do bloco antes de efetivamente 
+ler o resultado. Tal abordagem já era usada na implementação de Marcondes. No barramento Avalon existe o conceito de \textit{delay} 
+de leitura e escrita, que atrasa a operação do barramento em uma quantidade prédefinida de ciclos. Esse \textit{delay} poderia resolver 
+o problema de espera ocupada, mas não foi usado por dois motivos: Cada comando apresenta uma quantidade de ciclos variadas, sendo necessário 
+limitar o sistema ao pior caso. Não foram encontradas aplicações com uso prático de tal recurso, sendo recomendado o padrão de um ciclo de 
+\textit{delay}.
+

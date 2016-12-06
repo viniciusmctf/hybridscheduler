@@ -1,0 +1,49 @@
+\section{Adaptador}
+\label{sec:barramento}
+% Funcionamento da interface Avalon -> adaptação para entrada e saída no escalonador
+
+Como o compoente não foi desenvolvido originalmente para o barramento da \textit{Avalon}~\cite{AA}, foi necessário desenvolver um 
+adaptador que faz o intermédio entre esses dois elementos. Nesta seção serão apresentados inicialmente os sinais da interface 
+\textit{Memory Mapped Slave} para se comunicar com o barramento da Avalon. Também será apresentado em detalhes o controle que 
+o adaptador faz para traduzir os sinais entre componente e barramento. 
+
+\subsection{Barramento Avalon}
+O barramento fornece como entrada 6 sinais para o bloco. Os sinais de \textit{Clock} e \textit{Reset} na rede de relógio e ao 
+sinal de \textit{reset}, respectivamente. O sinal \textit{write} indica que algum dado está sendo escrito no barramento e o análogo 
+ocorre para as leituras, com o sinal \textit{read}. Escritas são feitas através do sinal \textit{writedata} de $n$ bits (parametrizado). 
+Quando um dado é lido ou escrito, também é identificado o endereço em seu espaço de memória, com o sinal \textit{address} 
+(de três bits). Há ainda um sinal chamado de \textit{chipselect} que fica ativo quando o Escalonador é o bloco que está recebendo ou enviando 
+informações pelo barramento. 
+
+Além dos sinais de entrada supracitados, existem ainda três sinais de saída. O primeiro deles é uma conexão de dados com o barramento, 
+por onde passarão as informações do Escalonador em \textit{hardware} para o \textit{software}. O segundo sinal é um sinal de 
+interrupções, que é conectado diretamente na CPU. O terceiro sinal é o de \textit{readdata}, de $n$ bits, que é por onde saem os dados lidos.
+
+A figura~\ref{fig:barramento} ilustra os sinais de entrada e saída do barramento. Os sinais \textit{write}, \textit{read}, \textit{writedata}, 
+\textit{readdata}, \textit{address} e \textit{chipselect} se comunicam com o \textit{Avalon Memory-Mapped Slave}, enquanto \textit{clock} e \textit{reset} 
+se comunicam com \textit{clock\_sink} e \textit{reset\_sink}, respectivamente. O sinal de interrupções se comunica com o \textit{interrupt handler}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\textwidth]{./figures/barramento}
+  \caption{Bloco do escalonador gerado pelo Qsys}
+  \label{fig:barramento}
+\end{figure}
+
+\subsection{Controle dos Sinais}
+
+A Figura \ref{fig:hardware} apresenta a organização do \textit{hardware} do ponto de vista do Escalonador. Para fins de clareza e organização 
+do código, há uma interface responsável por se conectar ao barramento externo e fazer as ligações corretas entre os blocos Adaptador e Escalonador. 
+O Adaptador recebe os sinais do barramento e realiza o tratamento necessário para que o bloco Escalonador receba corretamente suas entradas. 
+Após o Escalonador realizar o processamento, seus sinais de saída retornam ao Adaptador que os transfere corretamente para o barramento.
+
+Como o barramento permite transferir apenas um dado, o bloco Adaptador precisa fazer com que essa limitação seja transparente para o Escalonador. Para isso, os sinais escritos nos primeiros endereços são temporariamente armazenados em registradores. Quando o comando é recebido, todos os dados são transferidos para o Escalonador e ficam estáveis por apenas um ciclo de relógio, sendo zerados na sequência. Após realizar todo o processamento, o Escalonador retorna um status e um dado. Cada uma dessas informações passam pelo barramento quando há uma leitura no seu respectivo endereço.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./figures/hardware}
+    \caption{Organização do componente. O conteúdo do bloco \textit{Adapter} e a comunicação com o barramento foram abstraídas, apresentando apenas a visão que o bloco \textit{Scheduler} tem do sistema.}
+    \label{fig:hardware}
+\end{figure}
+
+

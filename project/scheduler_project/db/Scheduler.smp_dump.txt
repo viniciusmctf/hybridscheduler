@@ -1,0 +1,15 @@
+
+State Machine - |scheduler_interface|Scheduler:Scheduler_block|s_state
+Name s_state.reset s_state.getid s_state.pregetid s_state.reset_time s_state.acknowledge_int s_state.exit_error s_state.exit_ok s_state.remove s_state.insert s_state.preinsert s_state.destroy s_state.idle 
+s_state.idle 0 0 0 0 0 0 0 0 0 0 0 0 
+s_state.destroy 0 0 0 0 0 0 0 0 0 0 1 1 
+s_state.preinsert 0 0 0 0 0 0 0 0 0 1 0 1 
+s_state.insert 0 0 0 0 0 0 0 0 1 0 0 1 
+s_state.remove 0 0 0 0 0 0 0 1 0 0 0 1 
+s_state.exit_ok 0 0 0 0 0 0 1 0 0 0 0 1 
+s_state.exit_error 0 0 0 0 0 1 0 0 0 0 0 1 
+s_state.acknowledge_int 0 0 0 0 1 0 0 0 0 0 0 1 
+s_state.reset_time 0 0 0 1 0 0 0 0 0 0 0 1 
+s_state.pregetid 0 0 1 0 0 0 0 0 0 0 0 1 
+s_state.getid 0 1 0 0 0 0 0 0 0 0 0 1 
+s_state.reset 1 0 0 0 0 0 0 0 0 0 0 1 

@@ -1,0 +1,17 @@
+\section{Introdução}
+
+O desenvolvimento de sistemas embarcados tem se tornado cada vez mais complexo. Sistemas orientados a aplicação podem utilizar componentes híbridos de 
+\textit{hardware} e \textit{software}~\cite{Marcondes2008}, uma vez que diversos componentes desse tipo de sistema podem ser implementados das duas formas.
+
+No trabalho feito por Marcondes alguns componentes do Sistema Operacional (SO) foram desenvolvidos para operarem de forma híbrida. O escalonamento de processos e 
+semáforos foram implementados em \textit{hardware} e o EPOS (\textit{Embedded Parallel Operating System}) foi adaptado para lidar com esses componentes~\cite{M2009}. 
+Na implementação feita, cabia ao projetista configurar o EPOS para compilar os componentes funcionando em \textit{software} ou em \textit{hardware}, de forma 
+completamente transparente para o restante do sistema. No trabalho de Marcondes, os componentes foram feitos para funcionar apenas sobre a \textit{Field Programable Gate Arrays} (FPGA) da Xilinx.
+
+Com o objetivo de permitir uma melhor visibilidade do projeto e facilidade de reprodução dos experimentos na Universidade Federal de Santa Catarina (UFSC), 
+este trabalho realiza uma adaptação do escalonador para a FPGA DE2 da Altera. A principal motivação para realizar essa adaptação é que as placas da Altera estãos disponíveis nos 
+laboratórios de ensino da UFSC, usados em disciplinas do curso de graduação em Ciências da Computação.
+
+O restante deste trabalho está organizado da seguinte forma: na Seção \ref{sec:componente} será detalhado o funcionamento do componente de \textit{hardware} e na Seção \ref{sec:barramento} 
+será explicado como o mesmo foi conectado ao barramento da FPGA da Altera. Na Seção \ref{sec:testes} será apresentada a forma como a funcionalidade do projeto foi testada. Por fim, as 
+conclusões finais serão apresentadas na Seção \ref{sec:conclusao}.

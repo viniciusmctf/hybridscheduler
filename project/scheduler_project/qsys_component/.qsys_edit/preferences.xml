@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable>
+  <columns>
+   <connections preferredWidth="111" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="327" />
+   <clocksource preferredWidth="327" />
+   <frequency preferredWidth="308" />
+  </columns>
+ </clocktable>
+ <library
+   expandedCategories="Library/Memories and Memory Controllers/External Memory Interfaces,Library/Memories and Memory Controllers/On-Chip,Library/Memories and Memory Controllers,Library,Project" />
+ <window width="1382" height="754" x="-8" y="-8" />
+ <generation path="D:/aulas/SO2/projeto_final/to_fpga" />
+ <hdlexample language="VERILOG" />
+</preferences>

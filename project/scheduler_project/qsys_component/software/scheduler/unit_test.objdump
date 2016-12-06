@@ -1,0 +1,1867 @@
+
+unit_test.elf:     file format elf32-littlenios2
+unit_test.elf
+architecture: nios2, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00200140
+
+Program Header:
+    LOAD off    0x00001000 vaddr 0x00200000 paddr 0x00200000 align 2**12
+         filesz 0x00000020 memsz 0x00000020 flags r-x
+    LOAD off    0x00001020 vaddr 0x00200020 paddr 0x00200020 align 2**12
+         filesz 0x00000f84 memsz 0x00000f84 flags r-x
+    LOAD off    0x00001fa4 vaddr 0x00200fa4 paddr 0x00200fac align 2**12
+         filesz 0x00000008 memsz 0x00000008 flags rw-
+    LOAD off    0x00001fb4 vaddr 0x00200fb4 paddr 0x00200fb4 align 2**12
+         filesz 0x00000000 memsz 0x00000110 flags rw-
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .entry        00000020  00200000  00200000  00001000  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .exceptions   00000120  00200020  00200020  00001020  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .text         00000da8  00200140  00200140  00001140  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .rodata       000000bc  00200ee8  00200ee8  00001ee8  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .rwdata       00000008  00200fa4  00200fac  00001fa4  2**2
+                  CONTENTS, ALLOC, LOAD, DATA, SMALL_DATA
+  5 .bss          00000110  00200fb4  00200fb4  00001fb4  2**2
+                  ALLOC, SMALL_DATA
+  6 .comment      00000026  00000000  00000000  00001fac  2**0
+                  CONTENTS, READONLY
+  7 .debug_aranges 00000310  00000000  00000000  00001fd8  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_pubnames 0000049b  00000000  00000000  000022e8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_info   00001d36  00000000  00000000  00002783  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_abbrev 00000d2d  00000000  00000000  000044b9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_line   00002ca9  00000000  00000000  000051e6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_frame  00000424  00000000  00000000  00007e90  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_str    00000a27  00000000  00000000  000082b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_loc    00000bcc  00000000  00000000  00008cdb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_alt_sim_info 00000030  00000000  00000000  000098a8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 16 .debug_ranges 00000190  00000000  00000000  000098d8  2**3
+                  CONTENTS, READONLY, DEBUGGING
+ 17 .thread_model 00000003  00000000  00000000  0000acc8  2**0
+                  CONTENTS, READONLY
+ 18 .cpu          0000000c  00000000  00000000  0000accb  2**0
+                  CONTENTS, READONLY
+ 19 .qsys         00000001  00000000  00000000  0000acd7  2**0
+                  CONTENTS, READONLY
+ 20 .simulation_enabled 00000001  00000000  00000000  0000acd8  2**0
+                  CONTENTS, READONLY
+ 21 .stderr_dev   0000000b  00000000  00000000  0000acd9  2**0
+                  CONTENTS, READONLY
+ 22 .stdin_dev    0000000b  00000000  00000000  0000ace4  2**0
+                  CONTENTS, READONLY
+ 23 .stdout_dev   0000000b  00000000  00000000  0000acef  2**0
+                  CONTENTS, READONLY
+ 24 .sopc_system_name 0000000b  00000000  00000000  0000acfa  2**0
+                  CONTENTS, READONLY
+ 25 .quartus_project_dir 0000004c  00000000  00000000  0000ad05  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00200000 l    d  .entry	00000000 .entry
+00200020 l    d  .exceptions	00000000 .exceptions
+00200140 l    d  .text	00000000 .text
+00200ee8 l    d  .rodata	00000000 .rodata
+00200fa4 l    d  .rwdata	00000000 .rwdata
+00200fb4 l    d  .bss	00000000 .bss
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_pubnames	00000000 .debug_pubnames
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_alt_sim_info	00000000 .debug_alt_sim_info
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00200188 l       .text	00000000 alt_after_alt_main
+00000000 l    df *ABS*	00000000 alt_irq_handler.c
+00000000 l    df *ABS*	00000000 main.cpp
+00000000 l    df *ABS*	00000000 alt_iic.c
+00000000 l    df *ABS*	00000000 alt_iic_isr_register.c
+00000000 l    df *ABS*	00000000 alt_irq_vars.c
+00000000 l    df *ABS*	00000000 alt_load.c
+00200b88 l     F .text	00000020 alt_load_section
+00000000 l    df *ABS*	00000000 alt_main.c
+00000000 l    df *ABS*	00000000 alt_printf.c
+00000000 l    df *ABS*	00000000 alt_putchar.c
+00000000 l    df *ABS*	00000000 alt_putstr.c
+00000000 l    df *ABS*	00000000 alt_sys_init.c
+00000000 l    df *ABS*	00000000 altera_avalon_jtag_uart_write.c
+00000000 l    df *ABS*	00000000 alt_dcache_flush_all.c
+00000000 l    df *ABS*	00000000 alt_icache_flush_all.c
+00000000 l    df *ABS*	00000000 altera_nios2_qsys_irq.c
+00000000 l    df *ABS*	00000000 alt_icache_flush.c
+00000000 l    df *ABS*	00000000 strlen.c
+00200c14 g     F .text	0000002c alt_main
+00200fc4 g     O .bss	00000100 alt_irq
+00200fac g       *ABS*	00000000 __flash_rwdata_start
+002006b4  w    F .text	00000098 _ZN9Scheduler14choose_anotherEv
+002004d4  w    F .text	00000014 _ZN6Object7executeEv
+00200598  w    F .text	00000050 _ZN9Scheduler6resumeEP6Object
+00200870  w    F .text	000000a8 _ZN9Scheduler6removeEP6Object
+00200dd4 g     F .text	00000038 alt_putstr
+00200000 g     F .entry	0000001c __reset
+002005e8  w    F .text	00000024 _ZN9Scheduler6chosenEv
+00200020 g       *ABS*	00000000 __flash_exceptions_start
+00200fbc g     O .bss	00000004 alt_argv
+00208fa4 g       *ABS*	00000000 _gp
+00200000 g       *ABS*	00000000 __alt_mem_onchip_memory2_0
+00200e90 g     F .text	00000038 alt_icache_flush
+002010c4 g       *ABS*	00000000 __bss_end
+00200b1c g     F .text	0000006c alt_iic_isr_register
+00200a80 g     F .text	00000018 alt_ic_irq_enabled
+00200fb4 g     O .bss	00000004 alt_irq_active
+002000ec g     F .exceptions	00000054 alt_irq_handler
+002009a4  w    F .text	00000010 _ZN9Scheduler12schedulablesEv
+00200e64 g     F .text	00000018 alt_dcache_flush_all
+00200fac g       *ABS*	00000000 __ram_rwdata_end
+00200fa4 g       *ABS*	00000000 __ram_rodata_end
+00200fa8 g     O .rwdata	00000004 jtag_uart_0
+002009b4  w    F .text	000000bc _ZN9Scheduler11int_handlerEPv
+002010c4 g       *ABS*	00000000 end
+00208000 g       *ABS*	00000000 __alt_stack_pointer
+00200e30 g     F .text	00000034 altera_avalon_jtag_uart_write
+00200c40 g     F .text	00000144 alt_printf
+00200140 g     F .text	0000004c _start
+00200564  w    F .text	00000034 _ZN9Scheduler11set_quantumEi
+00200e0c g     F .text	00000004 alt_sys_init
+00200fa4 g       *ABS*	00000000 __ram_rwdata_start
+00200ee8 g       *ABS*	00000000 __ram_rodata_start
+002010c4 g       *ABS*	00000000 __alt_stack_base
+00200a70  w    F .text	00000010 _ZN9Scheduler5resetEv
+00200fb4 g       *ABS*	00000000 __bss_start
+0020018c g     F .text	00000348 main
+00200fc0 g     O .bss	00000004 alt_envp
+002004e8  w    F .text	00000048 _ZN9Scheduler11execute_cmdEiii
+00200ee8 g       *ABS*	00000000 __flash_rodata_start
+00200e10 g     F .text	00000020 alt_irq_init
+00200fb8 g     O .bss	00000004 alt_argc
+00200020 g       .exceptions	00000000 alt_irq_entry
+00200020 g       *ABS*	00000000 __ram_exceptions_start
+00200b18 g     F .text	00000004 alt_ic_isr_register
+0020060c  w    F .text	000000a8 _ZN9Scheduler6chooseEP6Object
+00200fac g       *ABS*	00000000 _edata
+002010c4 g       *ABS*	00000000 _end
+00200140 g       *ABS*	00000000 __ram_exceptions_end
+00200918  w    F .text	0000008c _ZN9Scheduler6insertEP6Object
+00200ad8 g     F .text	00000040 alt_ic_irq_disable
+00200e88 g     F .text	00000008 altera_nios2_qsys_irq_init
+0020001c g       .entry	00000000 exit
+00208000 g       *ABS*	00000000 __alt_data_end
+00200020 g     F .exceptions	00000000 alt_exception
+00200530  w    F .text	00000034 _ZN9Scheduler15enable_scheduleEv
+0020001c g       .entry	00000000 _exit
+00200ec8 g     F .text	00000020 strlen
+00200d84 g     F .text	00000050 alt_putchar
+0020074c  w    F .text	00000088 _ZN9Scheduler6chooseEv
+00200e7c g     F .text	0000000c alt_icache_flush_all
+00200fa4 g     O .rwdata	00000004 alt_priority_mask
+00200a98 g     F .text	00000040 alt_ic_irq_enable
+002007d4  w    F .text	0000009c _ZN9Scheduler7suspendEP6Object
+00200ba8 g     F .text	0000006c alt_load
+
+
+
+Disassembly of section .entry:
+
+00200000 <__reset>:
+  200000:	00840014 	movui	r2,4096
+  200004:	1001483a 	initi	r2
+  200008:	10bff804 	addi	r2,r2,-32
+  20000c:	00bffd16 	blt	zero,r2,200004 <__reset+0x4>
+  200010:	00400834 	movhi	at,32
+  200014:	08405014 	ori	at,at,320
+  200018:	0800683a 	jmp	at
+
+0020001c <_exit>:
+  20001c:	00000000 	call	0 <__reset-0x200000>
+
+Disassembly of section .exceptions:
+
+00200020 <alt_exception>:
+  200020:	deffed04 	addi	sp,sp,-76
+  200024:	dfc00015 	stw	ra,0(sp)
+  200028:	d8400215 	stw	at,8(sp)
+  20002c:	d8800315 	stw	r2,12(sp)
+  200030:	d8c00415 	stw	r3,16(sp)
+  200034:	d9000515 	stw	r4,20(sp)
+  200038:	d9400615 	stw	r5,24(sp)
+  20003c:	d9800715 	stw	r6,28(sp)
+  200040:	d9c00815 	stw	r7,32(sp)
+  200044:	000b307a 	rdctl	r5,estatus
+  200048:	da000915 	stw	r8,36(sp)
+  20004c:	da400a15 	stw	r9,40(sp)
+  200050:	da800b15 	stw	r10,44(sp)
+  200054:	dac00c15 	stw	r11,48(sp)
+  200058:	db000d15 	stw	r12,52(sp)
+  20005c:	db400e15 	stw	r13,56(sp)
+  200060:	db800f15 	stw	r14,60(sp)
+  200064:	dbc01015 	stw	r15,64(sp)
+  200068:	d9401115 	stw	r5,68(sp)
+  20006c:	ebffff04 	addi	r15,ea,-4
+  200070:	dbc01215 	stw	r15,72(sp)
+  200074:	0009313a 	rdctl	r4,ipending
+  200078:	2880004c 	andi	r2,r5,1
+  20007c:	10000326 	beq	r2,zero,20008c <alt_exception+0x6c>
+  200080:	20000226 	beq	r4,zero,20008c <alt_exception+0x6c>
+  200084:	02000ec0 	call	2000ec <alt_irq_handler>
+  200088:	00000306 	br	200098 <alt_exception+0x78>
+  20008c:	df401215 	stw	ea,72(sp)
+  200090:	e8bfff17 	ldw	r2,-4(ea)
+  200094:	003da03a 	break	0
+  200098:	d9401117 	ldw	r5,68(sp)
+  20009c:	df401217 	ldw	ea,72(sp)
+  2000a0:	dfc00017 	ldw	ra,0(sp)
+  2000a4:	2801707a 	wrctl	estatus,r5
+  2000a8:	d8400217 	ldw	at,8(sp)
+  2000ac:	d8800317 	ldw	r2,12(sp)
+  2000b0:	d8c00417 	ldw	r3,16(sp)
+  2000b4:	d9000517 	ldw	r4,20(sp)
+  2000b8:	d9400617 	ldw	r5,24(sp)
+  2000bc:	d9800717 	ldw	r6,28(sp)
+  2000c0:	d9c00817 	ldw	r7,32(sp)
+  2000c4:	da000917 	ldw	r8,36(sp)
+  2000c8:	da400a17 	ldw	r9,40(sp)
+  2000cc:	da800b17 	ldw	r10,44(sp)
+  2000d0:	dac00c17 	ldw	r11,48(sp)
+  2000d4:	db000d17 	ldw	r12,52(sp)
+  2000d8:	db400e17 	ldw	r13,56(sp)
+  2000dc:	db800f17 	ldw	r14,60(sp)
+  2000e0:	dbc01017 	ldw	r15,64(sp)
+  2000e4:	dec01304 	addi	sp,sp,76
+  2000e8:	ef80083a 	eret
+
+002000ec <alt_irq_handler>:
+  2000ec:	deffff04 	addi	sp,sp,-4
+  2000f0:	dfc00015 	stw	ra,0(sp)
+  2000f4:	0009313a 	rdctl	r4,ipending
+  2000f8:	00c00044 	movi	r3,1
+  2000fc:	01400834 	movhi	r5,32
+  200100:	2943f104 	addi	r5,r5,4036
+  200104:	20c4703a 	and	r2,r4,r3
+  200108:	18c7883a 	add	r3,r3,r3
+  20010c:	10000726 	beq	r2,zero,20012c <alt_irq_handler+0x40>
+  200110:	29000117 	ldw	r4,4(r5)
+  200114:	28800017 	ldw	r2,0(r5)
+  200118:	103ee83a 	callr	r2
+  20011c:	0005313a 	rdctl	r2,ipending
+  200120:	10000426 	beq	r2,zero,200134 <alt_irq_handler+0x48>
+  200124:	1009883a 	mov	r4,r2
+  200128:	003ff306 	br	2000f8 <alt_irq_handler+0xc>
+  20012c:	29400204 	addi	r5,r5,8
+  200130:	003ff406 	br	200104 <alt_irq_handler+0x18>
+  200134:	dfc00017 	ldw	ra,0(sp)
+  200138:	dec00104 	addi	sp,sp,4
+  20013c:	f800283a 	ret
+
+Disassembly of section .text:
+
+00200140 <_start>:
+  200140:	00820014 	movui	r2,2048
+  200144:	10000033 	initd	0(r2)
+  200148:	10bff804 	addi	r2,r2,-32
+  20014c:	00bffd16 	blt	zero,r2,200144 <_start+0x4>
+  200150:	06c00834 	movhi	sp,32
+  200154:	dee00014 	ori	sp,sp,32768
+  200158:	06800834 	movhi	gp,32
+  20015c:	d6a3e914 	ori	gp,gp,36772
+  200160:	00800834 	movhi	r2,32
+  200164:	1083ed14 	ori	r2,r2,4020
+  200168:	00c00834 	movhi	r3,32
+  20016c:	18c43114 	ori	r3,r3,4292
+  200170:	10c00326 	beq	r2,r3,200180 <_start+0x40>
+  200174:	10000015 	stw	zero,0(r2)
+  200178:	10800104 	addi	r2,r2,4
+  20017c:	10fffd36 	bltu	r2,r3,200174 <_start+0x34>
+  200180:	0200ba80 	call	200ba8 <alt_load>
+  200184:	0200c140 	call	200c14 <alt_main>
+
+00200188 <alt_after_alt_main>:
+  200188:	003fff06 	br	200188 <alt_after_alt_main>
+
+0020018c <main>:
+#include "Scheduler.h"
+//#include "sys/alt_irq.h"
+#include <sys/alt_irq.h>
+//#include <priv/alt_legacy_irq.h>
+
+int main()
+  20018c:	deffe504 	addi	sp,sp,-108
+{
+
+	alt_putstr("Hello from Nios II!\n");
+  200190:	01000834 	movhi	r4,32
+  200194:	2103cc04 	addi	r4,r4,3888
+#include "Scheduler.h"
+//#include "sys/alt_irq.h"
+#include <sys/alt_irq.h>
+//#include <priv/alt_legacy_irq.h>
+
+int main()
+  200198:	dfc01a15 	stw	ra,104(sp)
+  20019c:	dd401915 	stw	r21,100(sp)
+  2001a0:	dd001815 	stw	r20,96(sp)
+  2001a4:	dcc01715 	stw	r19,92(sp)
+  2001a8:	dc801615 	stw	r18,88(sp)
+  2001ac:	dc401515 	stw	r17,84(sp)
+  2001b0:	dc001415 	stw	r16,80(sp)
+{
+
+	alt_putstr("Hello from Nios II!\n");
+  2001b4:	0200dd40 	call	200dd4 <alt_putstr>
+//	alt_ic_isr_register( , SCHEDULER_0_IRQ, &(Scheduler::int_handler), 0, 0);
+//	alt_irq_register(SCHEDULER_0_IRQ, 0, &(Scheduler::int_handler));
+	alt_ic_isr_register(SCHEDULER_0_IRQ_INTERRUPT_CONTROLLER_ID, SCHEDULER_0_IRQ,  &(Scheduler::int_handler), 0, 0);
+  2001b8:	04000044 	movi	r16,1
+  2001bc:	01800834 	movhi	r6,32
+  2001c0:	31826d04 	addi	r6,r6,2484
+  2001c4:	000f883a 	mov	r7,zero
+  2001c8:	800b883a 	mov	r5,r16
+  2001cc:	0009883a 	mov	r4,zero
+  2001d0:	d8000015 	stw	zero,0(sp)
+  2001d4:	0200b180 	call	200b18 <alt_ic_isr_register>
+	alt_ic_irq_enable(SCHEDULER_0_IRQ_INTERRUPT_CONTROLLER_ID, SCHEDULER_0_IRQ);
+  2001d8:	800b883a 	mov	r5,r16
+  2001dc:	0009883a 	mov	r4,zero
+  2001e0:	0200a980 	call	200a98 <alt_ic_irq_enable>
+	Scheduler scheduler = Scheduler();
+	scheduler.reset();
+  2001e4:	d9000104 	addi	r4,sp,4
+  2001e8:	0200a700 	call	200a70 <_ZN9Scheduler5resetEv>
+	int id;
+public:
+	int priority;
+
+
+	Object(int id, int priority) : id(id), priority(priority) {
+  2001ec:	00800284 	movi	r2,10
+  2001f0:	d8800215 	stw	r2,8(sp)
+  2001f4:	008002c4 	movi	r2,11
+  2001f8:	d8800415 	stw	r2,16(sp)
+  2001fc:	00800084 	movi	r2,2
+  200200:	d8800515 	stw	r2,20(sp)
+  200204:	00800304 	movi	r2,12
+  200208:	d8800615 	stw	r2,24(sp)
+  20020c:	008000c4 	movi	r2,3
+  200210:	d8800715 	stw	r2,28(sp)
+  200214:	00800344 	movi	r2,13
+  200218:	d8800815 	stw	r2,32(sp)
+  20021c:	00800104 	movi	r2,4
+  200220:	d8800915 	stw	r2,36(sp)
+  200224:	00800384 	movi	r2,14
+  200228:	d8800a15 	stw	r2,40(sp)
+  20022c:	00800144 	movi	r2,5
+  200230:	d8800b15 	stw	r2,44(sp)
+  200234:	008003c4 	movi	r2,15
+  200238:	d8800c15 	stw	r2,48(sp)
+  20023c:	00800404 	movi	r2,16
+	Object t6 = Object(0x000f, 0x07);
+	Object t7 = Object(0x0010, 0x07);
+	Object t8 = Object(0x0011, 0x07);
+	Object t9 = Object(0x0012, 0x07);
+
+	scheduler.insert(&t1);
+  200240:	dc400204 	addi	r17,sp,8
+  200244:	d8800e15 	stw	r2,56(sp)
+  200248:	00800444 	movi	r2,17
+  20024c:	00c001c4 	movi	r3,7
+	scheduler.insert(&t2);
+  200250:	dc800404 	addi	r18,sp,16
+	Object t6 = Object(0x000f, 0x07);
+	Object t7 = Object(0x0010, 0x07);
+	Object t8 = Object(0x0011, 0x07);
+	Object t9 = Object(0x0012, 0x07);
+
+	scheduler.insert(&t1);
+  200254:	d9000104 	addi	r4,sp,4
+  200258:	880b883a 	mov	r5,r17
+  20025c:	d8801015 	stw	r2,64(sp)
+  200260:	00800484 	movi	r2,18
+  200264:	d8c01315 	stw	r3,76(sp)
+  200268:	d8c00d15 	stw	r3,52(sp)
+  20026c:	d8c00f15 	stw	r3,60(sp)
+  200270:	d8c01115 	stw	r3,68(sp)
+  200274:	d8801215 	stw	r2,72(sp)
+  200278:	dc000315 	stw	r16,12(sp)
+	scheduler.insert(&t2);
+	scheduler.insert(&t3);
+  20027c:	dd400604 	addi	r21,sp,24
+	Object t6 = Object(0x000f, 0x07);
+	Object t7 = Object(0x0010, 0x07);
+	Object t8 = Object(0x0011, 0x07);
+	Object t9 = Object(0x0012, 0x07);
+
+	scheduler.insert(&t1);
+  200280:	02009180 	call	200918 <_ZN9Scheduler6insertEP6Object>
+	scheduler.insert(&t2);
+  200284:	d9000104 	addi	r4,sp,4
+  200288:	900b883a 	mov	r5,r18
+  20028c:	02009180 	call	200918 <_ZN9Scheduler6insertEP6Object>
+	scheduler.insert(&t3);
+	scheduler.insert(&t4);
+  200290:	dd000804 	addi	r20,sp,32
+	Object t8 = Object(0x0011, 0x07);
+	Object t9 = Object(0x0012, 0x07);
+
+	scheduler.insert(&t1);
+	scheduler.insert(&t2);
+	scheduler.insert(&t3);
+  200294:	d9000104 	addi	r4,sp,4
+  200298:	a80b883a 	mov	r5,r21
+  20029c:	02009180 	call	200918 <_ZN9Scheduler6insertEP6Object>
+	scheduler.insert(&t4);
+	scheduler.insert(&t5);
+  2002a0:	dcc00a04 	addi	r19,sp,40
+	Object t9 = Object(0x0012, 0x07);
+
+	scheduler.insert(&t1);
+	scheduler.insert(&t2);
+	scheduler.insert(&t3);
+	scheduler.insert(&t4);
+  2002a4:	d9000104 	addi	r4,sp,4
+  2002a8:	a00b883a 	mov	r5,r20
+  2002ac:	02009180 	call	200918 <_ZN9Scheduler6insertEP6Object>
+	scheduler.insert(&t5);
+  2002b0:	980b883a 	mov	r5,r19
+  2002b4:	d9000104 	addi	r4,sp,4
+  2002b8:	02009180 	call	200918 <_ZN9Scheduler6insertEP6Object>
+	scheduler.insert(&t6);
+  2002bc:	d9000104 	addi	r4,sp,4
+  2002c0:	d9400c04 	addi	r5,sp,48
+  2002c4:	02009180 	call	200918 <_ZN9Scheduler6insertEP6Object>
+	scheduler.insert(&t7);
+	scheduler.insert(&t8);
+  2002c8:	dc001004 	addi	r16,sp,64
+	scheduler.insert(&t2);
+	scheduler.insert(&t3);
+	scheduler.insert(&t4);
+	scheduler.insert(&t5);
+	scheduler.insert(&t6);
+	scheduler.insert(&t7);
+  2002cc:	d9000104 	addi	r4,sp,4
+  2002d0:	d9400e04 	addi	r5,sp,56
+  2002d4:	02009180 	call	200918 <_ZN9Scheduler6insertEP6Object>
+	scheduler.insert(&t8);
+  2002d8:	800b883a 	mov	r5,r16
+  2002dc:	d9000104 	addi	r4,sp,4
+  2002e0:	02009180 	call	200918 <_ZN9Scheduler6insertEP6Object>
+
+	int size = scheduler.schedulables();
+  2002e4:	d9000104 	addi	r4,sp,4
+  2002e8:	02009a40 	call	2009a4 <_ZN9Scheduler12schedulablesEv>
+	alt_printf("Size = %x\n\n", size);
+  2002ec:	100b883a 	mov	r5,r2
+  2002f0:	01000834 	movhi	r4,32
+  2002f4:	2103d204 	addi	r4,r4,3912
+  2002f8:	0200c400 	call	200c40 <alt_printf>
+
+	alt_printf("OP: 1\n");
+  2002fc:	01000834 	movhi	r4,32
+  200300:	2103d504 	addi	r4,r4,3924
+  200304:	0200c400 	call	200c40 <alt_printf>
+	running = scheduler.choose();
+  200308:	d9000104 	addi	r4,sp,4
+  20030c:	020074c0 	call	20074c <_ZN9Scheduler6chooseEv>
+	running->execute();
+  200310:	1009883a 	mov	r4,r2
+  200314:	02004d40 	call	2004d4 <_ZN6Object7executeEv>
+
+	alt_printf("OP: 2\n");
+  200318:	01000834 	movhi	r4,32
+  20031c:	2103d704 	addi	r4,r4,3932
+  200320:	0200c400 	call	200c40 <alt_printf>
+	running = scheduler.choose();
+  200324:	d9000104 	addi	r4,sp,4
+  200328:	020074c0 	call	20074c <_ZN9Scheduler6chooseEv>
+	running->execute();
+  20032c:	1009883a 	mov	r4,r2
+  200330:	02004d40 	call	2004d4 <_ZN6Object7executeEv>
+
+	alt_printf("OP: 3\n");
+  200334:	01000834 	movhi	r4,32
+  200338:	2103d904 	addi	r4,r4,3940
+  20033c:	0200c400 	call	200c40 <alt_printf>
+	running = scheduler.choose_another();
+  200340:	d9000104 	addi	r4,sp,4
+  200344:	02006b40 	call	2006b4 <_ZN9Scheduler14choose_anotherEv>
+	running->execute();
+  200348:	1009883a 	mov	r4,r2
+  20034c:	02004d40 	call	2004d4 <_ZN6Object7executeEv>
+
+	alt_printf("OP: 4\n");
+  200350:	01000834 	movhi	r4,32
+  200354:	2103db04 	addi	r4,r4,3948
+  200358:	0200c400 	call	200c40 <alt_printf>
+	running = scheduler.choose_another();
+  20035c:	d9000104 	addi	r4,sp,4
+  200360:	02006b40 	call	2006b4 <_ZN9Scheduler14choose_anotherEv>
+	running->execute();
+  200364:	1009883a 	mov	r4,r2
+  200368:	02004d40 	call	2004d4 <_ZN6Object7executeEv>
+
+	scheduler.suspend(&t1);
+  20036c:	880b883a 	mov	r5,r17
+  200370:	d9000104 	addi	r4,sp,4
+  200374:	02007d40 	call	2007d4 <_ZN9Scheduler7suspendEP6Object>
+	scheduler.suspend(&t2);
+  200378:	900b883a 	mov	r5,r18
+  20037c:	d9000104 	addi	r4,sp,4
+  200380:	02007d40 	call	2007d4 <_ZN9Scheduler7suspendEP6Object>
+
+	alt_printf("OP: 5\n");
+  200384:	01000834 	movhi	r4,32
+  200388:	2103dd04 	addi	r4,r4,3956
+  20038c:	0200c400 	call	200c40 <alt_printf>
+	running = scheduler.choose();
+  200390:	d9000104 	addi	r4,sp,4
+  200394:	020074c0 	call	20074c <_ZN9Scheduler6chooseEv>
+	running->execute();
+  200398:	1009883a 	mov	r4,r2
+  20039c:	02004d40 	call	2004d4 <_ZN6Object7executeEv>
+
+	alt_printf("OP: 6\n");
+  2003a0:	01000834 	movhi	r4,32
+  2003a4:	2103df04 	addi	r4,r4,3964
+  2003a8:	0200c400 	call	200c40 <alt_printf>
+	scheduler.choose(&t8);
+  2003ac:	800b883a 	mov	r5,r16
+  2003b0:	d9000104 	addi	r4,sp,4
+  2003b4:	020060c0 	call	20060c <_ZN9Scheduler6chooseEP6Object>
+	running = scheduler.chosen();
+  2003b8:	d9000104 	addi	r4,sp,4
+  2003bc:	02005e80 	call	2005e8 <_ZN9Scheduler6chosenEv>
+	running->execute();
+  2003c0:	1009883a 	mov	r4,r2
+  2003c4:	02004d40 	call	2004d4 <_ZN6Object7executeEv>
+
+	alt_printf("OP: 7\n");
+  2003c8:	01000834 	movhi	r4,32
+  2003cc:	2103e104 	addi	r4,r4,3972
+  2003d0:	0200c400 	call	200c40 <alt_printf>
+	scheduler.remove(&t8);
+  2003d4:	800b883a 	mov	r5,r16
+  2003d8:	d9000104 	addi	r4,sp,4
+  2003dc:	02008700 	call	200870 <_ZN9Scheduler6removeEP6Object>
+	running = scheduler.chosen();
+  2003e0:	d9000104 	addi	r4,sp,4
+  2003e4:	02005e80 	call	2005e8 <_ZN9Scheduler6chosenEv>
+	running->execute();
+  2003e8:	1009883a 	mov	r4,r2
+  2003ec:	02004d40 	call	2004d4 <_ZN6Object7executeEv>
+
+	alt_printf("OP: 8\n");
+  2003f0:	01000834 	movhi	r4,32
+  2003f4:	2103e304 	addi	r4,r4,3980
+  2003f8:	0200c400 	call	200c40 <alt_printf>
+	scheduler.resume(&t1);
+  2003fc:	880b883a 	mov	r5,r17
+  200400:	d9000104 	addi	r4,sp,4
+  200404:	02005980 	call	200598 <_ZN9Scheduler6resumeEP6Object>
+	running = scheduler.choose();
+  200408:	d9000104 	addi	r4,sp,4
+  20040c:	020074c0 	call	20074c <_ZN9Scheduler6chooseEv>
+	running->execute();
+  200410:	1009883a 	mov	r4,r2
+  200414:	02004d40 	call	2004d4 <_ZN6Object7executeEv>
+
+
+	alt_printf("OP: 9\n");
+  200418:	01000834 	movhi	r4,32
+  20041c:	2103e504 	addi	r4,r4,3988
+  200420:	0200c400 	call	200c40 <alt_printf>
+	scheduler.remove(&t1);
+  200424:	880b883a 	mov	r5,r17
+  200428:	d9000104 	addi	r4,sp,4
+  20042c:	02008700 	call	200870 <_ZN9Scheduler6removeEP6Object>
+	scheduler.remove(&t2);
+  200430:	900b883a 	mov	r5,r18
+  200434:	d9000104 	addi	r4,sp,4
+  200438:	02008700 	call	200870 <_ZN9Scheduler6removeEP6Object>
+	size = scheduler.schedulables();
+  20043c:	d9000104 	addi	r4,sp,4
+  200440:	02009a40 	call	2009a4 <_ZN9Scheduler12schedulablesEv>
+	alt_printf("Size = %x\n\n", size);
+  200444:	100b883a 	mov	r5,r2
+  200448:	01000834 	movhi	r4,32
+  20044c:	2103d204 	addi	r4,r4,3912
+  200450:	0200c400 	call	200c40 <alt_printf>
+	running = scheduler.choose();
+  200454:	d9000104 	addi	r4,sp,4
+  200458:	020074c0 	call	20074c <_ZN9Scheduler6chooseEv>
+	running->execute();
+  20045c:	1009883a 	mov	r4,r2
+  200460:	02004d40 	call	2004d4 <_ZN6Object7executeEv>
+
+	alt_printf("OP: 10\n");
+  200464:	01000834 	movhi	r4,32
+  200468:	2103e704 	addi	r4,r4,3996
+  20046c:	0200c400 	call	200c40 <alt_printf>
+	scheduler.remove(&t3);
+  200470:	a80b883a 	mov	r5,r21
+  200474:	d9000104 	addi	r4,sp,4
+  200478:	02008700 	call	200870 <_ZN9Scheduler6removeEP6Object>
+	scheduler.remove(&t4);
+  20047c:	d9000104 	addi	r4,sp,4
+  200480:	a00b883a 	mov	r5,r20
+  200484:	02008700 	call	200870 <_ZN9Scheduler6removeEP6Object>
+	scheduler.remove(&t5);
+  200488:	d9000104 	addi	r4,sp,4
+  20048c:	980b883a 	mov	r5,r19
+  200490:	02008700 	call	200870 <_ZN9Scheduler6removeEP6Object>
+	scheduler.insert(&t9);
+  200494:	d9401204 	addi	r5,sp,72
+  200498:	d9000104 	addi	r4,sp,4
+  20049c:	02009180 	call	200918 <_ZN9Scheduler6insertEP6Object>
+	size = scheduler.schedulables();
+  2004a0:	d9000104 	addi	r4,sp,4
+  2004a4:	02009a40 	call	2009a4 <_ZN9Scheduler12schedulablesEv>
+	alt_printf("Size = %x\n\n", size);
+  2004a8:	100b883a 	mov	r5,r2
+  2004ac:	01000834 	movhi	r4,32
+  2004b0:	2103d204 	addi	r4,r4,3912
+  2004b4:	0200c400 	call	200c40 <alt_printf>
+
+	scheduler.set_quantum(50000000);
+  2004b8:	d9000104 	addi	r4,sp,4
+  2004bc:	0140bef4 	movhi	r5,763
+  2004c0:	297c2004 	addi	r5,r5,-3968
+  2004c4:	02005640 	call	200564 <_ZN9Scheduler11set_quantumEi>
+	scheduler.enable_schedule();
+  2004c8:	d9000104 	addi	r4,sp,4
+  2004cc:	02005300 	call	200530 <_ZN9Scheduler15enable_scheduleEv>
+  2004d0:	003fff06 	br	2004d0 <main+0x344>
+
+002004d4 <_ZN6Object7executeEv>:
+	}
+
+	void execute() {
+		alt_printf("Ola, sou a Thread '%x'\nPrioridade: '%x'\n\n", id, priority);
+  2004d4:	21800117 	ldw	r6,4(r4)
+  2004d8:	21400017 	ldw	r5,0(r4)
+  2004dc:	01000834 	movhi	r4,32
+  2004e0:	2103ba04 	addi	r4,r4,3816
+  2004e4:	0200c401 	jmpi	200c40 <alt_printf>
+
+002004e8 <_ZN9Scheduler11execute_cmdEiii>:
+		ADDR_STATUS = 0x0010
+	};
+
+	static int execute_cmd(int cmd, int priority, int param) {
+			//send command
+			IOWR_32DIRECT(ADDR_CMD, 0, cmd);
+  2004e8:	0005883a 	mov	r2,zero
+  2004ec:	11000035 	stwio	r4,0(r2)
+			IOWR_32DIRECT(ADDR_PRIORITY, 0, priority);
+  2004f0:	00800104 	movi	r2,4
+  2004f4:	11400035 	stwio	r5,0(r2)
+			IOWR_32DIRECT(ADDR_PARAM, 0, param);
+  2004f8:	00800204 	movi	r2,8
+  2004fc:	11800035 	stwio	r6,0(r2)
+  200500:	01000404 	movi	r4,16
+
+			//wait done
+			unsigned int status;
+			do {
+				status = IORD_32DIRECT(ADDR_STATUS,0);
+  200504:	20c00037 	ldwio	r3,0(r4)
+			IOWR_32DIRECT(ADDR_PRIORITY, 0, priority);
+			IOWR_32DIRECT(ADDR_PARAM, 0, param);
+
+			//wait done
+			unsigned int status;
+			do {
+  200508:	1880020c 	andi	r2,r3,8
+  20050c:	103ffd26 	beq	r2,zero,200504 <_ZN9Scheduler11execute_cmdEiii+0x1c>
+				status = IORD_32DIRECT(ADDR_STATUS,0);
+			} while( (status & STAT_DONE) == 0);
+
+			if (status & STAT_ERROR) {
+  200510:	1880004c 	andi	r2,r3,1
+  200514:	1005003a 	cmpeq	r2,r2,zero
+  200518:	1000021e 	bne	r2,zero,200524 <_ZN9Scheduler11execute_cmdEiii+0x3c>
+  20051c:	00bfffc4 	movi	r2,-1
+  200520:	f800283a 	ret
+				return -1;
+			}
+
+			//se necessário, tratar status no contexto de quem invocou este método.
+			return IORD_32DIRECT(ADDR_RETURN, 0);
+  200524:	00800304 	movi	r2,12
+  200528:	10800037 	ldwio	r2,0(r2)
+		}
+  20052c:	f800283a 	ret
+
+00200530 <_ZN9Scheduler15enable_scheduleEv>:
+			execute_cmd(CMD_SET_QUANTUM, 0, quantum);
+			int status = IORD_32DIRECT(ADDR_STATUS, 0);
+			alt_printf("Status = %x\n", status);
+		}
+
+		void enable_schedule() {
+  200530:	deffff04 	addi	sp,sp,-4
+			execute_cmd(CMD_ENABLE, 0, 0);
+  200534:	01000204 	movi	r4,8
+  200538:	000b883a 	mov	r5,zero
+  20053c:	000d883a 	mov	r6,zero
+			execute_cmd(CMD_SET_QUANTUM, 0, quantum);
+			int status = IORD_32DIRECT(ADDR_STATUS, 0);
+			alt_printf("Status = %x\n", status);
+		}
+
+		void enable_schedule() {
+  200540:	dfc00015 	stw	ra,0(sp)
+			execute_cmd(CMD_ENABLE, 0, 0);
+  200544:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+			int status = IORD_32DIRECT(ADDR_STATUS, 0);
+  200548:	00800404 	movi	r2,16
+  20054c:	11400037 	ldwio	r5,0(r2)
+			alt_printf("Status = %x\n", status);
+  200550:	01000834 	movhi	r4,32
+  200554:	2103c504 	addi	r4,r4,3860
+		}
+  200558:	dfc00017 	ldw	ra,0(sp)
+  20055c:	dec00104 	addi	sp,sp,4
+		}
+
+		void enable_schedule() {
+			execute_cmd(CMD_ENABLE, 0, 0);
+			int status = IORD_32DIRECT(ADDR_STATUS, 0);
+			alt_printf("Status = %x\n", status);
+  200560:	0200c401 	jmpi	200c40 <alt_printf>
+
+00200564 <_ZN9Scheduler11set_quantumEi>:
+		//
+		void reset_quantum() {
+			execute_cmd(CMD_RSTICKS, 0, 0);
+		}
+
+		void set_quantum(int quantum) {
+  200564:	deffff04 	addi	sp,sp,-4
+  200568:	280d883a 	mov	r6,r5
+			execute_cmd(CMD_SET_QUANTUM, 0, quantum);
+  20056c:	010001c4 	movi	r4,7
+  200570:	000b883a 	mov	r5,zero
+		//
+		void reset_quantum() {
+			execute_cmd(CMD_RSTICKS, 0, 0);
+		}
+
+		void set_quantum(int quantum) {
+  200574:	dfc00015 	stw	ra,0(sp)
+			execute_cmd(CMD_SET_QUANTUM, 0, quantum);
+  200578:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+			int status = IORD_32DIRECT(ADDR_STATUS, 0);
+  20057c:	00800404 	movi	r2,16
+  200580:	11400037 	ldwio	r5,0(r2)
+			alt_printf("Status = %x\n", status);
+  200584:	01000834 	movhi	r4,32
+  200588:	2103c504 	addi	r4,r4,3860
+		}
+  20058c:	dfc00017 	ldw	ra,0(sp)
+  200590:	dec00104 	addi	sp,sp,4
+		}
+
+		void set_quantum(int quantum) {
+			execute_cmd(CMD_SET_QUANTUM, 0, quantum);
+			int status = IORD_32DIRECT(ADDR_STATUS, 0);
+			alt_printf("Status = %x\n", status);
+  200594:	0200c401 	jmpi	200c40 <alt_printf>
+
+00200598 <_ZN9Scheduler6resumeEP6Object>:
+				tid = execute_cmd(CMD_GETID, 0, head);
+				execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+			}
+		}
+
+		void resume(Object* obj) {
+  200598:	defffe04 	addi	sp,sp,-8
+  20059c:	dc000015 	stw	r16,0(sp)
+  2005a0:	2821883a 	mov	r16,r5
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  2005a4:	010002c4 	movi	r4,11
+  2005a8:	800d883a 	mov	r6,r16
+  2005ac:	000b883a 	mov	r5,zero
+				tid = execute_cmd(CMD_GETID, 0, head);
+				execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+			}
+		}
+
+		void resume(Object* obj) {
+  2005b0:	dfc00115 	stw	ra,4(sp)
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  2005b4:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+			if(tid) {
+				int priority = obj->priority;
+				execute_cmd(CMD_INSERT, priority, tid);
+  2005b8:	100d883a 	mov	r6,r2
+  2005bc:	010000c4 	movi	r4,3
+			}
+		}
+
+		void resume(Object* obj) {
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+			if(tid) {
+  2005c0:	10000526 	beq	r2,zero,2005d8 <_ZN9Scheduler6resumeEP6Object+0x40>
+				int priority = obj->priority;
+				execute_cmd(CMD_INSERT, priority, tid);
+  2005c4:	81400117 	ldw	r5,4(r16)
+			}
+		}
+  2005c8:	dfc00117 	ldw	ra,4(sp)
+  2005cc:	dc000017 	ldw	r16,0(sp)
+  2005d0:	dec00204 	addi	sp,sp,8
+
+		void resume(Object* obj) {
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+			if(tid) {
+				int priority = obj->priority;
+				execute_cmd(CMD_INSERT, priority, tid);
+  2005d4:	02004e81 	jmpi	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+			}
+		}
+  2005d8:	dfc00117 	ldw	ra,4(sp)
+  2005dc:	dc000017 	ldw	r16,0(sp)
+  2005e0:	dec00204 	addi	sp,sp,8
+  2005e4:	f800283a 	ret
+
+002005e8 <_ZN9Scheduler6chosenEv>:
+
+	unsigned int schedulables() {
+			return execute_cmd(CMD_SIZE, 0, 0);
+		}
+
+		Object* volatile chosen() {
+  2005e8:	deffff04 	addi	sp,sp,-4
+			Object* obj = (Object*)execute_cmd(CMD_CHOSEN, 0, 0);
+  2005ec:	01000304 	movi	r4,12
+  2005f0:	000b883a 	mov	r5,zero
+  2005f4:	000d883a 	mov	r6,zero
+
+	unsigned int schedulables() {
+			return execute_cmd(CMD_SIZE, 0, 0);
+		}
+
+		Object* volatile chosen() {
+  2005f8:	dfc00015 	stw	ra,0(sp)
+			Object* obj = (Object*)execute_cmd(CMD_CHOSEN, 0, 0);
+  2005fc:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+			return const_cast <Object* volatile>(obj);
+		}
+  200600:	dfc00017 	ldw	ra,0(sp)
+  200604:	dec00104 	addi	sp,sp,4
+  200608:	f800283a 	ret
+
+0020060c <_ZN9Scheduler6chooseEP6Object>:
+			execute_cmd(CMD_UPDATE_RUNNING, 0, obj_tid);
+
+			return obj;
+		}
+
+		Object* choose(Object* obj) {
+  20060c:	defffc04 	addi	sp,sp,-16
+			int obj_tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  200610:	280d883a 	mov	r6,r5
+			execute_cmd(CMD_UPDATE_RUNNING, 0, obj_tid);
+
+			return obj;
+		}
+
+		Object* choose(Object* obj) {
+  200614:	dc800215 	stw	r18,8(sp)
+  200618:	dc000015 	stw	r16,0(sp)
+  20061c:	2825883a 	mov	r18,r5
+  200620:	2021883a 	mov	r16,r4
+			int obj_tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  200624:	000b883a 	mov	r5,zero
+  200628:	010002c4 	movi	r4,11
+			execute_cmd(CMD_UPDATE_RUNNING, 0, obj_tid);
+
+			return obj;
+		}
+
+		Object* choose(Object* obj) {
+  20062c:	dc400115 	stw	r17,4(sp)
+  200630:	dfc00315 	stw	ra,12(sp)
+			int obj_tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  200634:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+  200638:	1023883a 	mov	r17,r2
+			if(!obj_tid) {
+				obj = 0;
+			} else {
+				if(!execute_cmd(CMD_REMOVE, 0, obj_tid)) {
+  20063c:	100d883a 	mov	r6,r2
+  200640:	000b883a 	mov	r5,zero
+  200644:	01000104 	movi	r4,4
+			return obj;
+		}
+
+		Object* choose(Object* obj) {
+			int obj_tid = execute_cmd(CMD_GETID, 0, (int)obj);
+			if(!obj_tid) {
+  200648:	10001226 	beq	r2,zero,200694 <_ZN9Scheduler6chooseEP6Object+0x88>
+				obj = 0;
+			} else {
+				if(!execute_cmd(CMD_REMOVE, 0, obj_tid)) {
+  20064c:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+					obj = 0;
+				} else {
+					Object* running = chosen();
+  200650:	8009883a 	mov	r4,r16
+		Object* choose(Object* obj) {
+			int obj_tid = execute_cmd(CMD_GETID, 0, (int)obj);
+			if(!obj_tid) {
+				obj = 0;
+			} else {
+				if(!execute_cmd(CMD_REMOVE, 0, obj_tid)) {
+  200654:	10000f26 	beq	r2,zero,200694 <_ZN9Scheduler6chooseEP6Object+0x88>
+					obj = 0;
+				} else {
+					Object* running = chosen();
+  200658:	02005e80 	call	2005e8 <_ZN9Scheduler6chosenEv>
+  20065c:	1021883a 	mov	r16,r2
+					int running_tid = execute_cmd(CMD_GETID, 0, (int)running);
+  200660:	100d883a 	mov	r6,r2
+  200664:	010002c4 	movi	r4,11
+  200668:	000b883a 	mov	r5,zero
+  20066c:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+					int priority = running->priority;
+					execute_cmd(CMD_INSERT, priority, running_tid);
+  200670:	81400117 	ldw	r5,4(r16)
+  200674:	100d883a 	mov	r6,r2
+  200678:	010000c4 	movi	r4,3
+  20067c:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+					execute_cmd(CMD_UPDATE_RUNNING, 0, obj_tid);
+  200680:	880d883a 	mov	r6,r17
+  200684:	01000184 	movi	r4,6
+  200688:	000b883a 	mov	r5,zero
+  20068c:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+  200690:	00000106 	br	200698 <_ZN9Scheduler6chooseEP6Object+0x8c>
+  200694:	0025883a 	mov	r18,zero
+
+				}
+			}
+			return obj;
+		}
+  200698:	9005883a 	mov	r2,r18
+  20069c:	dfc00317 	ldw	ra,12(sp)
+  2006a0:	dc800217 	ldw	r18,8(sp)
+  2006a4:	dc400117 	ldw	r17,4(sp)
+  2006a8:	dc000017 	ldw	r16,0(sp)
+  2006ac:	dec00404 	addi	sp,sp,16
+  2006b0:	f800283a 	ret
+
+002006b4 <_ZN9Scheduler14choose_anotherEv>:
+			execute_cmd(CMD_UPDATE_RUNNING, 0, obj_tid);
+
+			return obj;
+		}
+
+		Object* choose_another() {
+  2006b4:	defffc04 	addi	sp,sp,-16
+  2006b8:	dc000015 	stw	r16,0(sp)
+			Object* obj = (Object*)execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+  2006bc:	000b883a 	mov	r5,zero
+			execute_cmd(CMD_UPDATE_RUNNING, 0, obj_tid);
+
+			return obj;
+		}
+
+		Object* choose_another() {
+  2006c0:	2021883a 	mov	r16,r4
+			Object* obj = (Object*)execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+  2006c4:	000d883a 	mov	r6,zero
+  2006c8:	01000144 	movi	r4,5
+			execute_cmd(CMD_UPDATE_RUNNING, 0, obj_tid);
+
+			return obj;
+		}
+
+		Object* choose_another() {
+  2006cc:	dfc00315 	stw	ra,12(sp)
+  2006d0:	dc800215 	stw	r18,8(sp)
+  2006d4:	dc400115 	stw	r17,4(sp)
+			Object* obj = (Object*)execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+  2006d8:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+
+			Object* running = chosen();
+  2006dc:	8009883a 	mov	r4,r16
+
+			return obj;
+		}
+
+		Object* choose_another() {
+			Object* obj = (Object*)execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+  2006e0:	1025883a 	mov	r18,r2
+
+			Object* running = chosen();
+			int running_tid = execute_cmd(CMD_GETID, 0, (int)running);
+  2006e4:	044002c4 	movi	r17,11
+		}
+
+		Object* choose_another() {
+			Object* obj = (Object*)execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+
+			Object* running = chosen();
+  2006e8:	02005e80 	call	2005e8 <_ZN9Scheduler6chosenEv>
+  2006ec:	1021883a 	mov	r16,r2
+			int running_tid = execute_cmd(CMD_GETID, 0, (int)running);
+  2006f0:	8809883a 	mov	r4,r17
+  2006f4:	000b883a 	mov	r5,zero
+  2006f8:	100d883a 	mov	r6,r2
+  2006fc:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+			int priority = running->priority;
+			execute_cmd(CMD_INSERT, priority, running_tid);
+  200700:	81400117 	ldw	r5,4(r16)
+  200704:	100d883a 	mov	r6,r2
+  200708:	010000c4 	movi	r4,3
+  20070c:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+
+			int obj_tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  200710:	8809883a 	mov	r4,r17
+  200714:	900d883a 	mov	r6,r18
+  200718:	000b883a 	mov	r5,zero
+  20071c:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+			execute_cmd(CMD_UPDATE_RUNNING, 0, obj_tid);
+  200720:	100d883a 	mov	r6,r2
+  200724:	01000184 	movi	r4,6
+  200728:	000b883a 	mov	r5,zero
+  20072c:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+
+			return obj;
+		}
+  200730:	9005883a 	mov	r2,r18
+  200734:	dfc00317 	ldw	ra,12(sp)
+  200738:	dc800217 	ldw	r18,8(sp)
+  20073c:	dc400117 	ldw	r17,4(sp)
+  200740:	dc000017 	ldw	r16,0(sp)
+  200744:	dec00404 	addi	sp,sp,16
+  200748:	f800283a 	ret
+
+0020074c <_ZN9Scheduler6chooseEv>:
+				int priority = obj->priority;
+				execute_cmd(CMD_INSERT, priority, tid);
+			}
+		}
+
+		Object* choose() {
+  20074c:	defffd04 	addi	sp,sp,-12
+  200750:	dfc00215 	stw	ra,8(sp)
+  200754:	dc400115 	stw	r17,4(sp)
+  200758:	dc000015 	stw	r16,0(sp)
+			Object* obj = chosen();
+  20075c:	02005e80 	call	2005e8 <_ZN9Scheduler6chosenEv>
+			int priority = obj->priority;
+  200760:	14000117 	ldw	r16,4(r2)
+			int obj_tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  200764:	044002c4 	movi	r17,11
+  200768:	8809883a 	mov	r4,r17
+				execute_cmd(CMD_INSERT, priority, tid);
+			}
+		}
+
+		Object* choose() {
+			Object* obj = chosen();
+  20076c:	100d883a 	mov	r6,r2
+			int priority = obj->priority;
+			int obj_tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  200770:	000b883a 	mov	r5,zero
+  200774:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+			execute_cmd(CMD_INSERT, priority, obj_tid);
+  200778:	100d883a 	mov	r6,r2
+  20077c:	800b883a 	mov	r5,r16
+  200780:	010000c4 	movi	r4,3
+  200784:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+
+			obj = (Object*)execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+  200788:	000b883a 	mov	r5,zero
+  20078c:	000d883a 	mov	r6,zero
+  200790:	01000144 	movi	r4,5
+  200794:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+			obj_tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  200798:	100d883a 	mov	r6,r2
+  20079c:	8809883a 	mov	r4,r17
+  2007a0:	000b883a 	mov	r5,zero
+			Object* obj = chosen();
+			int priority = obj->priority;
+			int obj_tid = execute_cmd(CMD_GETID, 0, (int)obj);
+			execute_cmd(CMD_INSERT, priority, obj_tid);
+
+			obj = (Object*)execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+  2007a4:	1021883a 	mov	r16,r2
+			obj_tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  2007a8:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+
+			execute_cmd(CMD_UPDATE_RUNNING, 0, obj_tid);
+  2007ac:	100d883a 	mov	r6,r2
+  2007b0:	01000184 	movi	r4,6
+  2007b4:	000b883a 	mov	r5,zero
+  2007b8:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+
+			return obj;
+		}
+  2007bc:	8005883a 	mov	r2,r16
+  2007c0:	dfc00217 	ldw	ra,8(sp)
+  2007c4:	dc400117 	ldw	r17,4(sp)
+  2007c8:	dc000017 	ldw	r16,0(sp)
+  2007cc:	dec00304 	addi	sp,sp,12
+  2007d0:	f800283a 	ret
+
+002007d4 <_ZN9Scheduler7suspendEP6Object>:
+				}
+			}
+			return obj;
+		}
+
+		void suspend(Object* obj) {
+  2007d4:	defffd04 	addi	sp,sp,-12
+  2007d8:	dc400115 	stw	r17,4(sp)
+  2007dc:	2823883a 	mov	r17,r5
+  2007e0:	dc000015 	stw	r16,0(sp)
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  2007e4:	000b883a 	mov	r5,zero
+  2007e8:	880d883a 	mov	r6,r17
+				}
+			}
+			return obj;
+		}
+
+		void suspend(Object* obj) {
+  2007ec:	2021883a 	mov	r16,r4
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  2007f0:	010002c4 	movi	r4,11
+				}
+			}
+			return obj;
+		}
+
+		void suspend(Object* obj) {
+  2007f4:	dfc00215 	stw	ra,8(sp)
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  2007f8:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+			if(tid < 0) {
+				return;
+			}
+			execute_cmd(CMD_REMOVE, 0, tid);
+  2007fc:	100d883a 	mov	r6,r2
+  200800:	000b883a 	mov	r5,zero
+  200804:	01000104 	movi	r4,4
+			return obj;
+		}
+
+		void suspend(Object* obj) {
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+			if(tid < 0) {
+  200808:	10001416 	blt	r2,zero,20085c <_ZN9Scheduler7suspendEP6Object+0x88>
+				return;
+			}
+			execute_cmd(CMD_REMOVE, 0, tid);
+  20080c:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+			if(obj == chosen()){
+  200810:	8009883a 	mov	r4,r16
+  200814:	02005e80 	call	2005e8 <_ZN9Scheduler6chosenEv>
+				int head = execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+  200818:	000b883a 	mov	r5,zero
+  20081c:	01000144 	movi	r4,5
+  200820:	000d883a 	mov	r6,zero
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+			if(tid < 0) {
+				return;
+			}
+			execute_cmd(CMD_REMOVE, 0, tid);
+			if(obj == chosen()){
+  200824:	88800d1e 	bne	r17,r2,20085c <_ZN9Scheduler7suspendEP6Object+0x88>
+				int head = execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+  200828:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+				tid = execute_cmd(CMD_GETID, 0, head);
+  20082c:	100d883a 	mov	r6,r2
+  200830:	010002c4 	movi	r4,11
+  200834:	000b883a 	mov	r5,zero
+  200838:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+				execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+  20083c:	100d883a 	mov	r6,r2
+  200840:	01000184 	movi	r4,6
+  200844:	000b883a 	mov	r5,zero
+			}
+		}
+  200848:	dfc00217 	ldw	ra,8(sp)
+  20084c:	dc400117 	ldw	r17,4(sp)
+  200850:	dc000017 	ldw	r16,0(sp)
+  200854:	dec00304 	addi	sp,sp,12
+			}
+			execute_cmd(CMD_REMOVE, 0, tid);
+			if(obj == chosen()){
+				int head = execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+				tid = execute_cmd(CMD_GETID, 0, head);
+				execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+  200858:	02004e81 	jmpi	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+			}
+		}
+  20085c:	dfc00217 	ldw	ra,8(sp)
+  200860:	dc400117 	ldw	r17,4(sp)
+  200864:	dc000017 	ldw	r16,0(sp)
+  200868:	dec00304 	addi	sp,sp,12
+  20086c:	f800283a 	ret
+
+00200870 <_ZN9Scheduler6removeEP6Object>:
+					execute_cmd(CMD_INSERT, priority, tid);
+				}
+			}
+		}
+
+		Object* remove(Object* obj) {
+  200870:	defffc04 	addi	sp,sp,-16
+  200874:	dc800215 	stw	r18,8(sp)
+  200878:	dc000015 	stw	r16,0(sp)
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  20087c:	280d883a 	mov	r6,r5
+					execute_cmd(CMD_INSERT, priority, tid);
+				}
+			}
+		}
+
+		Object* remove(Object* obj) {
+  200880:	2021883a 	mov	r16,r4
+  200884:	2825883a 	mov	r18,r5
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  200888:	010002c4 	movi	r4,11
+  20088c:	000b883a 	mov	r5,zero
+					execute_cmd(CMD_INSERT, priority, tid);
+				}
+			}
+		}
+
+		Object* remove(Object* obj) {
+  200890:	dc400115 	stw	r17,4(sp)
+  200894:	dfc00315 	stw	ra,12(sp)
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  200898:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+  20089c:	1023883a 	mov	r17,r2
+			if(tid < 0) { // a arquitetura retorna erro quando nao encontra id.
+				obj = 0;
+			} else {
+				Object* running = chosen();
+  2008a0:	8009883a 	mov	r4,r16
+			}
+		}
+
+		Object* remove(Object* obj) {
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+			if(tid < 0) { // a arquitetura retorna erro quando nao encontra id.
+  2008a4:	1000020e 	bge	r2,zero,2008b0 <_ZN9Scheduler6removeEP6Object+0x40>
+  2008a8:	0025883a 	mov	r18,zero
+  2008ac:	00001306 	br	2008fc <_ZN9Scheduler6removeEP6Object+0x8c>
+				obj = 0;
+			} else {
+				Object* running = chosen();
+  2008b0:	02005e80 	call	2005e8 <_ZN9Scheduler6chosenEv>
+				execute_cmd(CMD_DESTROY, 0, tid);
+  2008b4:	880d883a 	mov	r6,r17
+  2008b8:	01000084 	movi	r4,2
+  2008bc:	000b883a 	mov	r5,zero
+		Object* remove(Object* obj) {
+			int tid = execute_cmd(CMD_GETID, 0, (int)obj);
+			if(tid < 0) { // a arquitetura retorna erro quando nao encontra id.
+				obj = 0;
+			} else {
+				Object* running = chosen();
+  2008c0:	1021883a 	mov	r16,r2
+				execute_cmd(CMD_DESTROY, 0, tid);
+  2008c4:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+				if(obj == running) {
+					running = (Object*)execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+  2008c8:	01000144 	movi	r4,5
+  2008cc:	000b883a 	mov	r5,zero
+  2008d0:	000d883a 	mov	r6,zero
+			if(tid < 0) { // a arquitetura retorna erro quando nao encontra id.
+				obj = 0;
+			} else {
+				Object* running = chosen();
+				execute_cmd(CMD_DESTROY, 0, tid);
+				if(obj == running) {
+  2008d4:	9400091e 	bne	r18,r16,2008fc <_ZN9Scheduler6removeEP6Object+0x8c>
+					running = (Object*)execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+  2008d8:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+					tid = execute_cmd(CMD_GETID, 0, (int)running);
+  2008dc:	100d883a 	mov	r6,r2
+  2008e0:	010002c4 	movi	r4,11
+  2008e4:	000b883a 	mov	r5,zero
+  2008e8:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+					execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+  2008ec:	100d883a 	mov	r6,r2
+  2008f0:	01000184 	movi	r4,6
+  2008f4:	000b883a 	mov	r5,zero
+  2008f8:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+				}
+			}
+			return obj;
+		}
+  2008fc:	9005883a 	mov	r2,r18
+  200900:	dfc00317 	ldw	ra,12(sp)
+  200904:	dc800217 	ldw	r18,8(sp)
+  200908:	dc400117 	ldw	r17,4(sp)
+  20090c:	dc000017 	ldw	r16,0(sp)
+  200910:	dec00404 	addi	sp,sp,16
+  200914:	f800283a 	ret
+
+00200918 <_ZN9Scheduler6insertEP6Object>:
+		Object* volatile chosen() {
+			Object* obj = (Object*)execute_cmd(CMD_CHOSEN, 0, 0);
+			return const_cast <Object* volatile>(obj);
+		}
+
+		void insert (Object* obj) {
+  200918:	defffc04 	addi	sp,sp,-16
+  20091c:	dc800215 	stw	r18,8(sp)
+			int priority = obj->priority;
+  200920:	2c800117 	ldw	r18,4(r5)
+		Object* volatile chosen() {
+			Object* obj = (Object*)execute_cmd(CMD_CHOSEN, 0, 0);
+			return const_cast <Object* volatile>(obj);
+		}
+
+		void insert (Object* obj) {
+  200924:	dc000015 	stw	r16,0(sp)
+  200928:	280d883a 	mov	r6,r5
+  20092c:	2021883a 	mov	r16,r4
+			int priority = obj->priority;
+			int tid = execute_cmd(CMD_CREATE, priority, (int)obj);
+  200930:	900b883a 	mov	r5,r18
+  200934:	01000044 	movi	r4,1
+		Object* volatile chosen() {
+			Object* obj = (Object*)execute_cmd(CMD_CHOSEN, 0, 0);
+			return const_cast <Object* volatile>(obj);
+		}
+
+		void insert (Object* obj) {
+  200938:	dc400115 	stw	r17,4(sp)
+  20093c:	dfc00315 	stw	ra,12(sp)
+			int priority = obj->priority;
+			int tid = execute_cmd(CMD_CREATE, priority, (int)obj);
+  200940:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+  200944:	1023883a 	mov	r17,r2
+			if(tid > 0 ){
+				if(!chosen()) {
+  200948:	8009883a 	mov	r4,r16
+		}
+
+		void insert (Object* obj) {
+			int priority = obj->priority;
+			int tid = execute_cmd(CMD_CREATE, priority, (int)obj);
+			if(tid > 0 ){
+  20094c:	00800f0e 	bge	zero,r2,20098c <_ZN9Scheduler6insertEP6Object+0x74>
+				if(!chosen()) {
+  200950:	02005e80 	call	2005e8 <_ZN9Scheduler6chosenEv>
+					execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+  200954:	880d883a 	mov	r6,r17
+				} else {
+					execute_cmd(CMD_INSERT, priority, tid);
+  200958:	900b883a 	mov	r5,r18
+		void insert (Object* obj) {
+			int priority = obj->priority;
+			int tid = execute_cmd(CMD_CREATE, priority, (int)obj);
+			if(tid > 0 ){
+				if(!chosen()) {
+					execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+  20095c:	01000184 	movi	r4,6
+
+		void insert (Object* obj) {
+			int priority = obj->priority;
+			int tid = execute_cmd(CMD_CREATE, priority, (int)obj);
+			if(tid > 0 ){
+				if(!chosen()) {
+  200960:	1000021e 	bne	r2,zero,20096c <_ZN9Scheduler6insertEP6Object+0x54>
+					execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+  200964:	000b883a 	mov	r5,zero
+  200968:	00000206 	br	200974 <_ZN9Scheduler6insertEP6Object+0x5c>
+				} else {
+					execute_cmd(CMD_INSERT, priority, tid);
+  20096c:	880d883a 	mov	r6,r17
+  200970:	010000c4 	movi	r4,3
+				}
+			}
+		}
+  200974:	dfc00317 	ldw	ra,12(sp)
+  200978:	dc800217 	ldw	r18,8(sp)
+  20097c:	dc400117 	ldw	r17,4(sp)
+  200980:	dc000017 	ldw	r16,0(sp)
+  200984:	dec00404 	addi	sp,sp,16
+			int tid = execute_cmd(CMD_CREATE, priority, (int)obj);
+			if(tid > 0 ){
+				if(!chosen()) {
+					execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+				} else {
+					execute_cmd(CMD_INSERT, priority, tid);
+  200988:	02004e81 	jmpi	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+				}
+			}
+		}
+  20098c:	dfc00317 	ldw	ra,12(sp)
+  200990:	dc800217 	ldw	r18,8(sp)
+  200994:	dc400117 	ldw	r17,4(sp)
+  200998:	dc000017 	ldw	r16,0(sp)
+  20099c:	dec00404 	addi	sp,sp,16
+  2009a0:	f800283a 	ret
+
+002009a4 <_ZN9Scheduler12schedulablesEv>:
+		//	 Thread:: time_reschedule();
+
+	}
+
+	unsigned int schedulables() {
+			return execute_cmd(CMD_SIZE, 0, 0);
+  2009a4:	01000344 	movi	r4,13
+  2009a8:	000b883a 	mov	r5,zero
+  2009ac:	000d883a 	mov	r6,zero
+  2009b0:	02004e81 	jmpi	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+
+002009b4 <_ZN9Scheduler11int_handlerEPv>:
+	void reset() {
+		execute_cmd(CMD_RESET, 0, 0);
+	}
+
+//	static void int_handler (void *context, alt_u32 id) {
+	static void int_handler(void* context) {
+  2009b4:	defffc04 	addi	sp,sp,-16
+		//volatile unsigned int * sch isr = (unsigned int *)(0x41400220);
+
+		IOWR_32DIRECT(ADDR_CMD, 0, CMD_INT_ACK);
+  2009b8:	00c00284 	movi	r3,10
+  2009bc:	0005883a 	mov	r2,zero
+	void reset() {
+		execute_cmd(CMD_RESET, 0, 0);
+	}
+
+//	static void int_handler (void *context, alt_u32 id) {
+	static void int_handler(void* context) {
+  2009c0:	dfc00315 	stw	ra,12(sp)
+  2009c4:	dc800215 	stw	r18,8(sp)
+  2009c8:	dc400115 	stw	r17,4(sp)
+  2009cc:	dc000015 	stw	r16,0(sp)
+		//volatile unsigned int * sch isr = (unsigned int *)(0x41400220);
+
+		IOWR_32DIRECT(ADDR_CMD, 0, CMD_INT_ACK);
+  2009d0:	10c00035 	stwio	r3,0(r2)
+		IOWR_32DIRECT(ADDR_PARAM, 0, 0);
+  2009d4:	00800204 	movi	r2,8
+  2009d8:	10000035 	stwio	zero,0(r2)
+		alt_putstr("Interrupt!\n");
+  2009dc:	01000834 	movhi	r4,32
+  2009e0:	2103c904 	addi	r4,r4,3876
+  2009e4:	0200dd40 	call	200dd4 <alt_putstr>
+
+		Object* obj = (Object*)execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+  2009e8:	000b883a 	mov	r5,zero
+  2009ec:	01000144 	movi	r4,5
+  2009f0:	000d883a 	mov	r6,zero
+  2009f4:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+
+		Object* running = (Object*)execute_cmd(CMD_CHOSEN, 0, 0);
+  2009f8:	01000304 	movi	r4,12
+  2009fc:	000b883a 	mov	r5,zero
+  200a00:	000d883a 	mov	r6,zero
+
+		IOWR_32DIRECT(ADDR_CMD, 0, CMD_INT_ACK);
+		IOWR_32DIRECT(ADDR_PARAM, 0, 0);
+		alt_putstr("Interrupt!\n");
+
+		Object* obj = (Object*)execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+  200a04:	1025883a 	mov	r18,r2
+
+		Object* running = (Object*)execute_cmd(CMD_CHOSEN, 0, 0);
+		int running_tid = execute_cmd(CMD_GETID, 0, (int)running);
+  200a08:	044002c4 	movi	r17,11
+		IOWR_32DIRECT(ADDR_PARAM, 0, 0);
+		alt_putstr("Interrupt!\n");
+
+		Object* obj = (Object*)execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+
+		Object* running = (Object*)execute_cmd(CMD_CHOSEN, 0, 0);
+  200a0c:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+  200a10:	1021883a 	mov	r16,r2
+		int running_tid = execute_cmd(CMD_GETID, 0, (int)running);
+  200a14:	8809883a 	mov	r4,r17
+  200a18:	000b883a 	mov	r5,zero
+  200a1c:	100d883a 	mov	r6,r2
+  200a20:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+		int priority = running->priority;
+		execute_cmd(CMD_INSERT, priority, running_tid);
+  200a24:	81400117 	ldw	r5,4(r16)
+  200a28:	100d883a 	mov	r6,r2
+  200a2c:	010000c4 	movi	r4,3
+  200a30:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+
+		int obj_tid = execute_cmd(CMD_GETID, 0, (int)obj);
+  200a34:	8809883a 	mov	r4,r17
+  200a38:	900d883a 	mov	r6,r18
+  200a3c:	000b883a 	mov	r5,zero
+  200a40:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+		execute_cmd(CMD_UPDATE_RUNNING, 0, obj_tid);
+  200a44:	100d883a 	mov	r6,r2
+  200a48:	01000184 	movi	r4,6
+  200a4c:	000b883a 	mov	r5,zero
+  200a50:	02004e80 	call	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+
+		obj->execute();
+  200a54:	9009883a 	mov	r4,r18
+		//	 *sch_isr = *sch_isr ; // ack
+		//	 Thread:: time_reschedule();
+
+	}
+  200a58:	dfc00317 	ldw	ra,12(sp)
+  200a5c:	dc800217 	ldw	r18,8(sp)
+  200a60:	dc400117 	ldw	r17,4(sp)
+  200a64:	dc000017 	ldw	r16,0(sp)
+  200a68:	dec00404 	addi	sp,sp,16
+		execute_cmd(CMD_INSERT, priority, running_tid);
+
+		int obj_tid = execute_cmd(CMD_GETID, 0, (int)obj);
+		execute_cmd(CMD_UPDATE_RUNNING, 0, obj_tid);
+
+		obj->execute();
+  200a6c:	02004d41 	jmpi	2004d4 <_ZN6Object7executeEv>
+
+00200a70 <_ZN9Scheduler5resetEv>:
+	Scheduler(){
+
+	}
+
+	void reset() {
+		execute_cmd(CMD_RESET, 0, 0);
+  200a70:	010003c4 	movi	r4,15
+  200a74:	000b883a 	mov	r5,zero
+  200a78:	000d883a 	mov	r6,zero
+  200a7c:	02004e81 	jmpi	2004e8 <_ZN9Scheduler11execute_cmdEiii>
+
+00200a80 <alt_ic_irq_enabled>:
+  200a80:	000530fa 	rdctl	r2,ienable
+  200a84:	00c00044 	movi	r3,1
+  200a88:	1946983a 	sll	r3,r3,r5
+  200a8c:	10c4703a 	and	r2,r2,r3
+  200a90:	1004c03a 	cmpne	r2,r2,zero
+  200a94:	f800283a 	ret
+
+00200a98 <alt_ic_irq_enable>:
+  200a98:	000d303a 	rdctl	r6,status
+  200a9c:	00bfff84 	movi	r2,-2
+  200aa0:	3084703a 	and	r2,r6,r2
+  200aa4:	1001703a 	wrctl	status,r2
+  200aa8:	01000834 	movhi	r4,32
+  200aac:	2103ed04 	addi	r4,r4,4020
+  200ab0:	00c00044 	movi	r3,1
+  200ab4:	20800017 	ldw	r2,0(r4)
+  200ab8:	1946983a 	sll	r3,r3,r5
+  200abc:	10c4b03a 	or	r2,r2,r3
+  200ac0:	20800015 	stw	r2,0(r4)
+  200ac4:	20800017 	ldw	r2,0(r4)
+  200ac8:	100170fa 	wrctl	ienable,r2
+  200acc:	3001703a 	wrctl	status,r6
+  200ad0:	0005883a 	mov	r2,zero
+  200ad4:	f800283a 	ret
+
+00200ad8 <alt_ic_irq_disable>:
+  200ad8:	000d303a 	rdctl	r6,status
+  200adc:	00bfff84 	movi	r2,-2
+  200ae0:	3084703a 	and	r2,r6,r2
+  200ae4:	1001703a 	wrctl	status,r2
+  200ae8:	01000834 	movhi	r4,32
+  200aec:	2103ed04 	addi	r4,r4,4020
+  200af0:	00ffff84 	movi	r3,-2
+  200af4:	20800017 	ldw	r2,0(r4)
+  200af8:	1946183a 	rol	r3,r3,r5
+  200afc:	10c4703a 	and	r2,r2,r3
+  200b00:	20800015 	stw	r2,0(r4)
+  200b04:	20800017 	ldw	r2,0(r4)
+  200b08:	100170fa 	wrctl	ienable,r2
+  200b0c:	3001703a 	wrctl	status,r6
+  200b10:	0005883a 	mov	r2,zero
+  200b14:	f800283a 	ret
+
+00200b18 <alt_ic_isr_register>:
+  200b18:	0200b1c1 	jmpi	200b1c <alt_iic_isr_register>
+
+00200b1c <alt_iic_isr_register>:
+  200b1c:	defffe04 	addi	sp,sp,-8
+  200b20:	008007c4 	movi	r2,31
+  200b24:	dfc00115 	stw	ra,4(sp)
+  200b28:	dc000015 	stw	r16,0(sp)
+  200b2c:	00fffa84 	movi	r3,-22
+  200b30:	11401016 	blt	r2,r5,200b74 <alt_iic_isr_register+0x58>
+  200b34:	0021303a 	rdctl	r16,status
+  200b38:	00bfff84 	movi	r2,-2
+  200b3c:	8084703a 	and	r2,r16,r2
+  200b40:	1001703a 	wrctl	status,r2
+  200b44:	280490fa 	slli	r2,r5,3
+  200b48:	00c00834 	movhi	r3,32
+  200b4c:	18c3f104 	addi	r3,r3,4036
+  200b50:	10c5883a 	add	r2,r2,r3
+  200b54:	11c00115 	stw	r7,4(r2)
+  200b58:	11800015 	stw	r6,0(r2)
+  200b5c:	30000226 	beq	r6,zero,200b68 <alt_iic_isr_register+0x4c>
+  200b60:	0200a980 	call	200a98 <alt_ic_irq_enable>
+  200b64:	00000106 	br	200b6c <alt_iic_isr_register+0x50>
+  200b68:	0200ad80 	call	200ad8 <alt_ic_irq_disable>
+  200b6c:	1007883a 	mov	r3,r2
+  200b70:	8001703a 	wrctl	status,r16
+  200b74:	1805883a 	mov	r2,r3
+  200b78:	dfc00117 	ldw	ra,4(sp)
+  200b7c:	dc000017 	ldw	r16,0(sp)
+  200b80:	dec00204 	addi	sp,sp,8
+  200b84:	f800283a 	ret
+
+00200b88 <alt_load_section>:
+  200b88:	2900051e 	bne	r5,r4,200ba0 <alt_load_section+0x18>
+  200b8c:	f800283a 	ret
+  200b90:	20800017 	ldw	r2,0(r4)
+  200b94:	21000104 	addi	r4,r4,4
+  200b98:	28800015 	stw	r2,0(r5)
+  200b9c:	29400104 	addi	r5,r5,4
+  200ba0:	29bffb1e 	bne	r5,r6,200b90 <alt_load_section+0x8>
+  200ba4:	f800283a 	ret
+
+00200ba8 <alt_load>:
+  200ba8:	deffff04 	addi	sp,sp,-4
+  200bac:	01000834 	movhi	r4,32
+  200bb0:	2103eb04 	addi	r4,r4,4012
+  200bb4:	01400834 	movhi	r5,32
+  200bb8:	2943e904 	addi	r5,r5,4004
+  200bbc:	01800834 	movhi	r6,32
+  200bc0:	3183eb04 	addi	r6,r6,4012
+  200bc4:	dfc00015 	stw	ra,0(sp)
+  200bc8:	0200b880 	call	200b88 <alt_load_section>
+  200bcc:	01000834 	movhi	r4,32
+  200bd0:	21000804 	addi	r4,r4,32
+  200bd4:	01400834 	movhi	r5,32
+  200bd8:	29400804 	addi	r5,r5,32
+  200bdc:	01800834 	movhi	r6,32
+  200be0:	31805004 	addi	r6,r6,320
+  200be4:	0200b880 	call	200b88 <alt_load_section>
+  200be8:	01000834 	movhi	r4,32
+  200bec:	2103ba04 	addi	r4,r4,3816
+  200bf0:	01400834 	movhi	r5,32
+  200bf4:	2943ba04 	addi	r5,r5,3816
+  200bf8:	01800834 	movhi	r6,32
+  200bfc:	3183e904 	addi	r6,r6,4004
+  200c00:	0200b880 	call	200b88 <alt_load_section>
+  200c04:	0200e640 	call	200e64 <alt_dcache_flush_all>
+  200c08:	dfc00017 	ldw	ra,0(sp)
+  200c0c:	dec00104 	addi	sp,sp,4
+  200c10:	0200e7c1 	jmpi	200e7c <alt_icache_flush_all>
+
+00200c14 <alt_main>:
+  200c14:	deffff04 	addi	sp,sp,-4
+  200c18:	0009883a 	mov	r4,zero
+  200c1c:	dfc00015 	stw	ra,0(sp)
+  200c20:	0200e100 	call	200e10 <alt_irq_init>
+  200c24:	0200e0c0 	call	200e0c <alt_sys_init>
+  200c28:	d1200517 	ldw	r4,-32748(gp)
+  200c2c:	d1600617 	ldw	r5,-32744(gp)
+  200c30:	d1a00717 	ldw	r6,-32740(gp)
+  200c34:	dfc00017 	ldw	ra,0(sp)
+  200c38:	dec00104 	addi	sp,sp,4
+  200c3c:	020018c1 	jmpi	20018c <main>
+
+00200c40 <alt_printf>:
+  200c40:	defff804 	addi	sp,sp,-32
+  200c44:	dfc00415 	stw	ra,16(sp)
+  200c48:	dc800315 	stw	r18,12(sp)
+  200c4c:	dc400215 	stw	r17,8(sp)
+  200c50:	dc000115 	stw	r16,4(sp)
+  200c54:	d9400515 	stw	r5,20(sp)
+  200c58:	d9800615 	stw	r6,24(sp)
+  200c5c:	d9c00715 	stw	r7,28(sp)
+  200c60:	d8800504 	addi	r2,sp,20
+  200c64:	2025883a 	mov	r18,r4
+  200c68:	d8800015 	stw	r2,0(sp)
+  200c6c:	00003d06 	br	200d64 <alt_printf+0x124>
+  200c70:	00800944 	movi	r2,37
+  200c74:	94800044 	addi	r18,r18,1
+  200c78:	18800226 	beq	r3,r2,200c84 <alt_printf+0x44>
+  200c7c:	1809883a 	mov	r4,r3
+  200c80:	00000a06 	br	200cac <alt_printf+0x6c>
+  200c84:	91000007 	ldb	r4,0(r18)
+  200c88:	94800044 	addi	r18,r18,1
+  200c8c:	20003726 	beq	r4,zero,200d6c <alt_printf+0x12c>
+  200c90:	20c00626 	beq	r4,r3,200cac <alt_printf+0x6c>
+  200c94:	008018c4 	movi	r2,99
+  200c98:	2080061e 	bne	r4,r2,200cb4 <alt_printf+0x74>
+  200c9c:	d8800017 	ldw	r2,0(sp)
+  200ca0:	11000017 	ldw	r4,0(r2)
+  200ca4:	10800104 	addi	r2,r2,4
+  200ca8:	d8800015 	stw	r2,0(sp)
+  200cac:	0200d840 	call	200d84 <alt_putchar>
+  200cb0:	00002c06 	br	200d64 <alt_printf+0x124>
+  200cb4:	00801e04 	movi	r2,120
+  200cb8:	20801e1e 	bne	r4,r2,200d34 <alt_printf+0xf4>
+  200cbc:	d8800017 	ldw	r2,0(sp)
+  200cc0:	14400017 	ldw	r17,0(r2)
+  200cc4:	10800104 	addi	r2,r2,4
+  200cc8:	d8800015 	stw	r2,0(sp)
+  200ccc:	88000226 	beq	r17,zero,200cd8 <alt_printf+0x98>
+  200cd0:	04000704 	movi	r16,28
+  200cd4:	00000306 	br	200ce4 <alt_printf+0xa4>
+  200cd8:	01000c04 	movi	r4,48
+  200cdc:	003ff306 	br	200cac <alt_printf+0x6c>
+  200ce0:	843fff04 	addi	r16,r16,-4
+  200ce4:	008003c4 	movi	r2,15
+  200ce8:	1404983a 	sll	r2,r2,r16
+  200cec:	8884703a 	and	r2,r17,r2
+  200cf0:	103ffb26 	beq	r2,zero,200ce0 <alt_printf+0xa0>
+  200cf4:	00000b06 	br	200d24 <alt_printf+0xe4>
+  200cf8:	8884703a 	and	r2,r17,r2
+  200cfc:	1406d83a 	srl	r3,r2,r16
+  200d00:	00800244 	movi	r2,9
+  200d04:	19000c04 	addi	r4,r3,48
+  200d08:	10c0012e 	bgeu	r2,r3,200d10 <alt_printf+0xd0>
+  200d0c:	190015c4 	addi	r4,r3,87
+  200d10:	21003fcc 	andi	r4,r4,255
+  200d14:	2100201c 	xori	r4,r4,128
+  200d18:	213fe004 	addi	r4,r4,-128
+  200d1c:	843fff04 	addi	r16,r16,-4
+  200d20:	0200d840 	call	200d84 <alt_putchar>
+  200d24:	008003c4 	movi	r2,15
+  200d28:	1404983a 	sll	r2,r2,r16
+  200d2c:	803ff20e 	bge	r16,zero,200cf8 <alt_printf+0xb8>
+  200d30:	00000c06 	br	200d64 <alt_printf+0x124>
+  200d34:	00801cc4 	movi	r2,115
+  200d38:	20800a1e 	bne	r4,r2,200d64 <alt_printf+0x124>
+  200d3c:	d8800017 	ldw	r2,0(sp)
+  200d40:	14000017 	ldw	r16,0(r2)
+  200d44:	10800104 	addi	r2,r2,4
+  200d48:	d8800015 	stw	r2,0(sp)
+  200d4c:	00000106 	br	200d54 <alt_printf+0x114>
+  200d50:	0200d840 	call	200d84 <alt_putchar>
+  200d54:	80800007 	ldb	r2,0(r16)
+  200d58:	84000044 	addi	r16,r16,1
+  200d5c:	1009883a 	mov	r4,r2
+  200d60:	103ffb1e 	bne	r2,zero,200d50 <alt_printf+0x110>
+  200d64:	90c00007 	ldb	r3,0(r18)
+  200d68:	183fc11e 	bne	r3,zero,200c70 <alt_printf+0x30>
+  200d6c:	dfc00417 	ldw	ra,16(sp)
+  200d70:	dc800317 	ldw	r18,12(sp)
+  200d74:	dc400217 	ldw	r17,8(sp)
+  200d78:	dc000117 	ldw	r16,4(sp)
+  200d7c:	dec00804 	addi	sp,sp,32
+  200d80:	f800283a 	ret
+
+00200d84 <alt_putchar>:
+  200d84:	defffd04 	addi	sp,sp,-12
+  200d88:	dc000115 	stw	r16,4(sp)
+  200d8c:	d80b883a 	mov	r5,sp
+  200d90:	2021883a 	mov	r16,r4
+  200d94:	01800044 	movi	r6,1
+  200d98:	01000834 	movhi	r4,32
+  200d9c:	2103ea04 	addi	r4,r4,4008
+  200da0:	000f883a 	mov	r7,zero
+  200da4:	dfc00215 	stw	ra,8(sp)
+  200da8:	dc000005 	stb	r16,0(sp)
+  200dac:	0200e300 	call	200e30 <altera_avalon_jtag_uart_write>
+  200db0:	1009883a 	mov	r4,r2
+  200db4:	00bfffc4 	movi	r2,-1
+  200db8:	2080011e 	bne	r4,r2,200dc0 <alt_putchar+0x3c>
+  200dbc:	2021883a 	mov	r16,r4
+  200dc0:	8005883a 	mov	r2,r16
+  200dc4:	dfc00217 	ldw	ra,8(sp)
+  200dc8:	dc000117 	ldw	r16,4(sp)
+  200dcc:	dec00304 	addi	sp,sp,12
+  200dd0:	f800283a 	ret
+
+00200dd4 <alt_putstr>:
+  200dd4:	defffe04 	addi	sp,sp,-8
+  200dd8:	dc000015 	stw	r16,0(sp)
+  200ddc:	dfc00115 	stw	ra,4(sp)
+  200de0:	2021883a 	mov	r16,r4
+  200de4:	0200ec80 	call	200ec8 <strlen>
+  200de8:	800b883a 	mov	r5,r16
+  200dec:	100d883a 	mov	r6,r2
+  200df0:	01000834 	movhi	r4,32
+  200df4:	2103ea04 	addi	r4,r4,4008
+  200df8:	000f883a 	mov	r7,zero
+  200dfc:	dfc00117 	ldw	ra,4(sp)
+  200e00:	dc000017 	ldw	r16,0(sp)
+  200e04:	dec00204 	addi	sp,sp,8
+  200e08:	0200e301 	jmpi	200e30 <altera_avalon_jtag_uart_write>
+
+00200e0c <alt_sys_init>:
+  200e0c:	f800283a 	ret
+
+00200e10 <alt_irq_init>:
+  200e10:	deffff04 	addi	sp,sp,-4
+  200e14:	dfc00015 	stw	ra,0(sp)
+  200e18:	0200e880 	call	200e88 <altera_nios2_qsys_irq_init>
+  200e1c:	00800044 	movi	r2,1
+  200e20:	1001703a 	wrctl	status,r2
+  200e24:	dfc00017 	ldw	ra,0(sp)
+  200e28:	dec00104 	addi	sp,sp,4
+  200e2c:	f800283a 	ret
+
+00200e30 <altera_avalon_jtag_uart_write>:
+  200e30:	21000017 	ldw	r4,0(r4)
+  200e34:	298f883a 	add	r7,r5,r6
+  200e38:	20c00104 	addi	r3,r4,4
+  200e3c:	00000606 	br	200e58 <altera_avalon_jtag_uart_write+0x28>
+  200e40:	18800037 	ldwio	r2,0(r3)
+  200e44:	10bfffec 	andhi	r2,r2,65535
+  200e48:	10000326 	beq	r2,zero,200e58 <altera_avalon_jtag_uart_write+0x28>
+  200e4c:	28800007 	ldb	r2,0(r5)
+  200e50:	29400044 	addi	r5,r5,1
+  200e54:	20800035 	stwio	r2,0(r4)
+  200e58:	29fff936 	bltu	r5,r7,200e40 <altera_avalon_jtag_uart_write+0x10>
+  200e5c:	3005883a 	mov	r2,r6
+  200e60:	f800283a 	ret
+
+00200e64 <alt_dcache_flush_all>:
+  200e64:	0005883a 	mov	r2,zero
+  200e68:	00c20004 	movi	r3,2048
+  200e6c:	1000003b 	flushd	0(r2)
+  200e70:	10800804 	addi	r2,r2,32
+  200e74:	10fffd1e 	bne	r2,r3,200e6c <alt_dcache_flush_all+0x8>
+  200e78:	f800283a 	ret
+
+00200e7c <alt_icache_flush_all>:
+  200e7c:	0009883a 	mov	r4,zero
+  200e80:	01440004 	movi	r5,4096
+  200e84:	0200e901 	jmpi	200e90 <alt_icache_flush>
+
+00200e88 <altera_nios2_qsys_irq_init>:
+  200e88:	000170fa 	wrctl	ienable,zero
+  200e8c:	f800283a 	ret
+
+00200e90 <alt_icache_flush>:
+  200e90:	00840004 	movi	r2,4096
+  200e94:	2007883a 	mov	r3,r4
+  200e98:	1140012e 	bgeu	r2,r5,200ea0 <alt_icache_flush+0x10>
+  200e9c:	100b883a 	mov	r5,r2
+  200ea0:	194b883a 	add	r5,r3,r5
+  200ea4:	00000206 	br	200eb0 <alt_icache_flush+0x20>
+  200ea8:	1800603a 	flushi	r3
+  200eac:	18c00804 	addi	r3,r3,32
+  200eb0:	197ffd36 	bltu	r3,r5,200ea8 <alt_icache_flush+0x18>
+  200eb4:	208007cc 	andi	r2,r4,31
+  200eb8:	10000126 	beq	r2,zero,200ec0 <alt_icache_flush+0x30>
+  200ebc:	1800603a 	flushi	r3
+  200ec0:	0000203a 	flushp
+  200ec4:	f800283a 	ret
+
+00200ec8 <strlen>:
+  200ec8:	20800007 	ldb	r2,0(r4)
+  200ecc:	10000526 	beq	r2,zero,200ee4 <strlen+0x1c>
+  200ed0:	2007883a 	mov	r3,r4
+  200ed4:	18c00044 	addi	r3,r3,1
+  200ed8:	18800007 	ldb	r2,0(r3)
+  200edc:	103ffd1e 	bne	r2,zero,200ed4 <strlen+0xc>
+  200ee0:	1905c83a 	sub	r2,r3,r4
+  200ee4:	f800283a 	ret

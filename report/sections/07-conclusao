@@ -1,0 +1,7 @@
+\section{Conclusão}
+\label{sec:conclusao}
+Neste trabalho o escalonador do SO desenvolvido por Marcondes como um componente de \textit{hardware} foi adaptado para a interface \textit{Avalon} usando a interface \textit{Memory-Mapped Slave}. Cada comando do escalonador foi testado individualmente, comprovando seu correto funcionamento com um conjunto de 26 testes de unidade. Além da adaptação feita em \textit{hardware}, também foi desenvolvida uma classe em \textit{software} baseada na implementação do escalonador do EPOS. 
+
+Não foi possível testar a implementação realizada em conjunto com o EPOS, uma vez que ele não foi portado para a arquitetura sintetizada na FPGA da Altera. Apesar de tal limitação, todo o material produzido neste trabalho foi elaborado visando uma futura integração com o escalonador do EPOS, onde deverá ser possível realizar a resolução em tempo de compilação de qual componente será usado, \textit{software} ou \textit{hardware}, e a reprodução dos experimentos de Marcondes para a FPGA da Altera.    
+
+Todo o código desenvolvido, incluindo documentação detalhada sobre cada comando da arquitetura, está disponível em \url{https://github.com/viniciusmctf/hybridscheduler/}.

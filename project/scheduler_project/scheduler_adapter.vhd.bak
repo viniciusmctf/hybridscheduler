@@ -1,0 +1,151 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+entity scheduler_adapter is
+	port ( clock, resetn : IN STD_LOGIC;
+		sread, swrite, chipselect : IN STD_LOGIC;
+		address : 		in STD_LOGIC_VECTOR(2 downto 0);
+		writedata : 	in STD_LOGIC_VECTOR(31 downto 0);
+			
+		i_return: 		in std_logic_vector (0 to 31);
+		i_status:		in std_logic_vector (0 to 5);
+		i_command: 		out std_logic_vector (0 to 3);
+		i_priority:		out std_logic_vector (0 to 31);
+		i_parameter:	out std_logic_vector (0 to 31);
+			
+		readdata : 		OUT STD_LOGIC_VECTOR(31 downto 0);
+		Q_export : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+	);
+end scheduler_interface;
+
+ARCHITECTURE Structure OF scheduler_interface IS
+	signal reg_command  : 	std_logic_vector (31 downto 0);
+	signal reg_parameter: 	std_logic_vector (31 downto 0);
+	signal reg_priority :	std_logic_vector (31 downto 0);	
+	signal ireg_command  : 	std_logic_vector (0 to 31);
+	signal ireg_parameter: 	std_logic_vector (0 to 31);
+	signal ireg_priority :	std_logic_vector (0 to 31);
+	
+	signal local_command  : 	std_logic_vector (0 to 3);
+	signal local_parameter: 	std_logic_vector (0 to 31);
+	signal local_priority :	std_logic_vector (0 to 31);
+	
+	signal reg_return   :	std_logic_vector (31 downto 0);
+	signal reg_status   :	std_logic_vector (31 downto 0);
+	signal treg_status   :	std_logic_vector (5 downto 0);
+	signal ireg_return   :	std_logic_vector (0 to 31);
+	signal ireg_status   :	std_logic_vector (0 to 5);
+	signal load   :	STD_LOGIC;
+	signal local_reset:	STD_LOGIC;
+BEGIN
+--Q_export(15 downto 12) <= ireg_command(0 to 3);
+Q_export(15 downto 12) <= local_command;
+Q_export(11 downto 8) <= ireg_command(28 to 31); 
+Q_export(7 downto 4) <= reg_command(3 downto 0); 
+Q_export(3 downto 0) <= reg_command(31 downto 28);
+  --reverse wires
+   ireg_command <= reg_command;
+	ireg_parameter <= reg_parameter;
+	ireg_priority <= reg_priority;
+	reg_return <= i_return;
+	treg_status <= i_status;
+	reg_status(5 downto 0) <= treg_status;
+	reg_status(31 downto 6) <= (others => '0');
+	--to scheduler
+	i_command <= local_command;
+	i_parameter <= local_parameter;
+	i_priority <= local_priority;
+	
+	-- tratamento do input
+	process (clock, resetn)
+	begin
+		--reseta todos os sinais
+		
+		if resetn = '0' then
+			--command irá receber 1111, que é um comando que não altera estado.
+			-- trava leitura de output (vai dar problema se nao tratar interrupt)
+				reg_command <= (others => '0');
+				reg_priority <= (others => '0');
+				reg_parameter <= (others => '0');
+				local_reset <= '0';
+				load <= '0';
+		else 
+			if (rising_edge(clock)) then
+				if(chipselect = '1') then
+					if(swrite = '1' and sread = '0') then
+						case address is
+							--verificar se os valores de address estao corretos
+							when "000" =>
+								reg_command <= writedata;
+								local_reset <= '0';
+							when "001" =>
+								reg_priority <= writedata;
+							when "010" =>
+								reg_parameter <= writedata;
+								load <= '1';
+							when "011" =>
+								readdata <= reg_return;
+							when "100" =>
+								readdata <= reg_status;
+							when others => null;
+ 
+						end case;
+					elsif(swrite = '0' and sread = '1') then
+							case address is
+								--verificar se os valores de address estao corretos
+								when "000" =>
+									readdata <= reg_command;
+								when "001" =>
+									readdata <= reg_priority;
+								when "010" =>
+									readdata <= reg_parameter;
+								when "011" =>
+									readdata <= reg_return;
+								when "100" =>
+									readdata <= reg_status;
+								when others => null;
+							end case;
+					else	
+						load <= '0';
+						local_reset <= '1';
+					end if;
+				else	
+					load <= '0';
+					local_reset <= '1';
+				end if;
+			end if;
+		end if;
+	end process;
+	
+	--input pronto para ser enviado para a arquitetura.
+	process (clock)
+	begin
+		--reseta todos os sinais
+		if (rising_edge(clock)) then
+			if(load = '1') then
+				local_command <= ireg_command(28 to 31);
+				local_parameter <= ireg_parameter(0 to 31);
+				local_priority <= ireg_priority(0 to 31);		
+			else
+				local_command <= (others => '0');
+				local_parameter <= (others => '0');
+				local_priority <= (others => '0');
+			end if;
+		end if;
+	end process;
+	
+	-- tratamento do output
+	--process (clock, local_reset)
+	--begin
+	--	if(local_reset = '0') then
+	--		ireg_return <= (others => '0');
+	--		ireg_status <= (others => '0');
+	--	else
+	--		if (rising_edge(clock)) then
+	--			if (i_status(2) = '1') then
+	--				ireg_return <= i_return;
+	--				ireg_status <= i_status;
+	--			end if;
+	--		end if;
+	--	end if;
+	--end process;
+END Structure;

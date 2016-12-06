@@ -1,0 +1,382 @@
+Analysis & Synthesis report for Scheduler
+Mon Oct 31 11:02:01 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |scheduler_interface|Scheduler:Scheduler_block|s_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |scheduler_interface
+ 13. Parameter Settings for User Entity Instance: scheduler_adapter:Adapter_block
+ 14. Parameter Settings for User Entity Instance: Scheduler:Scheduler_block
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Oct 31 11:02:01 2016           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Scheduler                                       ;
+; Top-level Entity Name              ; scheduler_interface                             ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 2,133                                           ;
+;     Total combinational functions  ; 1,665                                           ;
+;     Dedicated logic registers      ; 847                                             ;
+; Total registers                    ; 847                                             ;
+; Total pins                         ; 73                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                         ;
++----------------------------------------------------------------------------+---------------------+--------------------+
+; Option                                                                     ; Setting             ; Default Value      ;
++----------------------------------------------------------------------------+---------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6        ;                    ;
+; Top-level entity name                                                      ; scheduler_interface ; Scheduler          ;
+; Family name                                                                ; Cyclone II          ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                 ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                  ; On                 ;
+; Enable compact report table                                                ; Off                 ; Off                ;
+; Restructure Multiplexers                                                   ; Auto                ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                 ; Off                ;
+; Preserve fewer node names                                                  ; On                  ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                 ; Off                ;
+; Verilog Version                                                            ; Verilog_2001        ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993           ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto                ; Auto               ;
+; Safe State Machine                                                         ; Off                 ; Off                ;
+; Extract Verilog State Machines                                             ; On                  ; On                 ;
+; Extract VHDL State Machines                                                ; On                  ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                 ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000                ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                 ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                  ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                  ; On                 ;
+; Parallel Synthesis                                                         ; On                  ; On                 ;
+; DSP Block Balancing                                                        ; Auto                ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                  ; On                 ;
+; Power-Up Don't Care                                                        ; On                  ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                 ; Off                ;
+; Remove Duplicate Registers                                                 ; On                  ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                 ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                 ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                 ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                 ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                 ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                  ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                 ; Off                ;
+; Optimization Technique                                                     ; Balanced            ; Balanced           ;
+; Carry Chain Length                                                         ; 70                  ; 70                 ;
+; Auto Carry Chains                                                          ; On                  ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                  ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                 ; Off                ;
+; Auto ROM Replacement                                                       ; On                  ; On                 ;
+; Auto RAM Replacement                                                       ; On                  ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto                ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                  ; On                 ;
+; Strict RAM Replacement                                                     ; Off                 ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                  ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                 ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                 ; Off                ;
+; Auto Resource Sharing                                                      ; Off                 ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                 ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                 ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                 ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                  ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                 ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                 ; Off                ;
+; Report Parameter Settings                                                  ; On                  ; On                 ;
+; Report Source Assignments                                                  ; On                  ; On                 ;
+; Report Connectivity Checks                                                 ; On                  ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                 ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                   ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation  ; Normal compilation ;
+; HDL message level                                                          ; Level2              ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                 ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                 ; 100                ;
+; Clock MUX Protection                                                       ; On                  ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                 ; Off                ;
+; Block Design Naming                                                        ; Auto                ; Auto               ;
+; SDC constraint protection                                                  ; Off                 ; Off                ;
+; Synthesis Effort                                                           ; Auto                ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                  ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                 ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium              ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto                ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                  ; On                 ;
+; Synthesis Seed                                                             ; 1                   ; 1                  ;
++----------------------------------------------------------------------------+---------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                          ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
+; scheduler_interface.vhd          ; yes             ; User VHDL File  ; D:/aulas/SO2/projeto_final_refactor/scheduler/scheduler_interface.vhd ;         ;
+; scheduler_adapter.vhd            ; yes             ; User VHDL File  ; D:/aulas/SO2/projeto_final_refactor/scheduler/scheduler_adapter.vhd   ;         ;
+; scheduler.vhd                    ; yes             ; User VHDL File  ; D:/aulas/SO2/projeto_final_refactor/scheduler/scheduler.vhd           ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 2,133 ;
+;                                             ;       ;
+; Total combinational functions               ; 1665  ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 1222  ;
+;     -- 3 input functions                    ; 275   ;
+;     -- <=2 input functions                  ; 168   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 1604  ;
+;     -- arithmetic mode                      ; 61    ;
+;                                             ;       ;
+; Total registers                             ; 847   ;
+;     -- Dedicated logic registers            ; 847   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 73    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 847   ;
+; Total fan-out                               ; 8696  ;
+; Average fan-out                             ; 3.36  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                    ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
+; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                  ; Library Name ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
+; |scheduler_interface                 ; 1665 (1)          ; 847 (0)      ; 0           ; 0            ; 0       ; 0         ; 73   ; 0            ; |scheduler_interface                                 ; work         ;
+;    |Scheduler:Scheduler_block|       ; 1555 (1555)       ; 678 (678)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |scheduler_interface|Scheduler:Scheduler_block       ; work         ;
+;    |scheduler_adapter:Adapter_block| ; 109 (109)         ; 169 (169)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |scheduler_interface|scheduler_adapter:Adapter_block ; work         ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |scheduler_interface|Scheduler:Scheduler_block|s_state                                                                                                                                                                                  ;
++-------------------------+---------------+---------------+------------------+--------------------+-------------------------+--------------------+-----------------+----------------+----------------+-------------------+-----------------+--------------+
+; Name                    ; s_state.reset ; s_state.getid ; s_state.pregetid ; s_state.reset_time ; s_state.acknowledge_int ; s_state.exit_error ; s_state.exit_ok ; s_state.remove ; s_state.insert ; s_state.preinsert ; s_state.destroy ; s_state.idle ;
++-------------------------+---------------+---------------+------------------+--------------------+-------------------------+--------------------+-----------------+----------------+----------------+-------------------+-----------------+--------------+
+; s_state.idle            ; 0             ; 0             ; 0                ; 0                  ; 0                       ; 0                  ; 0               ; 0              ; 0              ; 0                 ; 0               ; 0            ;
+; s_state.destroy         ; 0             ; 0             ; 0                ; 0                  ; 0                       ; 0                  ; 0               ; 0              ; 0              ; 0                 ; 1               ; 1            ;
+; s_state.preinsert       ; 0             ; 0             ; 0                ; 0                  ; 0                       ; 0                  ; 0               ; 0              ; 0              ; 1                 ; 0               ; 1            ;
+; s_state.insert          ; 0             ; 0             ; 0                ; 0                  ; 0                       ; 0                  ; 0               ; 0              ; 1              ; 0                 ; 0               ; 1            ;
+; s_state.remove          ; 0             ; 0             ; 0                ; 0                  ; 0                       ; 0                  ; 0               ; 1              ; 0              ; 0                 ; 0               ; 1            ;
+; s_state.exit_ok         ; 0             ; 0             ; 0                ; 0                  ; 0                       ; 0                  ; 1               ; 0              ; 0              ; 0                 ; 0               ; 1            ;
+; s_state.exit_error      ; 0             ; 0             ; 0                ; 0                  ; 0                       ; 1                  ; 0               ; 0              ; 0              ; 0                 ; 0               ; 1            ;
+; s_state.acknowledge_int ; 0             ; 0             ; 0                ; 0                  ; 1                       ; 0                  ; 0               ; 0              ; 0              ; 0                 ; 0               ; 1            ;
+; s_state.reset_time      ; 0             ; 0             ; 0                ; 1                  ; 0                       ; 0                  ; 0               ; 0              ; 0              ; 0                 ; 0               ; 1            ;
+; s_state.pregetid        ; 0             ; 0             ; 1                ; 0                  ; 0                       ; 0                  ; 0               ; 0              ; 0              ; 0                 ; 0               ; 1            ;
+; s_state.getid           ; 0             ; 1             ; 0                ; 0                  ; 0                       ; 0                  ; 0               ; 0              ; 0              ; 0                 ; 0               ; 1            ;
+; s_state.reset           ; 1             ; 0             ; 0                ; 0                  ; 0                       ; 0                  ; 0               ; 0              ; 0              ; 0                 ; 0               ; 1            ;
++-------------------------+---------------+---------------+------------------+--------------------+-------------------------+--------------------+-----------------+----------------+----------------+-------------------+-----------------+--------------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; Scheduler:Scheduler_block|s_state.reset ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1   ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 847   ;
+; Number of registers using Synchronous Clear  ; 106   ;
+; Number of registers using Synchronous Load   ; 52    ;
+; Number of registers using Asynchronous Clear ; 69    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 645   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; 8:1                ; 26 bits   ; 130 LEs       ; 26 LEs               ; 104 LEs                ; Yes        ; |scheduler_interface|scheduler_adapter:Adapter_block|readdata[8]    ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |scheduler_interface|scheduler_adapter:Adapter_block|readdata[0]    ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_counter[3]         ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_found_tid[3]       ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_stid_found[3]      ;
+; 18:1               ; 28 bits   ; 336 LEs       ; 28 LEs               ; 308 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_quantum_ticks[19]  ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 4 LEs                ; 28 LEs                 ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_quantum_ticks[0]   ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 4 LEs                ; 28 LEs                 ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_running_tid[2]     ;
+; 13:1               ; 4 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_command_tid[3]     ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_free_tid[1]        ;
+; 22:1               ; 4 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_size[1]            ;
+; 22:1               ; 32 bits   ; 448 LEs       ; 32 LEs               ; 416 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_obj_table[7][19]   ;
+; 22:1               ; 32 bits   ; 448 LEs       ; 32 LEs               ; 416 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_obj_table[3][9]    ;
+; 22:1               ; 32 bits   ; 448 LEs       ; 32 LEs               ; 416 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_obj_table[4][22]   ;
+; 22:1               ; 32 bits   ; 448 LEs       ; 32 LEs               ; 416 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_obj_table[0][1]    ;
+; 22:1               ; 32 bits   ; 448 LEs       ; 32 LEs               ; 416 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_obj_table[5][9]    ;
+; 22:1               ; 32 bits   ; 448 LEs       ; 32 LEs               ; 416 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_obj_table[1][23]   ;
+; 22:1               ; 32 bits   ; 448 LEs       ; 32 LEs               ; 416 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_obj_table[6][13]   ;
+; 22:1               ; 32 bits   ; 448 LEs       ; 32 LEs               ; 416 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_obj_table[2][16]   ;
+; 23:1               ; 16 bits   ; 240 LEs       ; 16 LEs               ; 224 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_order_table[7][6]  ;
+; 23:1               ; 16 bits   ; 240 LEs       ; 16 LEs               ; 224 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_order_table[3][6]  ;
+; 23:1               ; 16 bits   ; 240 LEs       ; 16 LEs               ; 224 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_order_table[4][6]  ;
+; 23:1               ; 16 bits   ; 240 LEs       ; 16 LEs               ; 224 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_order_table[0][14] ;
+; 23:1               ; 16 bits   ; 240 LEs       ; 16 LEs               ; 224 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_order_table[5][1]  ;
+; 23:1               ; 16 bits   ; 240 LEs       ; 16 LEs               ; 224 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_order_table[1][0]  ;
+; 23:1               ; 16 bits   ; 240 LEs       ; 16 LEs               ; 224 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_order_table[6][6]  ;
+; 23:1               ; 16 bits   ; 240 LEs       ; 16 LEs               ; 224 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_order_table[2][12] ;
+; 24:1               ; 4 bits    ; 64 LEs        ; 8 LEs                ; 56 LEs                 ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_tail_tid[2]        ;
+; 25:1               ; 4 bits    ; 64 LEs        ; 8 LEs                ; 56 LEs                 ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_head_tid[0]        ;
+; 41:1               ; 27 bits   ; 729 LEs       ; 162 LEs              ; 567 LEs                ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_return[31]         ;
+; 42:1               ; 4 bits    ; 112 LEs       ; 32 LEs               ; 80 LEs                 ; Yes        ; |scheduler_interface|Scheduler:Scheduler_block|s_return[3]          ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |scheduler_interface|Scheduler:Scheduler_block|Mux794               ;
+; 8:1                ; 9 bits    ; 45 LEs        ; 45 LEs               ; 0 LEs                  ; No         ; |scheduler_interface|Scheduler:Scheduler_block|Mux706               ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |scheduler_interface|Scheduler:Scheduler_block|Mux711               ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |scheduler_interface|Scheduler:Scheduler_block|Mux776               ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 120 LEs              ; 0 LEs                  ; No         ; |scheduler_interface|Scheduler:Scheduler_block|Mux754               ;
+; 23:1               ; 4 bits    ; 60 LEs        ; 40 LEs               ; 20 LEs                 ; No         ; |scheduler_interface|Scheduler:Scheduler_block|s_state              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |scheduler_interface ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; C_MAX_THREADS  ; 8     ; Signed Integer                                             ;
+; C_DWIDTH       ; 32    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: scheduler_adapter:Adapter_block ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; c_max_threads  ; 8     ; Signed Integer                                      ;
+; c_dwidth       ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Scheduler:Scheduler_block ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; c_max_threads  ; 8     ; Signed Integer                                ;
+; c_dwidth       ; 32    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:07     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Oct 31 11:01:51 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Scheduler -c Scheduler
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file scheduler_interface.vhd
+    Info (12022): Found design unit 1: scheduler_interface-Structure
+    Info (12023): Found entity 1: scheduler_interface
+Info (12021): Found 2 design units, including 1 entities, in source file scheduler_adapter.vhd
+    Info (12022): Found design unit 1: scheduler_adapter-Structure
+    Info (12023): Found entity 1: scheduler_adapter
+Info (12021): Found 2 design units, including 1 entities, in source file scheduler.vhd
+    Info (12022): Found design unit 1: Scheduler-Behavioral
+    Info (12023): Found entity 1: Scheduler
+Info (12127): Elaborating entity "scheduler_interface" for the top level hierarchy
+Info (12128): Elaborating entity "scheduler_adapter" for hierarchy "scheduler_adapter:Adapter_block"
+Info (12128): Elaborating entity "Scheduler" for hierarchy "Scheduler:Scheduler_block"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2264 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 40 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 2191 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 512 megabytes
+    Info: Processing ended: Mon Oct 31 11:02:01 2016
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:10
+
+

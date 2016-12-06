@@ -1,0 +1,45 @@
+\section{Escalonador em Hardware}
+\label{sec:componente}
+% O que é um comp hib -> onde é usado -> 
+% como funciona um comp hib
+
+O funcionamento do escalonador baseia-se em guardar um 
+endereço de memória e a respectiva prioridade de cada tarefa. A prioridade é 
+definida pelo \textit{software} de acordo com uma política de escalonamento. Como a 
+política e o funcionamento do escalonador são conceitos isolados no EPOS, o componente pode 
+funcionar com a prioridade sendo passada por parâmetro, tornando o sistemas 
+flexível para uma implementação híbrida.
+
+Para permitir que ele tenha todas as funcionalidades de um escalonador em \textit{software}, os principais comandos executados pelo escalonador são:
+
+\begin{itemize}
+  \item \textit{Create}: cria uma nova thread no escalonador
+  \item \textit{Delete}: deleta uma thread do escalonador
+  \item \textit{Insert}: adiciona uma thread já criada a fila do escalonador
+  \item \textit{Remove}: remove uma thread da fila do escalonador
+  \item \textit{Update Running}: atualiza por prioridade qual é a thread em execução
+  \item \textit{Get ID}: retorna o endereço interno de uma thread no escalonador
+  \item \textit{Chosen}: retorna o endereço interno da thread executando
+  \item \textit{Size}: retorna o número de threads na fila de pronto
+\end{itemize}
+
+Há também comandos que permitem o controle de tempo da execução, que são:
+
+
+\begin{itemize}
+  \item \textit{Set quantum}: atualiza o valor do quantum
+  \item \textit{Reset ticks}: reinicia o contador de tempo restante
+  \item \textit{Interrupt acknowledge}: sinaliza que a interrupção foi reconhecida
+  \item \textit{Enable}: habilita que interrupções ocorram no fim do quantum
+  \item \textit{Disable}: desabilita as interrupções
+\end{itemize}
+
+Existem ainda outros comandos, mas são apenas especializações dos que já foram listados. 
+Quase todos os comandos executam em apenas um ciclo de relógio, com exceção daqueles que fazem 
+buscas em tabelas internas ou precisam de alguma configuração antes da execução. Os comandos 
+\textit{insert}, \textit{remove}, \textit{destroy} e \textit{Get ID} são exemplos que levam mais de um ciclo. 
+
+Foi adicionado ainda um comando para resetar a arquitetura de forma síncrona. Essa funcionalidade garante que o 
+bloco possa ser resetado individualmente via \textit{software}, não só na forma global do sistema. Tal adição foi 
+feita apenas para simplificar os testes de unidade, que assumem que o \textit{hardware} está entrando em operação no 
+começo do teste. Esse comando pode ser removido para a versão final do componente sem afetar seu funcionamento.

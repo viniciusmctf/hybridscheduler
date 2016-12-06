@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+\usepackage{graphicx,url}
+\usepackage{mathtools}
+\usepackage[utf8]{inputenc}  
+\usepackage[brazil]{babel}
+\usepackage[portuguese, onelanguage, ruled, linesnumbered]{algorithm2e}
+\usepackage{amssymb,amsmath,amsthm,amssymb}
+
+\newcommand{\lb}{\textit{PseudoDispersalLB}}
+
+\sloppy
+
+\title{Escalonador em Hardware com Interface Avalon}
+% A core-guided load-balancing algorithm prototype: PseudoDispersalLB
+
+\author{Luiz Henrique de Lorenzi Cancellier, Vinicius Marino Calvo Torres de Freitas}
+
+\address{Departamento de Informática e Estatística -- Universidade Federal de
+Santa Catarina\\
+Florianópolis -- SC -- Brasil
+\email{luizhenriquecancellier@gmail.com, vinicius.mctf@grad.ufsc.br}
+}
+
+\begin{document} 
+
+\maketitle
+     
+\begin{resumo} 
+
+    \input{sections/00-resumo}
+
+\end{resumo}
+
+%máximo de 10 linhas!
+
+\input{sections/01-introducao}
+\input{sections/02-componente}
+%\input{sections/03-funcionamento}
+\input{sections/04-interface}
+%\input{sections/05-aplicacao}
+\input{sections/06-testes}
+\input{sections/07-conclusao}
+
+\bibliographystyle{sbc}
+\bibliography{soii}
+
+\end{document}

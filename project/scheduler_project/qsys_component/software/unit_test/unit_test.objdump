@@ -1,0 +1,3257 @@
+
+unit_test.elf:     file format elf32-littlenios2
+unit_test.elf
+architecture: nios2, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00200140
+
+Program Header:
+    LOAD off    0x00001000 vaddr 0x00200000 paddr 0x00200000 align 2**12
+         filesz 0x00000020 memsz 0x00000020 flags r-x
+    LOAD off    0x00001020 vaddr 0x00200020 paddr 0x00200020 align 2**12
+         filesz 0x00001c60 memsz 0x00001c60 flags r-x
+    LOAD off    0x00002c80 vaddr 0x00201c80 paddr 0x00201c88 align 2**12
+         filesz 0x00000008 memsz 0x00000008 flags rw-
+    LOAD off    0x00002c90 vaddr 0x00201c90 paddr 0x00201c90 align 2**12
+         filesz 0x00000000 memsz 0x00000110 flags rw-
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .entry        00000020  00200000  00200000  00001000  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .exceptions   00000120  00200020  00200020  00001020  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .text         00001598  00200140  00200140  00001140  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .rodata       000005a8  002016d8  002016d8  000026d8  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .rwdata       00000008  00201c80  00201c88  00002c80  2**2
+                  CONTENTS, ALLOC, LOAD, DATA, SMALL_DATA
+  5 .bss          00000110  00201c90  00201c90  00002c90  2**2
+                  ALLOC, SMALL_DATA
+  6 .comment      00000026  00000000  00000000  00002c88  2**0
+                  CONTENTS, READONLY
+  7 .debug_aranges 00000278  00000000  00000000  00002cb0  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_pubnames 000003fa  00000000  00000000  00002f28  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_info   000018c2  00000000  00000000  00003322  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_abbrev 00000b0f  00000000  00000000  00004be4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_line   0000310a  00000000  00000000  000056f3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_frame  0000050c  00000000  00000000  00008800  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_str    0000080b  00000000  00000000  00008d0c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_loc    00000a31  00000000  00000000  00009517  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_alt_sim_info 00000030  00000000  00000000  00009f48  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 16 .debug_ranges 00000090  00000000  00000000  00009f78  2**3
+                  CONTENTS, READONLY, DEBUGGING
+ 17 .thread_model 00000003  00000000  00000000  0000b1bf  2**0
+                  CONTENTS, READONLY
+ 18 .cpu          0000000c  00000000  00000000  0000b1c2  2**0
+                  CONTENTS, READONLY
+ 19 .qsys         00000001  00000000  00000000  0000b1ce  2**0
+                  CONTENTS, READONLY
+ 20 .simulation_enabled 00000001  00000000  00000000  0000b1cf  2**0
+                  CONTENTS, READONLY
+ 21 .stderr_dev   0000000b  00000000  00000000  0000b1d0  2**0
+                  CONTENTS, READONLY
+ 22 .stdin_dev    0000000b  00000000  00000000  0000b1db  2**0
+                  CONTENTS, READONLY
+ 23 .stdout_dev   0000000b  00000000  00000000  0000b1e6  2**0
+                  CONTENTS, READONLY
+ 24 .sopc_system_name 0000000b  00000000  00000000  0000b1f1  2**0
+                  CONTENTS, READONLY
+ 25 .quartus_project_dir 0000004c  00000000  00000000  0000b1fc  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00200000 l    d  .entry	00000000 .entry
+00200020 l    d  .exceptions	00000000 .exceptions
+00200140 l    d  .text	00000000 .text
+002016d8 l    d  .rodata	00000000 .rodata
+00201c80 l    d  .rwdata	00000000 .rwdata
+00201c90 l    d  .bss	00000000 .bss
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_pubnames	00000000 .debug_pubnames
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_alt_sim_info	00000000 .debug_alt_sim_info
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00200188 l       .text	00000000 alt_after_alt_main
+00000000 l    df *ABS*	00000000 alt_irq_handler.c
+00000000 l    df *ABS*	00000000 main.c
+00200220 l     F .text	0000002c irqhandler_1
+00000000 l    df *ABS*	00000000 alt_irq_register.c
+00000000 l    df *ABS*	00000000 alt_irq_vars.c
+00000000 l    df *ABS*	00000000 alt_load.c
+00201378 l     F .text	00000020 alt_load_section
+00000000 l    df *ABS*	00000000 alt_main.c
+00000000 l    df *ABS*	00000000 alt_printf.c
+00000000 l    df *ABS*	00000000 alt_putchar.c
+00000000 l    df *ABS*	00000000 alt_putstr.c
+00000000 l    df *ABS*	00000000 alt_sys_init.c
+00000000 l    df *ABS*	00000000 altera_avalon_jtag_uart_write.c
+00000000 l    df *ABS*	00000000 alt_dcache_flush_all.c
+00000000 l    df *ABS*	00000000 alt_icache_flush_all.c
+00000000 l    df *ABS*	00000000 altera_nios2_qsys_irq.c
+00000000 l    df *ABS*	00000000 alt_icache_flush.c
+00000000 l    df *ABS*	00000000 strlen.c
+00201404 g     F .text	0000002c alt_main
+00201ca0 g     O .bss	00000100 alt_irq
+00201c88 g       *ABS*	00000000 __flash_rwdata_start
+00200d28 g     F .text	00000064 test_10
+00200b10 g     F .text	00000084 test_14
+0020090c g     F .text	000000b4 test_17
+002015c4 g     F .text	00000038 alt_putstr
+00200728 g     F .text	000000a8 test_20
+00200000 g     F .entry	0000001c __reset
+00200020 g       *ABS*	00000000 __flash_exceptions_start
+00201c98 g     O .bss	00000004 alt_argv
+00209c80 g       *ABS*	00000000 _gp
+00200b94 g     F .text	0000007c test_13
+00201080 g     F .text	0000009c test_3
+0020018c g     F .text	0000004c test_4
+00200580 g     F .text	000000c8 test_22
+00200f98 g     F .text	0000007c test_6
+00200000 g       *ABS*	00000000 __alt_mem_onchip_memory2_0
+00201680 g     F .text	00000038 alt_icache_flush
+002001d8 g     F .text	00000048 execute_cmd
+002007d0 g     F .text	00000098 test_19
+00200868 g     F .text	000000a4 test_18
+002012d8 g     F .text	000000a0 alt_irq_register
+002009c0 g     F .text	000000a8 test_16
+00201da0 g       *ABS*	00000000 __bss_end
+00201c90 g     O .bss	00000004 alt_irq_active
+002000ec g     F .exceptions	00000054 alt_irq_handler
+00201654 g     F .text	00000018 alt_dcache_flush_all
+00200380 g     F .text	000000bc test_25
+00201c88 g       *ABS*	00000000 __ram_rwdata_end
+00201c80 g       *ABS*	00000000 __ram_rodata_end
+00201c84 g     O .rwdata	00000004 jtag_uart_0
+00201da0 g       *ABS*	00000000 end
+00208000 g       *ABS*	00000000 __alt_stack_pointer
+00201620 g     F .text	00000034 altera_avalon_jtag_uart_write
+00201430 g     F .text	00000144 alt_printf
+00200140 g     F .text	0000004c _start
+0020111c g     F .text	000000a0 test_2
+00200e60 g     F .text	000000b8 test_8
+002015fc g     F .text	00000004 alt_sys_init
+00201c80 g       *ABS*	00000000 __ram_rwdata_start
+002016d8 g       *ABS*	00000000 __ram_rodata_start
+00201014 g     F .text	0000006c test_5
+00201da0 g       *ABS*	00000000 __alt_stack_base
+00200648 g     F .text	000000e0 test_21
+00201c90 g       *ABS*	00000000 __bss_start
+00201240 g     F .text	00000098 main
+00201c9c g     O .bss	00000004 alt_envp
+00200c10 g     F .text	00000064 test_12
+0020043c g     F .text	00000060 test_24
+002016d8 g       *ABS*	00000000 __flash_rodata_start
+00201600 g     F .text	00000020 alt_irq_init
+00201c94 g     O .bss	00000004 alt_argc
+00200020 g       .exceptions	00000000 alt_irq_entry
+00200020 g       *ABS*	00000000 __ram_exceptions_start
+00201c88 g       *ABS*	00000000 _edata
+00201da0 g       *ABS*	00000000 _end
+00200140 g       *ABS*	00000000 __ram_exceptions_end
+00201678 g     F .text	00000008 altera_nios2_qsys_irq_init
+0020001c g       .entry	00000000 exit
+002011bc g     F .text	00000084 test_1
+00200f18 g     F .text	00000080 test_7
+00200a68 g     F .text	000000a8 test_15
+0020049c g     F .text	000000e4 test_23
+00208000 g       *ABS*	00000000 __alt_data_end
+00200020 g     F .exceptions	00000000 alt_exception
+00200d8c g     F .text	000000d4 test_9
+0020001c g       .entry	00000000 _exit
+00200c74 g     F .text	000000b4 test_11
+002016b8 g     F .text	00000020 strlen
+0020024c g     F .text	00000134 test_26
+00201574 g     F .text	00000050 alt_putchar
+0020166c g     F .text	0000000c alt_icache_flush_all
+00201c80 g     O .rwdata	00000004 alt_priority_mask
+00201398 g     F .text	0000006c alt_load
+
+
+
+Disassembly of section .entry:
+
+00200000 <__reset>:
+  200000:	00840014 	movui	r2,4096
+  200004:	1001483a 	initi	r2
+  200008:	10bff804 	addi	r2,r2,-32
+  20000c:	00bffd16 	blt	zero,r2,200004 <__reset+0x4>
+  200010:	00400834 	movhi	at,32
+  200014:	08405014 	ori	at,at,320
+  200018:	0800683a 	jmp	at
+
+0020001c <_exit>:
+  20001c:	00000000 	call	0 <__reset-0x200000>
+
+Disassembly of section .exceptions:
+
+00200020 <alt_exception>:
+  200020:	deffed04 	addi	sp,sp,-76
+  200024:	dfc00015 	stw	ra,0(sp)
+  200028:	d8400215 	stw	at,8(sp)
+  20002c:	d8800315 	stw	r2,12(sp)
+  200030:	d8c00415 	stw	r3,16(sp)
+  200034:	d9000515 	stw	r4,20(sp)
+  200038:	d9400615 	stw	r5,24(sp)
+  20003c:	d9800715 	stw	r6,28(sp)
+  200040:	d9c00815 	stw	r7,32(sp)
+  200044:	000b307a 	rdctl	r5,estatus
+  200048:	da000915 	stw	r8,36(sp)
+  20004c:	da400a15 	stw	r9,40(sp)
+  200050:	da800b15 	stw	r10,44(sp)
+  200054:	dac00c15 	stw	r11,48(sp)
+  200058:	db000d15 	stw	r12,52(sp)
+  20005c:	db400e15 	stw	r13,56(sp)
+  200060:	db800f15 	stw	r14,60(sp)
+  200064:	dbc01015 	stw	r15,64(sp)
+  200068:	d9401115 	stw	r5,68(sp)
+  20006c:	ebffff04 	addi	r15,ea,-4
+  200070:	dbc01215 	stw	r15,72(sp)
+  200074:	0009313a 	rdctl	r4,ipending
+  200078:	2880004c 	andi	r2,r5,1
+  20007c:	10000326 	beq	r2,zero,20008c <alt_exception+0x6c>
+  200080:	20000226 	beq	r4,zero,20008c <alt_exception+0x6c>
+  200084:	02000ec0 	call	2000ec <alt_irq_handler>
+  200088:	00000306 	br	200098 <alt_exception+0x78>
+  20008c:	df401215 	stw	ea,72(sp)
+  200090:	e8bfff17 	ldw	r2,-4(ea)
+  200094:	003da03a 	break	0
+  200098:	d9401117 	ldw	r5,68(sp)
+  20009c:	df401217 	ldw	ea,72(sp)
+  2000a0:	dfc00017 	ldw	ra,0(sp)
+  2000a4:	2801707a 	wrctl	estatus,r5
+  2000a8:	d8400217 	ldw	at,8(sp)
+  2000ac:	d8800317 	ldw	r2,12(sp)
+  2000b0:	d8c00417 	ldw	r3,16(sp)
+  2000b4:	d9000517 	ldw	r4,20(sp)
+  2000b8:	d9400617 	ldw	r5,24(sp)
+  2000bc:	d9800717 	ldw	r6,28(sp)
+  2000c0:	d9c00817 	ldw	r7,32(sp)
+  2000c4:	da000917 	ldw	r8,36(sp)
+  2000c8:	da400a17 	ldw	r9,40(sp)
+  2000cc:	da800b17 	ldw	r10,44(sp)
+  2000d0:	dac00c17 	ldw	r11,48(sp)
+  2000d4:	db000d17 	ldw	r12,52(sp)
+  2000d8:	db400e17 	ldw	r13,56(sp)
+  2000dc:	db800f17 	ldw	r14,60(sp)
+  2000e0:	dbc01017 	ldw	r15,64(sp)
+  2000e4:	dec01304 	addi	sp,sp,76
+  2000e8:	ef80083a 	eret
+
+002000ec <alt_irq_handler>:
+  2000ec:	deffff04 	addi	sp,sp,-4
+  2000f0:	dfc00015 	stw	ra,0(sp)
+  2000f4:	0009313a 	rdctl	r4,ipending
+  2000f8:	00c00044 	movi	r3,1
+  2000fc:	01400834 	movhi	r5,32
+  200100:	29472804 	addi	r5,r5,7328
+  200104:	20c4703a 	and	r2,r4,r3
+  200108:	18c7883a 	add	r3,r3,r3
+  20010c:	10000726 	beq	r2,zero,20012c <alt_irq_handler+0x40>
+  200110:	29000117 	ldw	r4,4(r5)
+  200114:	28800017 	ldw	r2,0(r5)
+  200118:	103ee83a 	callr	r2
+  20011c:	0005313a 	rdctl	r2,ipending
+  200120:	10000426 	beq	r2,zero,200134 <alt_irq_handler+0x48>
+  200124:	1009883a 	mov	r4,r2
+  200128:	003ff306 	br	2000f8 <alt_irq_handler+0xc>
+  20012c:	29400204 	addi	r5,r5,8
+  200130:	003ff406 	br	200104 <alt_irq_handler+0x18>
+  200134:	dfc00017 	ldw	ra,0(sp)
+  200138:	dec00104 	addi	sp,sp,4
+  20013c:	f800283a 	ret
+
+Disassembly of section .text:
+
+00200140 <_start>:
+  200140:	00820014 	movui	r2,2048
+  200144:	10000033 	initd	0(r2)
+  200148:	10bff804 	addi	r2,r2,-32
+  20014c:	00bffd16 	blt	zero,r2,200144 <_start+0x4>
+  200150:	06c00834 	movhi	sp,32
+  200154:	dee00014 	ori	sp,sp,32768
+  200158:	06800834 	movhi	gp,32
+  20015c:	d6a72014 	ori	gp,gp,40064
+  200160:	00800834 	movhi	r2,32
+  200164:	10872414 	ori	r2,r2,7312
+  200168:	00c00834 	movhi	r3,32
+  20016c:	18c76814 	ori	r3,r3,7584
+  200170:	10c00326 	beq	r2,r3,200180 <_start+0x40>
+  200174:	10000015 	stw	zero,0(r2)
+  200178:	10800104 	addi	r2,r2,4
+  20017c:	10fffd36 	bltu	r2,r3,200174 <_start+0x34>
+  200180:	02013980 	call	201398 <alt_load>
+  200184:	02014040 	call	201404 <alt_main>
+
+00200188 <alt_after_alt_main>:
+  200188:	003fff06 	br	200188 <alt_after_alt_main>
+
+0020018c <test_4>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_4() {
+  20018c:	deffff04 	addi	sp,sp,-4
+	alt_putstr("\nTEST: 4\n");
+  200190:	01000834 	movhi	r4,32
+  200194:	2105b604 	addi	r4,r4,5848
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_4() {
+  200198:	dfc00015 	stw	ra,0(sp)
+	alt_putstr("\nTEST: 4\n");
+  20019c:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Check empty status ");
+  2001a0:	01000834 	movhi	r4,32
+  2001a4:	2105b904 	addi	r4,r4,5860
+  2001a8:	02015c40 	call	2015c4 <alt_putstr>
+	unsigned int status = IORD_32DIRECT(ADDR_STATUS, 0);
+  2001ac:	00800404 	movi	r2,16
+  2001b0:	10800037 	ldwio	r2,0(r2)
+	int empty = status & STAT_EMPTY;
+	if(empty == 2) {
+		alt_putstr("[TEST PASS]\n");
+  2001b4:	01000834 	movhi	r4,32
+  2001b8:	2105be04 	addi	r4,r4,5880
+void test_4() {
+	alt_putstr("\nTEST: 4\n");
+	alt_putstr("Check empty status ");
+	unsigned int status = IORD_32DIRECT(ADDR_STATUS, 0);
+	int empty = status & STAT_EMPTY;
+	if(empty == 2) {
+  2001bc:	1080008c 	andi	r2,r2,2
+  2001c0:	1000021e 	bne	r2,zero,2001cc <test_4+0x40>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  2001c4:	01000834 	movhi	r4,32
+  2001c8:	2105c204 	addi	r4,r4,5896
+	}
+}
+  2001cc:	dfc00017 	ldw	ra,0(sp)
+  2001d0:	dec00104 	addi	sp,sp,4
+	unsigned int status = IORD_32DIRECT(ADDR_STATUS, 0);
+	int empty = status & STAT_EMPTY;
+	if(empty == 2) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  2001d4:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+002001d8 <execute_cmd>:
+	ADDR_STATUS = 0x0010
+};
+
+int  execute_cmd(int cmd, int priority, int param){
+	//send command
+	IOWR_32DIRECT(ADDR_CMD, 0, cmd);
+  2001d8:	0005883a 	mov	r2,zero
+  2001dc:	11000035 	stwio	r4,0(r2)
+	IOWR_32DIRECT(ADDR_PRIORITY, 0, priority);
+  2001e0:	00800104 	movi	r2,4
+  2001e4:	11400035 	stwio	r5,0(r2)
+	IOWR_32DIRECT(ADDR_PARAM, 0, param);
+  2001e8:	00800204 	movi	r2,8
+  2001ec:	11800035 	stwio	r6,0(r2)
+  2001f0:	01000404 	movi	r4,16
+
+	//wait done
+	unsigned int status;
+	do {
+		status = IORD_32DIRECT(ADDR_STATUS, 0);
+  2001f4:	20c00037 	ldwio	r3,0(r4)
+	} while( (status & STAT_DONE) == 0);
+  2001f8:	1880020c 	andi	r2,r3,8
+  2001fc:	103ffd26 	beq	r2,zero,2001f4 <execute_cmd+0x1c>
+
+	if (status & STAT_ERROR) {
+  200200:	1880004c 	andi	r2,r3,1
+  200204:	1005003a 	cmpeq	r2,r2,zero
+  200208:	1000021e 	bne	r2,zero,200214 <execute_cmd+0x3c>
+  20020c:	00bfffc4 	movi	r2,-1
+  200210:	f800283a 	ret
+		return -1;
+	}
+	//se necessário, tratar status co contexto de quem invocou este método.
+	return IORD_32DIRECT(ADDR_RETURN, 0);
+  200214:	00800304 	movi	r2,12
+  200218:	10800037 	ldwio	r2,0(r2)
+}
+  20021c:	f800283a 	ret
+
+00200220 <irqhandler_1>:
+		alt_putstr("[TEST FAIL - 3]\n");
+	}
+}
+
+static void irqhandler_1 (void *context, alt_u32 id)
+{
+  200220:	deffff04 	addi	sp,sp,-4
+	execute_cmd(CMD_INT_ACK, 0, 0);
+  200224:	01000284 	movi	r4,10
+  200228:	000b883a 	mov	r5,zero
+  20022c:	000d883a 	mov	r6,zero
+		alt_putstr("[TEST FAIL - 3]\n");
+	}
+}
+
+static void irqhandler_1 (void *context, alt_u32 id)
+{
+  200230:	dfc00015 	stw	ra,0(sp)
+	execute_cmd(CMD_INT_ACK, 0, 0);
+  200234:	02001d80 	call	2001d8 <execute_cmd>
+	alt_printf ("\n=================\ninterrupt occurred\n=================\n");
+  200238:	01000834 	movhi	r4,32
+  20023c:	2105c604 	addi	r4,r4,5912
+}
+  200240:	dfc00017 	ldw	ra,0(sp)
+  200244:	dec00104 	addi	sp,sp,4
+}
+
+static void irqhandler_1 (void *context, alt_u32 id)
+{
+	execute_cmd(CMD_INT_ACK, 0, 0);
+	alt_printf ("\n=================\ninterrupt occurred\n=================\n");
+  200248:	02014301 	jmpi	201430 <alt_printf>
+
+0020024c <test_26>:
+	} else {
+		alt_putstr("[TEST FAIL - 2]\n");
+	}
+}
+
+void test_26() {
+  20024c:	defffa04 	addi	sp,sp,-24
+	alt_putstr("\nTEST: 26\n");
+  200250:	01000834 	movhi	r4,32
+  200254:	2105d504 	addi	r4,r4,5972
+	} else {
+		alt_putstr("[TEST FAIL - 2]\n");
+	}
+}
+
+void test_26() {
+  200258:	dfc00515 	stw	ra,20(sp)
+  20025c:	dd000415 	stw	r20,16(sp)
+  200260:	dcc00315 	stw	r19,12(sp)
+  200264:	dc800215 	stw	r18,8(sp)
+  200268:	dc000015 	stw	r16,0(sp)
+  20026c:	dc400115 	stw	r17,4(sp)
+	alt_putstr("\nTEST: 26\n");
+  200270:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Update Running change running thread");
+  200274:	01000834 	movhi	r4,32
+  200278:	2105d804 	addi	r4,r4,5984
+  20027c:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  200280:	000b883a 	mov	r5,zero
+  200284:	010003c4 	movi	r4,15
+  200288:	000d883a 	mov	r6,zero
+  20028c:	02001d80 	call	2001d8 <execute_cmd>
+
+	int address_a = 100;
+	int address_b = 200;
+	int ret = 0;
+	int tid_a = execute_cmd(CMD_CREATE, 1, address_a);
+  200290:	05001904 	movi	r20,100
+  200294:	01000044 	movi	r4,1
+  200298:	200b883a 	mov	r5,r4
+  20029c:	a00d883a 	mov	r6,r20
+  2002a0:	02001d80 	call	2001d8 <execute_cmd>
+	ret = execute_cmd(CMD_INSERT, 1, tid_a);
+  2002a4:	100d883a 	mov	r6,r2
+  2002a8:	010000c4 	movi	r4,3
+  2002ac:	01400044 	movi	r5,1
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL - 1]\n");
+		return;
+	}
+
+	int tid_b = execute_cmd(CMD_CREATE, 1, address_b);
+  2002b0:	04c03204 	movi	r19,200
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int address_a = 100;
+	int address_b = 200;
+	int ret = 0;
+	int tid_a = execute_cmd(CMD_CREATE, 1, address_a);
+  2002b4:	1021883a 	mov	r16,r2
+	ret = execute_cmd(CMD_INSERT, 1, tid_a);
+	if(ret == -1) {
+  2002b8:	04bfffc4 	movi	r18,-1
+
+	int address_a = 100;
+	int address_b = 200;
+	int ret = 0;
+	int tid_a = execute_cmd(CMD_CREATE, 1, address_a);
+	ret = execute_cmd(CMD_INSERT, 1, tid_a);
+  2002bc:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL - 1]\n");
+		return;
+	}
+
+	int tid_b = execute_cmd(CMD_CREATE, 1, address_b);
+  2002c0:	01000044 	movi	r4,1
+  2002c4:	200b883a 	mov	r5,r4
+  2002c8:	980d883a 	mov	r6,r19
+	int address_a = 100;
+	int address_b = 200;
+	int ret = 0;
+	int tid_a = execute_cmd(CMD_CREATE, 1, address_a);
+	ret = execute_cmd(CMD_INSERT, 1, tid_a);
+	if(ret == -1) {
+  2002cc:	1480031e 	bne	r2,r18,2002dc <test_26+0x90>
+		alt_putstr("[TEST FAIL - 1]\n");
+  2002d0:	01000834 	movhi	r4,32
+  2002d4:	2105e204 	addi	r4,r4,6024
+  2002d8:	00000c06 	br	20030c <test_26+0xc0>
+		return;
+	}
+
+	int tid_b = execute_cmd(CMD_CREATE, 1, address_b);
+  2002dc:	02001d80 	call	2001d8 <execute_cmd>
+	ret = execute_cmd(CMD_INSERT, 1, tid_b);
+  2002e0:	100d883a 	mov	r6,r2
+  2002e4:	010000c4 	movi	r4,3
+  2002e8:	01400044 	movi	r5,1
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL - 1]\n");
+		return;
+	}
+
+	int tid_b = execute_cmd(CMD_CREATE, 1, address_b);
+  2002ec:	1023883a 	mov	r17,r2
+	ret = execute_cmd(CMD_INSERT, 1, tid_b);
+  2002f0:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL - 2]\n");
+		return;
+	}
+
+	execute_cmd(CMD_UPDATE_RUNNING, 0, tid_a);
+  2002f4:	800d883a 	mov	r6,r16
+  2002f8:	01000184 	movi	r4,6
+  2002fc:	000b883a 	mov	r5,zero
+		return;
+	}
+
+	int tid_b = execute_cmd(CMD_CREATE, 1, address_b);
+	ret = execute_cmd(CMD_INSERT, 1, tid_b);
+	if(ret == -1) {
+  200300:	14800a1e 	bne	r2,r18,20032c <test_26+0xe0>
+		alt_putstr("[TEST FAIL - 2]\n");
+  200304:	01000834 	movhi	r4,32
+  200308:	2105e704 	addi	r4,r4,6044
+	if(address_a == running_a && address_b == running_b) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL - 3]\n");
+	}
+}
+  20030c:	dfc00517 	ldw	ra,20(sp)
+  200310:	dd000417 	ldw	r20,16(sp)
+  200314:	dcc00317 	ldw	r19,12(sp)
+  200318:	dc800217 	ldw	r18,8(sp)
+  20031c:	dc400117 	ldw	r17,4(sp)
+  200320:	dc000017 	ldw	r16,0(sp)
+  200324:	dec00604 	addi	sp,sp,24
+	}
+
+	int tid_b = execute_cmd(CMD_CREATE, 1, address_b);
+	ret = execute_cmd(CMD_INSERT, 1, tid_b);
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL - 2]\n");
+  200328:	02015c41 	jmpi	2015c4 <alt_putstr>
+		return;
+	}
+
+	execute_cmd(CMD_UPDATE_RUNNING, 0, tid_a);
+  20032c:	02001d80 	call	2001d8 <execute_cmd>
+	int running_a = execute_cmd(CMD_CHOSEN, 0, 0);
+  200330:	01000304 	movi	r4,12
+  200334:	000b883a 	mov	r5,zero
+  200338:	000d883a 	mov	r6,zero
+  20033c:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_UPDATE_RUNNING, 0, tid_b);
+  200340:	880d883a 	mov	r6,r17
+  200344:	01000184 	movi	r4,6
+  200348:	000b883a 	mov	r5,zero
+		alt_putstr("[TEST FAIL - 2]\n");
+		return;
+	}
+
+	execute_cmd(CMD_UPDATE_RUNNING, 0, tid_a);
+	int running_a = execute_cmd(CMD_CHOSEN, 0, 0);
+  20034c:	1021883a 	mov	r16,r2
+	execute_cmd(CMD_UPDATE_RUNNING, 0, tid_b);
+  200350:	02001d80 	call	2001d8 <execute_cmd>
+	int running_b = execute_cmd(CMD_CHOSEN, 0, 0);
+  200354:	01000304 	movi	r4,12
+  200358:	000b883a 	mov	r5,zero
+  20035c:	000d883a 	mov	r6,zero
+  200360:	02001d80 	call	2001d8 <execute_cmd>
+	if(address_a == running_a && address_b == running_b) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL - 3]\n");
+  200364:	01000834 	movhi	r4,32
+  200368:	2105ec04 	addi	r4,r4,6064
+
+	execute_cmd(CMD_UPDATE_RUNNING, 0, tid_a);
+	int running_a = execute_cmd(CMD_CHOSEN, 0, 0);
+	execute_cmd(CMD_UPDATE_RUNNING, 0, tid_b);
+	int running_b = execute_cmd(CMD_CHOSEN, 0, 0);
+	if(address_a == running_a && address_b == running_b) {
+  20036c:	853fe71e 	bne	r16,r20,20030c <test_26+0xc0>
+  200370:	14ffe61e 	bne	r2,r19,20030c <test_26+0xc0>
+		alt_putstr("[TEST PASS]\n");
+  200374:	01000834 	movhi	r4,32
+  200378:	2105be04 	addi	r4,r4,5880
+  20037c:	003fe306 	br	20030c <test_26+0xc0>
+
+00200380 <test_25>:
+	} else {
+		alt_putstr("[TEST FAIL - 1]\n");
+	}
+}
+
+void test_25() {
+  200380:	defffd04 	addi	sp,sp,-12
+	alt_putstr("\nTEST: 25\n");
+  200384:	01000834 	movhi	r4,32
+  200388:	2105f104 	addi	r4,r4,6084
+	} else {
+		alt_putstr("[TEST FAIL - 1]\n");
+	}
+}
+
+void test_25() {
+  20038c:	dfc00215 	stw	ra,8(sp)
+  200390:	dc400115 	stw	r17,4(sp)
+  200394:	dc000015 	stw	r16,0(sp)
+	alt_putstr("\nTEST: 25\n");
+  200398:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("choose return running thread address ");
+  20039c:	01000834 	movhi	r4,32
+  2003a0:	2105f404 	addi	r4,r4,6096
+  2003a4:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  2003a8:	000b883a 	mov	r5,zero
+  2003ac:	010003c4 	movi	r4,15
+  2003b0:	000d883a 	mov	r6,zero
+  2003b4:	02001d80 	call	2001d8 <execute_cmd>
+
+	int address = 100;
+	int ret = 0;
+	int tid = execute_cmd(CMD_CREATE, 1, address);
+  2003b8:	04401904 	movi	r17,100
+  2003bc:	01000044 	movi	r4,1
+  2003c0:	200b883a 	mov	r5,r4
+  2003c4:	880d883a 	mov	r6,r17
+  2003c8:	02001d80 	call	2001d8 <execute_cmd>
+	ret = execute_cmd(CMD_INSERT, 1, tid);
+  2003cc:	100d883a 	mov	r6,r2
+  2003d0:	010000c4 	movi	r4,3
+  2003d4:	01400044 	movi	r5,1
+	alt_putstr("choose return running thread address ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int address = 100;
+	int ret = 0;
+	int tid = execute_cmd(CMD_CREATE, 1, address);
+  2003d8:	1021883a 	mov	r16,r2
+	ret = execute_cmd(CMD_INSERT, 1, tid);
+  2003dc:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+  2003e0:	00ffffc4 	movi	r3,-1
+		alt_putstr("[TEST FAIL - 1]\n");
+		return;
+	}
+	execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+  2003e4:	800d883a 	mov	r6,r16
+  2003e8:	01000184 	movi	r4,6
+  2003ec:	000b883a 	mov	r5,zero
+
+	int address = 100;
+	int ret = 0;
+	int tid = execute_cmd(CMD_CREATE, 1, address);
+	ret = execute_cmd(CMD_INSERT, 1, tid);
+	if(ret == -1) {
+  2003f0:	10c0031e 	bne	r2,r3,200400 <test_25+0x80>
+		alt_putstr("[TEST FAIL - 1]\n");
+  2003f4:	01000834 	movhi	r4,32
+  2003f8:	2105e204 	addi	r4,r4,6024
+  2003fc:	00000a06 	br	200428 <test_25+0xa8>
+		return;
+	}
+	execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+  200400:	02001d80 	call	2001d8 <execute_cmd>
+	ret = execute_cmd(CMD_CHOSEN, 0, 0);
+  200404:	01000304 	movi	r4,12
+  200408:	000b883a 	mov	r5,zero
+  20040c:	000d883a 	mov	r6,zero
+  200410:	02001d80 	call	2001d8 <execute_cmd>
+
+	if(ret == address) {
+		alt_putstr("[TEST PASS]\n");
+  200414:	01000834 	movhi	r4,32
+  200418:	2105be04 	addi	r4,r4,5880
+		return;
+	}
+	execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+	ret = execute_cmd(CMD_CHOSEN, 0, 0);
+
+	if(ret == address) {
+  20041c:	14400226 	beq	r2,r17,200428 <test_25+0xa8>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL - 2]\n");
+  200420:	01000834 	movhi	r4,32
+  200424:	2105e704 	addi	r4,r4,6044
+	}
+}
+  200428:	dfc00217 	ldw	ra,8(sp)
+  20042c:	dc400117 	ldw	r17,4(sp)
+  200430:	dc000017 	ldw	r16,0(sp)
+  200434:	dec00304 	addi	sp,sp,12
+	ret = execute_cmd(CMD_CHOSEN, 0, 0);
+
+	if(ret == address) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL - 2]\n");
+  200438:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+0020043c <test_24>:
+	} else {
+		alt_putstr("[TEST FAIL - 3]\n");
+	}
+}
+
+void test_24() {
+  20043c:	deffff04 	addi	sp,sp,-4
+	alt_putstr("\nTEST: 24\n");
+  200440:	01000834 	movhi	r4,32
+  200444:	2105fe04 	addi	r4,r4,6136
+	} else {
+		alt_putstr("[TEST FAIL - 3]\n");
+	}
+}
+
+void test_24() {
+  200448:	dfc00015 	stw	ra,0(sp)
+	alt_putstr("\nTEST: 24\n");
+  20044c:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("choose return 0 when no thread is running ");
+  200450:	01000834 	movhi	r4,32
+  200454:	21060104 	addi	r4,r4,6148
+  200458:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  20045c:	000b883a 	mov	r5,zero
+  200460:	010003c4 	movi	r4,15
+  200464:	000d883a 	mov	r6,zero
+  200468:	02001d80 	call	2001d8 <execute_cmd>
+
+	int ret = execute_cmd(CMD_CHOSEN, 0, 0);
+  20046c:	01000304 	movi	r4,12
+  200470:	000b883a 	mov	r5,zero
+  200474:	000d883a 	mov	r6,zero
+  200478:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == 0) {
+		alt_putstr("[TEST PASS]\n");
+  20047c:	01000834 	movhi	r4,32
+  200480:	2105be04 	addi	r4,r4,5880
+	alt_putstr("\nTEST: 24\n");
+	alt_putstr("choose return 0 when no thread is running ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int ret = execute_cmd(CMD_CHOSEN, 0, 0);
+	if(ret == 0) {
+  200484:	10000226 	beq	r2,zero,200490 <test_24+0x54>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL - 1]\n");
+  200488:	01000834 	movhi	r4,32
+  20048c:	2105e204 	addi	r4,r4,6024
+	}
+}
+  200490:	dfc00017 	ldw	ra,0(sp)
+  200494:	dec00104 	addi	sp,sp,4
+
+	int ret = execute_cmd(CMD_CHOSEN, 0, 0);
+	if(ret == 0) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL - 1]\n");
+  200498:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+0020049c <test_23>:
+	} else {
+		alt_putstr("[TEST FAIL - 3]\n");
+	}
+}
+
+void test_23() {
+  20049c:	defffc04 	addi	sp,sp,-16
+	alt_putstr("\nTEST: 23\n");
+  2004a0:	01000834 	movhi	r4,32
+  2004a4:	21060c04 	addi	r4,r4,6192
+	} else {
+		alt_putstr("[TEST FAIL - 3]\n");
+	}
+}
+
+void test_23() {
+  2004a8:	dfc00315 	stw	ra,12(sp)
+  2004ac:	dc800215 	stw	r18,8(sp)
+  2004b0:	dc000015 	stw	r16,0(sp)
+  2004b4:	dc400115 	stw	r17,4(sp)
+	alt_putstr("\nTEST: 23\n");
+  2004b8:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Remove not inserted thread don't change Size");
+  2004bc:	01000834 	movhi	r4,32
+  2004c0:	21060f04 	addi	r4,r4,6204
+  2004c4:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  2004c8:	000b883a 	mov	r5,zero
+  2004cc:	010003c4 	movi	r4,15
+  2004d0:	000d883a 	mov	r6,zero
+  2004d4:	02001d80 	call	2001d8 <execute_cmd>
+
+	int address = 100;
+	int ret = 0;
+	int tid = execute_cmd(CMD_CREATE, 1, address);
+  2004d8:	01000044 	movi	r4,1
+  2004dc:	200b883a 	mov	r5,r4
+  2004e0:	01801904 	movi	r6,100
+  2004e4:	02001d80 	call	2001d8 <execute_cmd>
+	ret = execute_cmd(CMD_INSERT, 1, tid);
+  2004e8:	100d883a 	mov	r6,r2
+  2004ec:	010000c4 	movi	r4,3
+  2004f0:	01400044 	movi	r5,1
+	alt_putstr("Remove not inserted thread don't change Size");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int address = 100;
+	int ret = 0;
+	int tid = execute_cmd(CMD_CREATE, 1, address);
+  2004f4:	1021883a 	mov	r16,r2
+	ret = execute_cmd(CMD_INSERT, 1, tid);
+	if(ret == -1) {
+  2004f8:	04bfffc4 	movi	r18,-1
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int address = 100;
+	int ret = 0;
+	int tid = execute_cmd(CMD_CREATE, 1, address);
+	ret = execute_cmd(CMD_INSERT, 1, tid);
+  2004fc:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL - 1]\n");
+		return;
+	}
+	int size1 = execute_cmd(CMD_SIZE, 0, 0);
+  200500:	01000344 	movi	r4,13
+  200504:	000b883a 	mov	r5,zero
+  200508:	000d883a 	mov	r6,zero
+
+	int address = 100;
+	int ret = 0;
+	int tid = execute_cmd(CMD_CREATE, 1, address);
+	ret = execute_cmd(CMD_INSERT, 1, tid);
+	if(ret == -1) {
+  20050c:	1480031e 	bne	r2,r18,20051c <test_23+0x80>
+		alt_putstr("[TEST FAIL - 1]\n");
+  200510:	01000834 	movhi	r4,32
+  200514:	2105e204 	addi	r4,r4,6024
+  200518:	00000c06 	br	20054c <test_23+0xb0>
+		return;
+	}
+	int size1 = execute_cmd(CMD_SIZE, 0, 0);
+  20051c:	02001d80 	call	2001d8 <execute_cmd>
+
+	ret = execute_cmd(CMD_REMOVE, 0, tid-1);
+  200520:	81bfffc4 	addi	r6,r16,-1
+  200524:	01000104 	movi	r4,4
+  200528:	000b883a 	mov	r5,zero
+	ret = execute_cmd(CMD_INSERT, 1, tid);
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL - 1]\n");
+		return;
+	}
+	int size1 = execute_cmd(CMD_SIZE, 0, 0);
+  20052c:	1023883a 	mov	r17,r2
+
+	ret = execute_cmd(CMD_REMOVE, 0, tid-1);
+  200530:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL - 2]\n");
+		return;
+	}
+
+	int size2 = execute_cmd(CMD_SIZE, 0, 0);
+  200534:	01000344 	movi	r4,13
+  200538:	000b883a 	mov	r5,zero
+  20053c:	000d883a 	mov	r6,zero
+		return;
+	}
+	int size1 = execute_cmd(CMD_SIZE, 0, 0);
+
+	ret = execute_cmd(CMD_REMOVE, 0, tid-1);
+	if(ret == -1) {
+  200540:	1480081e 	bne	r2,r18,200564 <test_23+0xc8>
+		alt_putstr("[TEST FAIL - 2]\n");
+  200544:	01000834 	movhi	r4,32
+  200548:	2105e704 	addi	r4,r4,6044
+	if(size1 == size2) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL - 3]\n");
+	}
+}
+  20054c:	dfc00317 	ldw	ra,12(sp)
+  200550:	dc800217 	ldw	r18,8(sp)
+  200554:	dc400117 	ldw	r17,4(sp)
+  200558:	dc000017 	ldw	r16,0(sp)
+  20055c:	dec00404 	addi	sp,sp,16
+	}
+	int size1 = execute_cmd(CMD_SIZE, 0, 0);
+
+	ret = execute_cmd(CMD_REMOVE, 0, tid-1);
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL - 2]\n");
+  200560:	02015c41 	jmpi	2015c4 <alt_putstr>
+		return;
+	}
+
+	int size2 = execute_cmd(CMD_SIZE, 0, 0);
+  200564:	02001d80 	call	2001d8 <execute_cmd>
+
+	if(size1 == size2) {
+		alt_putstr("[TEST PASS]\n");
+  200568:	01000834 	movhi	r4,32
+  20056c:	2105be04 	addi	r4,r4,5880
+		return;
+	}
+
+	int size2 = execute_cmd(CMD_SIZE, 0, 0);
+
+	if(size1 == size2) {
+  200570:	88bff626 	beq	r17,r2,20054c <test_23+0xb0>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL - 3]\n");
+  200574:	01000834 	movhi	r4,32
+  200578:	2105ec04 	addi	r4,r4,6064
+  20057c:	003ff306 	br	20054c <test_23+0xb0>
+
+00200580 <test_22>:
+
+	alt_putstr("\n[DONE]\n");
+		while(1);
+}
+
+void test_22() {
+  200580:	defffd04 	addi	sp,sp,-12
+	alt_putstr("\nTEST: 22\n");
+  200584:	01000834 	movhi	r4,32
+  200588:	21061b04 	addi	r4,r4,6252
+
+	alt_putstr("\n[DONE]\n");
+		while(1);
+}
+
+void test_22() {
+  20058c:	dfc00215 	stw	ra,8(sp)
+  200590:	dc400115 	stw	r17,4(sp)
+  200594:	dc000015 	stw	r16,0(sp)
+	alt_putstr("\nTEST: 22\n");
+  200598:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Remove inserted thread ");
+  20059c:	01000834 	movhi	r4,32
+  2005a0:	21061e04 	addi	r4,r4,6264
+  2005a4:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  2005a8:	000b883a 	mov	r5,zero
+  2005ac:	010003c4 	movi	r4,15
+  2005b0:	000d883a 	mov	r6,zero
+  2005b4:	02001d80 	call	2001d8 <execute_cmd>
+
+	int address = 100;
+	int ret = 0;
+	int tid = execute_cmd(CMD_CREATE, 1, address);
+  2005b8:	01000044 	movi	r4,1
+  2005bc:	200b883a 	mov	r5,r4
+  2005c0:	01801904 	movi	r6,100
+  2005c4:	02001d80 	call	2001d8 <execute_cmd>
+	ret = execute_cmd(CMD_INSERT, 1, tid);
+  2005c8:	100d883a 	mov	r6,r2
+  2005cc:	010000c4 	movi	r4,3
+  2005d0:	01400044 	movi	r5,1
+	alt_putstr("Remove inserted thread ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int address = 100;
+	int ret = 0;
+	int tid = execute_cmd(CMD_CREATE, 1, address);
+  2005d4:	1021883a 	mov	r16,r2
+	ret = execute_cmd(CMD_INSERT, 1, tid);
+	if(ret == -1) {
+  2005d8:	047fffc4 	movi	r17,-1
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int address = 100;
+	int ret = 0;
+	int tid = execute_cmd(CMD_CREATE, 1, address);
+	ret = execute_cmd(CMD_INSERT, 1, tid);
+  2005dc:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL - 1]\n");
+		return;
+	}
+
+	ret = execute_cmd(CMD_REMOVE, 0, tid);
+  2005e0:	01000104 	movi	r4,4
+  2005e4:	000b883a 	mov	r5,zero
+  2005e8:	800d883a 	mov	r6,r16
+
+	int address = 100;
+	int ret = 0;
+	int tid = execute_cmd(CMD_CREATE, 1, address);
+	ret = execute_cmd(CMD_INSERT, 1, tid);
+	if(ret == -1) {
+  2005ec:	1440031e 	bne	r2,r17,2005fc <test_22+0x7c>
+		alt_putstr("[TEST FAIL - 1]\n");
+  2005f0:	01000834 	movhi	r4,32
+  2005f4:	2105e204 	addi	r4,r4,6024
+  2005f8:	00000706 	br	200618 <test_22+0x98>
+		return;
+	}
+
+	ret = execute_cmd(CMD_REMOVE, 0, tid);
+  2005fc:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL - 2]\n");
+		return;
+	}
+
+	ret = execute_cmd(CMD_GETID, 0, address);
+  200600:	010002c4 	movi	r4,11
+  200604:	000b883a 	mov	r5,zero
+  200608:	01801904 	movi	r6,100
+		alt_putstr("[TEST FAIL - 1]\n");
+		return;
+	}
+
+	ret = execute_cmd(CMD_REMOVE, 0, tid);
+	if(ret == -1) {
+  20060c:	1440071e 	bne	r2,r17,20062c <test_22+0xac>
+		alt_putstr("[TEST FAIL - 2]\n");
+  200610:	01000834 	movhi	r4,32
+  200614:	2105e704 	addi	r4,r4,6044
+	if(ret == tid) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL - 3]\n");
+	}
+}
+  200618:	dfc00217 	ldw	ra,8(sp)
+  20061c:	dc400117 	ldw	r17,4(sp)
+  200620:	dc000017 	ldw	r16,0(sp)
+  200624:	dec00304 	addi	sp,sp,12
+		return;
+	}
+
+	ret = execute_cmd(CMD_REMOVE, 0, tid);
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL - 2]\n");
+  200628:	02015c41 	jmpi	2015c4 <alt_putstr>
+		return;
+	}
+
+	ret = execute_cmd(CMD_GETID, 0, address);
+  20062c:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == tid) {
+		alt_putstr("[TEST PASS]\n");
+  200630:	01000834 	movhi	r4,32
+  200634:	2105be04 	addi	r4,r4,5880
+		alt_putstr("[TEST FAIL - 2]\n");
+		return;
+	}
+
+	ret = execute_cmd(CMD_GETID, 0, address);
+	if(ret == tid) {
+  200638:	143ff726 	beq	r2,r16,200618 <test_22+0x98>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL - 3]\n");
+  20063c:	01000834 	movhi	r4,32
+  200640:	2105ec04 	addi	r4,r4,6064
+  200644:	003ff406 	br	200618 <test_22+0x98>
+
+00200648 <test_21>:
+	execute_cmd(CMD_INSERT, 1, tid);
+	alt_putstr("\n[DONE]\n");
+	while(1);
+}
+
+void test_21() {
+  200648:	defffe04 	addi	sp,sp,-8
+	alt_putstr("\nTEST: 21\n");
+  20064c:	01000834 	movhi	r4,32
+  200650:	21062404 	addi	r4,r4,6288
+	execute_cmd(CMD_INSERT, 1, tid);
+	alt_putstr("\n[DONE]\n");
+	while(1);
+}
+
+void test_21() {
+  200654:	dfc00115 	stw	ra,4(sp)
+  200658:	dc000015 	stw	r16,0(sp)
+	alt_putstr("\nTEST: 21\n");
+  20065c:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Set to lower quantum ");
+  200660:	01000834 	movhi	r4,32
+  200664:	21062704 	addi	r4,r4,6300
+  200668:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  20066c:	000b883a 	mov	r5,zero
+  200670:	010003c4 	movi	r4,15
+  200674:	000d883a 	mov	r6,zero
+  200678:	02001d80 	call	2001d8 <execute_cmd>
+
+	execute_cmd(CMD_ENABLE, 0, 0);
+  20067c:	01000204 	movi	r4,8
+  200680:	000b883a 	mov	r5,zero
+  200684:	000d883a 	mov	r6,zero
+  200688:	02001d80 	call	2001d8 <execute_cmd>
+	int tid = execute_cmd(CMD_CREATE, 2, 100);
+  20068c:	01000044 	movi	r4,1
+  200690:	01400084 	movi	r5,2
+  200694:	01801904 	movi	r6,100
+  200698:	02001d80 	call	2001d8 <execute_cmd>
+  20069c:	1021883a 	mov	r16,r2
+	execute_cmd(CMD_INSERT, 2, tid);
+  2006a0:	010000c4 	movi	r4,3
+  2006a4:	01400084 	movi	r5,2
+  2006a8:	100d883a 	mov	r6,r2
+  2006ac:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+  2006b0:	800d883a 	mov	r6,r16
+  2006b4:	01000184 	movi	r4,6
+  2006b8:	000b883a 	mov	r5,zero
+  2006bc:	02001d80 	call	2001d8 <execute_cmd>
+	tid = execute_cmd(CMD_CREATE, 1, 200);
+  2006c0:	01000044 	movi	r4,1
+  2006c4:	200b883a 	mov	r5,r4
+  2006c8:	01803204 	movi	r6,200
+  2006cc:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_INSERT, 1, tid);
+  2006d0:	100d883a 	mov	r6,r2
+  2006d4:	010000c4 	movi	r4,3
+  2006d8:	01400044 	movi	r5,1
+  2006dc:	02001d80 	call	2001d8 <execute_cmd>
+
+	int ret = execute_cmd(CMD_SET_QUANTUM, 0, 50000000);
+  2006e0:	010001c4 	movi	r4,7
+  2006e4:	000b883a 	mov	r5,zero
+  2006e8:	0180bef4 	movhi	r6,763
+  2006ec:	31bc2004 	addi	r6,r6,-3968
+  2006f0:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+  2006f4:	00ffffc4 	movi	r3,-1
+  2006f8:	10c0031e 	bne	r2,r3,200708 <test_21+0xc0>
+		alt_putstr("[TEST FAIL]\n");
+  2006fc:	01000834 	movhi	r4,32
+  200700:	2105c204 	addi	r4,r4,5896
+  200704:	02015c40 	call	2015c4 <alt_putstr>
+	}
+	execute_cmd(CMD_RSTICKS, 0, 0);
+  200708:	01000384 	movi	r4,14
+  20070c:	000b883a 	mov	r5,zero
+  200710:	000d883a 	mov	r6,zero
+  200714:	02001d80 	call	2001d8 <execute_cmd>
+
+	alt_putstr("\n[DONE]\n");
+  200718:	01000834 	movhi	r4,32
+  20071c:	21062d04 	addi	r4,r4,6324
+  200720:	02015c40 	call	2015c4 <alt_putstr>
+  200724:	003fff06 	br	200724 <test_21+0xdc>
+
+00200728 <test_20>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_20() {
+  200728:	defffe04 	addi	sp,sp,-8
+	alt_putstr("\nTEST: 20\n");
+  20072c:	01000834 	movhi	r4,32
+  200730:	21063004 	addi	r4,r4,6336
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_20() {
+  200734:	dfc00115 	stw	ra,4(sp)
+  200738:	dc000015 	stw	r16,0(sp)
+	alt_putstr("\nTEST: 20\n");
+  20073c:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Interrupt occurs after enable and another is waiting ");
+  200740:	01000834 	movhi	r4,32
+  200744:	21063304 	addi	r4,r4,6348
+  200748:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  20074c:	000b883a 	mov	r5,zero
+  200750:	010003c4 	movi	r4,15
+  200754:	000d883a 	mov	r6,zero
+  200758:	02001d80 	call	2001d8 <execute_cmd>
+
+	execute_cmd(CMD_ENABLE, 0, 0);
+  20075c:	01000204 	movi	r4,8
+  200760:	000b883a 	mov	r5,zero
+  200764:	000d883a 	mov	r6,zero
+  200768:	02001d80 	call	2001d8 <execute_cmd>
+	int tid = execute_cmd(CMD_CREATE, 2, 100);
+  20076c:	01000044 	movi	r4,1
+  200770:	01400084 	movi	r5,2
+  200774:	01801904 	movi	r6,100
+  200778:	02001d80 	call	2001d8 <execute_cmd>
+  20077c:	1021883a 	mov	r16,r2
+	execute_cmd(CMD_INSERT, 2, tid);
+  200780:	010000c4 	movi	r4,3
+  200784:	01400084 	movi	r5,2
+  200788:	100d883a 	mov	r6,r2
+  20078c:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_UPDATE_RUNNING, 0, tid);
+  200790:	800d883a 	mov	r6,r16
+  200794:	01000184 	movi	r4,6
+  200798:	000b883a 	mov	r5,zero
+  20079c:	02001d80 	call	2001d8 <execute_cmd>
+
+	tid = execute_cmd(CMD_CREATE, 1, 200);
+  2007a0:	01000044 	movi	r4,1
+  2007a4:	200b883a 	mov	r5,r4
+  2007a8:	01803204 	movi	r6,200
+  2007ac:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_INSERT, 1, tid);
+  2007b0:	100d883a 	mov	r6,r2
+  2007b4:	010000c4 	movi	r4,3
+  2007b8:	01400044 	movi	r5,1
+  2007bc:	02001d80 	call	2001d8 <execute_cmd>
+	alt_putstr("\n[DONE]\n");
+  2007c0:	01000834 	movhi	r4,32
+  2007c4:	21062d04 	addi	r4,r4,6324
+  2007c8:	02015c40 	call	2015c4 <alt_putstr>
+  2007cc:	003fff06 	br	2007cc <test_20+0xa4>
+
+002007d0 <test_19>:
+		alt_putstr("[TEST FAIL - 2]\n");
+		alt_printf("Status: %x\n", IORD_32DIRECT(ADDR_STATUS, 0));
+	}
+}
+
+void test_19() {
+  2007d0:	defffe04 	addi	sp,sp,-8
+	alt_putstr("\nTEST: 19\n");
+  2007d4:	01000834 	movhi	r4,32
+  2007d8:	21064104 	addi	r4,r4,6404
+		alt_putstr("[TEST FAIL - 2]\n");
+		alt_printf("Status: %x\n", IORD_32DIRECT(ADDR_STATUS, 0));
+	}
+}
+
+void test_19() {
+  2007dc:	dfc00115 	stw	ra,4(sp)
+  2007e0:	dc000015 	stw	r16,0(sp)
+	alt_putstr("\nTEST: 19\n");
+  2007e4:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Interrupt disable ");
+  2007e8:	01000834 	movhi	r4,32
+  2007ec:	21064404 	addi	r4,r4,6416
+  2007f0:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  2007f4:	000b883a 	mov	r5,zero
+  2007f8:	010003c4 	movi	r4,15
+  2007fc:	000d883a 	mov	r6,zero
+  200800:	02001d80 	call	2001d8 <execute_cmd>
+
+	int ret = execute_cmd(CMD_ENABLE, 0, 0);
+  200804:	01000204 	movi	r4,8
+  200808:	000b883a 	mov	r5,zero
+  20080c:	000d883a 	mov	r6,zero
+  200810:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+  200814:	043fffc4 	movi	r16,-1
+		alt_putstr("[TEST FAIL]\n");
+		return;
+	}
+
+	ret = execute_cmd(CMD_DISABLE, 0, 0);
+  200818:	01000244 	movi	r4,9
+  20081c:	000b883a 	mov	r5,zero
+  200820:	000d883a 	mov	r6,zero
+	alt_putstr("\nTEST: 19\n");
+	alt_putstr("Interrupt disable ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int ret = execute_cmd(CMD_ENABLE, 0, 0);
+	if(ret == -1) {
+  200824:	14000a26 	beq	r2,r16,200850 <test_19+0x80>
+		alt_putstr("[TEST FAIL]\n");
+		return;
+	}
+
+	ret = execute_cmd(CMD_DISABLE, 0, 0);
+  200828:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL]\n");
+  20082c:	01000834 	movhi	r4,32
+  200830:	2105c204 	addi	r4,r4,5896
+		alt_putstr("[TEST FAIL]\n");
+		return;
+	}
+
+	ret = execute_cmd(CMD_DISABLE, 0, 0);
+	if(ret == -1) {
+  200834:	14000826 	beq	r2,r16,200858 <test_19+0x88>
+		alt_putstr("[TEST FAIL]\n");
+		return;
+	}
+	int enable = IORD_32DIRECT(ADDR_STATUS, 0) & STAT_ENABLE;
+  200838:	00800404 	movi	r2,16
+  20083c:	10800037 	ldwio	r2,0(r2)
+	if(enable == 0) {
+		alt_putstr("[TEST PASS]\n");
+  200840:	01000834 	movhi	r4,32
+  200844:	2105be04 	addi	r4,r4,5880
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL]\n");
+		return;
+	}
+	int enable = IORD_32DIRECT(ADDR_STATUS, 0) & STAT_ENABLE;
+	if(enable == 0) {
+  200848:	1080080c 	andi	r2,r2,32
+  20084c:	10000226 	beq	r2,zero,200858 <test_19+0x88>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200850:	01000834 	movhi	r4,32
+  200854:	2105c204 	addi	r4,r4,5896
+	}
+}
+  200858:	dfc00117 	ldw	ra,4(sp)
+  20085c:	dc000017 	ldw	r16,0(sp)
+  200860:	dec00204 	addi	sp,sp,8
+	}
+	int enable = IORD_32DIRECT(ADDR_STATUS, 0) & STAT_ENABLE;
+	if(enable == 0) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200864:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+00200868 <test_18>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_18() {
+  200868:	defffe04 	addi	sp,sp,-8
+	alt_putstr("\nTEST: 18\n");
+  20086c:	01000834 	movhi	r4,32
+  200870:	21064904 	addi	r4,r4,6436
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_18() {
+  200874:	dfc00115 	stw	ra,4(sp)
+  200878:	dc000015 	stw	r16,0(sp)
+	alt_putstr("\nTEST: 18\n");
+  20087c:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Interrupt enable ");
+  200880:	01000834 	movhi	r4,32
+  200884:	21064c04 	addi	r4,r4,6448
+  200888:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  20088c:	000b883a 	mov	r5,zero
+  200890:	010003c4 	movi	r4,15
+  200894:	000d883a 	mov	r6,zero
+  200898:	02001d80 	call	2001d8 <execute_cmd>
+
+	int ret = execute_cmd(CMD_ENABLE, 0, 0);
+  20089c:	01000204 	movi	r4,8
+  2008a0:	000b883a 	mov	r5,zero
+  2008a4:	000d883a 	mov	r6,zero
+  2008a8:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+  2008ac:	00ffffc4 	movi	r3,-1
+		alt_putstr("[TEST FAIL - 1]\n");
+		return;
+	}
+
+	int enable = IORD_32DIRECT(ADDR_STATUS, 0) & STAT_ENABLE;
+  2008b0:	04000404 	movi	r16,16
+	alt_putstr("Interrupt enable ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int ret = execute_cmd(CMD_ENABLE, 0, 0);
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL - 1]\n");
+  2008b4:	01000834 	movhi	r4,32
+  2008b8:	2105e204 	addi	r4,r4,6024
+	alt_putstr("\nTEST: 18\n");
+	alt_putstr("Interrupt enable ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int ret = execute_cmd(CMD_ENABLE, 0, 0);
+	if(ret == -1) {
+  2008bc:	10c00726 	beq	r2,r3,2008dc <test_18+0x74>
+		alt_putstr("[TEST FAIL - 1]\n");
+		return;
+	}
+
+	int enable = IORD_32DIRECT(ADDR_STATUS, 0) & STAT_ENABLE;
+  2008c0:	80800037 	ldwio	r2,0(r16)
+
+	if(enable == STAT_ENABLE) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL - 2]\n");
+  2008c4:	01000834 	movhi	r4,32
+  2008c8:	2105e704 	addi	r4,r4,6044
+		return;
+	}
+
+	int enable = IORD_32DIRECT(ADDR_STATUS, 0) & STAT_ENABLE;
+
+	if(enable == STAT_ENABLE) {
+  2008cc:	1080080c 	andi	r2,r2,32
+  2008d0:	10000626 	beq	r2,zero,2008ec <test_18+0x84>
+		alt_putstr("[TEST PASS]\n");
+  2008d4:	01000834 	movhi	r4,32
+  2008d8:	2105be04 	addi	r4,r4,5880
+	} else {
+		alt_putstr("[TEST FAIL - 2]\n");
+		alt_printf("Status: %x\n", IORD_32DIRECT(ADDR_STATUS, 0));
+	}
+}
+  2008dc:	dfc00117 	ldw	ra,4(sp)
+  2008e0:	dc000017 	ldw	r16,0(sp)
+  2008e4:	dec00204 	addi	sp,sp,8
+	}
+
+	int enable = IORD_32DIRECT(ADDR_STATUS, 0) & STAT_ENABLE;
+
+	if(enable == STAT_ENABLE) {
+		alt_putstr("[TEST PASS]\n");
+  2008e8:	02015c41 	jmpi	2015c4 <alt_putstr>
+	} else {
+		alt_putstr("[TEST FAIL - 2]\n");
+  2008ec:	02015c40 	call	2015c4 <alt_putstr>
+		alt_printf("Status: %x\n", IORD_32DIRECT(ADDR_STATUS, 0));
+  2008f0:	81400037 	ldwio	r5,0(r16)
+  2008f4:	01000834 	movhi	r4,32
+  2008f8:	21065104 	addi	r4,r4,6468
+	}
+}
+  2008fc:	dfc00117 	ldw	ra,4(sp)
+  200900:	dc000017 	ldw	r16,0(sp)
+  200904:	dec00204 	addi	sp,sp,8
+
+	if(enable == STAT_ENABLE) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL - 2]\n");
+		alt_printf("Status: %x\n", IORD_32DIRECT(ADDR_STATUS, 0));
+  200908:	02014301 	jmpi	201430 <alt_printf>
+
+0020090c <test_17>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_17() {
+  20090c:	deffff04 	addi	sp,sp,-4
+	alt_putstr("\nTEST: 17\n");
+  200910:	01000834 	movhi	r4,32
+  200914:	21065404 	addi	r4,r4,6480
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_17() {
+  200918:	dfc00015 	stw	ra,0(sp)
+	alt_putstr("\nTEST: 17\n");
+  20091c:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Check Size after insert and remove head ");
+  200920:	01000834 	movhi	r4,32
+  200924:	21065704 	addi	r4,r4,6492
+  200928:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  20092c:	000b883a 	mov	r5,zero
+  200930:	010003c4 	movi	r4,15
+  200934:	000d883a 	mov	r6,zero
+  200938:	02001d80 	call	2001d8 <execute_cmd>
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+  20093c:	01000044 	movi	r4,1
+  200940:	200b883a 	mov	r5,r4
+  200944:	01801904 	movi	r6,100
+  200948:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_INSERT, 1, tid);
+  20094c:	100d883a 	mov	r6,r2
+  200950:	010000c4 	movi	r4,3
+  200954:	01400044 	movi	r5,1
+  200958:	02001d80 	call	2001d8 <execute_cmd>
+	tid = execute_cmd(CMD_CREATE, 1, 200);
+  20095c:	01000044 	movi	r4,1
+  200960:	200b883a 	mov	r5,r4
+  200964:	01803204 	movi	r6,200
+  200968:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_INSERT, 1, tid);
+  20096c:	100d883a 	mov	r6,r2
+  200970:	010000c4 	movi	r4,3
+  200974:	01400044 	movi	r5,1
+  200978:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+  20097c:	01000144 	movi	r4,5
+  200980:	000b883a 	mov	r5,zero
+  200984:	000d883a 	mov	r6,zero
+  200988:	02001d80 	call	2001d8 <execute_cmd>
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+  20098c:	01000344 	movi	r4,13
+  200990:	000b883a 	mov	r5,zero
+  200994:	000d883a 	mov	r6,zero
+  200998:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == 2) {
+  20099c:	00c00084 	movi	r3,2
+		alt_putstr("[TEST PASS]\n");
+  2009a0:	01000834 	movhi	r4,32
+  2009a4:	2105be04 	addi	r4,r4,5880
+	execute_cmd(CMD_INSERT, 1, tid);
+	tid = execute_cmd(CMD_CREATE, 1, 200);
+	execute_cmd(CMD_INSERT, 1, tid);
+	execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+	if(ret == 2) {
+  2009a8:	10c00226 	beq	r2,r3,2009b4 <test_17+0xa8>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  2009ac:	01000834 	movhi	r4,32
+  2009b0:	2105c204 	addi	r4,r4,5896
+	}
+}
+  2009b4:	dfc00017 	ldw	ra,0(sp)
+  2009b8:	dec00104 	addi	sp,sp,4
+	execute_cmd(CMD_REMOVE_HEAD, 0, 0);
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+	if(ret == 2) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  2009bc:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+002009c0 <test_16>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_16() {
+  2009c0:	defffd04 	addi	sp,sp,-12
+	alt_putstr("\nTEST: 16\n");
+  2009c4:	01000834 	movhi	r4,32
+  2009c8:	21066204 	addi	r4,r4,6536
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_16() {
+  2009cc:	dfc00215 	stw	ra,8(sp)
+  2009d0:	dc400115 	stw	r17,4(sp)
+  2009d4:	dc000015 	stw	r16,0(sp)
+	alt_putstr("\nTEST: 16\n");
+  2009d8:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Check Size after insert and destroy ");
+  2009dc:	01000834 	movhi	r4,32
+  2009e0:	21066504 	addi	r4,r4,6548
+  2009e4:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+  2009e8:	04400044 	movi	r17,1
+}
+
+void test_16() {
+	alt_putstr("\nTEST: 16\n");
+	alt_putstr("Check Size after insert and destroy ");
+	execute_cmd(CMD_RESET, 0, 0);
+  2009ec:	010003c4 	movi	r4,15
+  2009f0:	000b883a 	mov	r5,zero
+  2009f4:	000d883a 	mov	r6,zero
+  2009f8:	02001d80 	call	2001d8 <execute_cmd>
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+  2009fc:	8809883a 	mov	r4,r17
+  200a00:	880b883a 	mov	r5,r17
+  200a04:	01801904 	movi	r6,100
+  200a08:	02001d80 	call	2001d8 <execute_cmd>
+  200a0c:	1021883a 	mov	r16,r2
+	execute_cmd(CMD_INSERT, 1, tid);
+  200a10:	010000c4 	movi	r4,3
+  200a14:	880b883a 	mov	r5,r17
+  200a18:	100d883a 	mov	r6,r2
+  200a1c:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_DESTROY, 0, tid);
+  200a20:	800d883a 	mov	r6,r16
+  200a24:	01000084 	movi	r4,2
+  200a28:	000b883a 	mov	r5,zero
+  200a2c:	02001d80 	call	2001d8 <execute_cmd>
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+  200a30:	01000344 	movi	r4,13
+  200a34:	000b883a 	mov	r5,zero
+  200a38:	000d883a 	mov	r6,zero
+  200a3c:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == 1) {
+		alt_putstr("[TEST PASS]\n");
+  200a40:	01000834 	movhi	r4,32
+  200a44:	2105be04 	addi	r4,r4,5880
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+	execute_cmd(CMD_INSERT, 1, tid);
+	execute_cmd(CMD_DESTROY, 0, tid);
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+	if(ret == 1) {
+  200a48:	14400226 	beq	r2,r17,200a54 <test_16+0x94>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200a4c:	01000834 	movhi	r4,32
+  200a50:	2105c204 	addi	r4,r4,5896
+	}
+}
+  200a54:	dfc00217 	ldw	ra,8(sp)
+  200a58:	dc400117 	ldw	r17,4(sp)
+  200a5c:	dc000017 	ldw	r16,0(sp)
+  200a60:	dec00304 	addi	sp,sp,12
+	execute_cmd(CMD_DESTROY, 0, tid);
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+	if(ret == 1) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200a64:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+00200a68 <test_15>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_15() {
+  200a68:	defffd04 	addi	sp,sp,-12
+	alt_putstr("\nTEST: 15\n");
+  200a6c:	01000834 	movhi	r4,32
+  200a70:	21066f04 	addi	r4,r4,6588
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_15() {
+  200a74:	dfc00215 	stw	ra,8(sp)
+  200a78:	dc400115 	stw	r17,4(sp)
+  200a7c:	dc000015 	stw	r16,0(sp)
+	alt_putstr("\nTEST: 15\n");
+  200a80:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Check Size after insert and remove ");
+  200a84:	01000834 	movhi	r4,32
+  200a88:	21067204 	addi	r4,r4,6600
+  200a8c:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+  200a90:	04400044 	movi	r17,1
+}
+
+void test_15() {
+	alt_putstr("\nTEST: 15\n");
+	alt_putstr("Check Size after insert and remove ");
+	execute_cmd(CMD_RESET, 0, 0);
+  200a94:	010003c4 	movi	r4,15
+  200a98:	000b883a 	mov	r5,zero
+  200a9c:	000d883a 	mov	r6,zero
+  200aa0:	02001d80 	call	2001d8 <execute_cmd>
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+  200aa4:	8809883a 	mov	r4,r17
+  200aa8:	880b883a 	mov	r5,r17
+  200aac:	01801904 	movi	r6,100
+  200ab0:	02001d80 	call	2001d8 <execute_cmd>
+  200ab4:	1021883a 	mov	r16,r2
+	execute_cmd(CMD_INSERT, 1, tid);
+  200ab8:	010000c4 	movi	r4,3
+  200abc:	880b883a 	mov	r5,r17
+  200ac0:	100d883a 	mov	r6,r2
+  200ac4:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_REMOVE, 0, tid);
+  200ac8:	800d883a 	mov	r6,r16
+  200acc:	01000104 	movi	r4,4
+  200ad0:	000b883a 	mov	r5,zero
+  200ad4:	02001d80 	call	2001d8 <execute_cmd>
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+  200ad8:	01000344 	movi	r4,13
+  200adc:	000b883a 	mov	r5,zero
+  200ae0:	000d883a 	mov	r6,zero
+  200ae4:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == 1) {
+		alt_putstr("[TEST PASS]\n");
+  200ae8:	01000834 	movhi	r4,32
+  200aec:	2105be04 	addi	r4,r4,5880
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+	execute_cmd(CMD_INSERT, 1, tid);
+	execute_cmd(CMD_REMOVE, 0, tid);
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+	if(ret == 1) {
+  200af0:	14400226 	beq	r2,r17,200afc <test_15+0x94>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200af4:	01000834 	movhi	r4,32
+  200af8:	2105c204 	addi	r4,r4,5896
+	}
+}
+  200afc:	dfc00217 	ldw	ra,8(sp)
+  200b00:	dc400117 	ldw	r17,4(sp)
+  200b04:	dc000017 	ldw	r16,0(sp)
+  200b08:	dec00304 	addi	sp,sp,12
+	execute_cmd(CMD_REMOVE, 0, tid);
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+	if(ret == 1) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200b0c:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+00200b10 <test_14>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_14() {
+  200b10:	deffff04 	addi	sp,sp,-4
+	alt_putstr("\nTEST: 14\n");
+  200b14:	01000834 	movhi	r4,32
+  200b18:	21067b04 	addi	r4,r4,6636
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_14() {
+  200b1c:	dfc00015 	stw	ra,0(sp)
+	alt_putstr("\nTEST: 14\n");
+  200b20:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Check Size after insert ");
+  200b24:	01000834 	movhi	r4,32
+  200b28:	21067e04 	addi	r4,r4,6648
+  200b2c:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  200b30:	000b883a 	mov	r5,zero
+  200b34:	010003c4 	movi	r4,15
+  200b38:	000d883a 	mov	r6,zero
+  200b3c:	02001d80 	call	2001d8 <execute_cmd>
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+  200b40:	01000044 	movi	r4,1
+  200b44:	200b883a 	mov	r5,r4
+  200b48:	01801904 	movi	r6,100
+  200b4c:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_INSERT, 1, tid);
+  200b50:	100d883a 	mov	r6,r2
+  200b54:	010000c4 	movi	r4,3
+  200b58:	01400044 	movi	r5,1
+  200b5c:	02001d80 	call	2001d8 <execute_cmd>
+
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+  200b60:	01000344 	movi	r4,13
+  200b64:	000b883a 	mov	r5,zero
+  200b68:	000d883a 	mov	r6,zero
+  200b6c:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == 2) {
+  200b70:	00c00084 	movi	r3,2
+		alt_putstr("[TEST PASS]\n");
+  200b74:	01000834 	movhi	r4,32
+  200b78:	2105be04 	addi	r4,r4,5880
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+	execute_cmd(CMD_INSERT, 1, tid);
+
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+	if(ret == 2) {
+  200b7c:	10c00226 	beq	r2,r3,200b88 <test_14+0x78>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200b80:	01000834 	movhi	r4,32
+  200b84:	2105c204 	addi	r4,r4,5896
+	}
+}
+  200b88:	dfc00017 	ldw	ra,0(sp)
+  200b8c:	dec00104 	addi	sp,sp,4
+
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+	if(ret == 2) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200b90:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+00200b94 <test_13>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_13() {
+  200b94:	defffe04 	addi	sp,sp,-8
+	alt_putstr("\nTEST: 13\n");
+  200b98:	01000834 	movhi	r4,32
+  200b9c:	21068504 	addi	r4,r4,6676
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_13() {
+  200ba0:	dfc00115 	stw	ra,4(sp)
+  200ba4:	dc000015 	stw	r16,0(sp)
+	alt_putstr("\nTEST: 13\n");
+  200ba8:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Check Size after create ");
+  200bac:	01000834 	movhi	r4,32
+  200bb0:	21068804 	addi	r4,r4,6688
+  200bb4:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  200bb8:	000b883a 	mov	r5,zero
+  200bbc:	010003c4 	movi	r4,15
+  200bc0:	000d883a 	mov	r6,zero
+
+	execute_cmd(CMD_CREATE, 0, 100);
+  200bc4:	04000044 	movi	r16,1
+}
+
+void test_13() {
+	alt_putstr("\nTEST: 13\n");
+	alt_putstr("Check Size after create ");
+	execute_cmd(CMD_RESET, 0, 0);
+  200bc8:	02001d80 	call	2001d8 <execute_cmd>
+
+	execute_cmd(CMD_CREATE, 0, 100);
+  200bcc:	8009883a 	mov	r4,r16
+  200bd0:	000b883a 	mov	r5,zero
+  200bd4:	01801904 	movi	r6,100
+  200bd8:	02001d80 	call	2001d8 <execute_cmd>
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+  200bdc:	01000344 	movi	r4,13
+  200be0:	000b883a 	mov	r5,zero
+  200be4:	000d883a 	mov	r6,zero
+  200be8:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == 1) {
+		alt_putstr("[TEST PASS]\n");
+  200bec:	01000834 	movhi	r4,32
+  200bf0:	2105be04 	addi	r4,r4,5880
+	alt_putstr("Check Size after create ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	execute_cmd(CMD_CREATE, 0, 100);
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+	if(ret == 1) {
+  200bf4:	14000226 	beq	r2,r16,200c00 <test_13+0x6c>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200bf8:	01000834 	movhi	r4,32
+  200bfc:	2105c204 	addi	r4,r4,5896
+	}
+}
+  200c00:	dfc00117 	ldw	ra,4(sp)
+  200c04:	dc000017 	ldw	r16,0(sp)
+  200c08:	dec00204 	addi	sp,sp,8
+	execute_cmd(CMD_CREATE, 0, 100);
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+	if(ret == 1) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200c0c:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+00200c10 <test_12>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_12() {
+  200c10:	deffff04 	addi	sp,sp,-4
+	alt_putstr("\nTEST: 12\n");
+  200c14:	01000834 	movhi	r4,32
+  200c18:	21068f04 	addi	r4,r4,6716
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_12() {
+  200c1c:	dfc00015 	stw	ra,0(sp)
+	alt_putstr("\nTEST: 12\n");
+  200c20:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Check Size ");
+  200c24:	01000834 	movhi	r4,32
+  200c28:	21069204 	addi	r4,r4,6728
+  200c2c:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  200c30:	000b883a 	mov	r5,zero
+  200c34:	010003c4 	movi	r4,15
+  200c38:	000d883a 	mov	r6,zero
+  200c3c:	02001d80 	call	2001d8 <execute_cmd>
+
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+  200c40:	01000344 	movi	r4,13
+  200c44:	000b883a 	mov	r5,zero
+  200c48:	000d883a 	mov	r6,zero
+  200c4c:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == 1) {
+  200c50:	00c00044 	movi	r3,1
+		alt_putstr("[TEST PASS]\n");
+  200c54:	01000834 	movhi	r4,32
+  200c58:	2105be04 	addi	r4,r4,5880
+	alt_putstr("\nTEST: 12\n");
+	alt_putstr("Check Size ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+	if(ret == 1) {
+  200c5c:	10c00226 	beq	r2,r3,200c68 <test_12+0x58>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200c60:	01000834 	movhi	r4,32
+  200c64:	2105c204 	addi	r4,r4,5896
+	}
+}
+  200c68:	dfc00017 	ldw	ra,0(sp)
+  200c6c:	dec00104 	addi	sp,sp,4
+
+	int ret = execute_cmd(CMD_SIZE, 0, 0);
+	if(ret == 1) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200c70:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+00200c74 <test_11>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_11() {
+  200c74:	defffd04 	addi	sp,sp,-12
+	alt_putstr("\nTEST: 11\n");
+  200c78:	01000834 	movhi	r4,32
+  200c7c:	21069504 	addi	r4,r4,6740
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_11() {
+  200c80:	dfc00215 	stw	ra,8(sp)
+  200c84:	dc400115 	stw	r17,4(sp)
+  200c88:	dc000015 	stw	r16,0(sp)
+	alt_putstr("\nTEST: 11\n");
+  200c8c:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Get ID return correct ID if created ");
+  200c90:	01000834 	movhi	r4,32
+  200c94:	21069804 	addi	r4,r4,6752
+  200c98:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  200c9c:	000b883a 	mov	r5,zero
+  200ca0:	010003c4 	movi	r4,15
+  200ca4:	000d883a 	mov	r6,zero
+  200ca8:	02001d80 	call	2001d8 <execute_cmd>
+
+	int address = 100;
+	int tid = execute_cmd(CMD_CREATE, 0, address);
+  200cac:	01000044 	movi	r4,1
+  200cb0:	000b883a 	mov	r5,zero
+  200cb4:	01801904 	movi	r6,100
+  200cb8:	02001d80 	call	2001d8 <execute_cmd>
+	int ret = execute_cmd(CMD_GETID, 0, address);
+  200cbc:	010002c4 	movi	r4,11
+  200cc0:	000b883a 	mov	r5,zero
+  200cc4:	01801904 	movi	r6,100
+	alt_putstr("\nTEST: 11\n");
+	alt_putstr("Get ID return correct ID if created ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int address = 100;
+	int tid = execute_cmd(CMD_CREATE, 0, address);
+  200cc8:	1023883a 	mov	r17,r2
+	int ret = execute_cmd(CMD_GETID, 0, address);
+  200ccc:	02001d80 	call	2001d8 <execute_cmd>
+  200cd0:	1021883a 	mov	r16,r2
+	if(ret != -1 && ret == tid) {
+  200cd4:	00bfffc4 	movi	r2,-1
+		alt_putstr("[TEST PASS]\n");
+		alt_printf("-Thread ID = %x\n", tid);
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200cd8:	01000834 	movhi	r4,32
+  200cdc:	2105c204 	addi	r4,r4,5896
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int address = 100;
+	int tid = execute_cmd(CMD_CREATE, 0, address);
+	int ret = execute_cmd(CMD_GETID, 0, address);
+	if(ret != -1 && ret == tid) {
+  200ce0:	80800c26 	beq	r16,r2,200d14 <test_11+0xa0>
+  200ce4:	84400b1e 	bne	r16,r17,200d14 <test_11+0xa0>
+		alt_putstr("[TEST PASS]\n");
+  200ce8:	01000834 	movhi	r4,32
+  200cec:	2105be04 	addi	r4,r4,5880
+  200cf0:	02015c40 	call	2015c4 <alt_putstr>
+		alt_printf("-Thread ID = %x\n", tid);
+  200cf4:	800b883a 	mov	r5,r16
+  200cf8:	01000834 	movhi	r4,32
+  200cfc:	2106a204 	addi	r4,r4,6792
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+  200d00:	dfc00217 	ldw	ra,8(sp)
+  200d04:	dc400117 	ldw	r17,4(sp)
+  200d08:	dc000017 	ldw	r16,0(sp)
+  200d0c:	dec00304 	addi	sp,sp,12
+	int address = 100;
+	int tid = execute_cmd(CMD_CREATE, 0, address);
+	int ret = execute_cmd(CMD_GETID, 0, address);
+	if(ret != -1 && ret == tid) {
+		alt_putstr("[TEST PASS]\n");
+		alt_printf("-Thread ID = %x\n", tid);
+  200d10:	02014301 	jmpi	201430 <alt_printf>
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+  200d14:	dfc00217 	ldw	ra,8(sp)
+  200d18:	dc400117 	ldw	r17,4(sp)
+  200d1c:	dc000017 	ldw	r16,0(sp)
+  200d20:	dec00304 	addi	sp,sp,12
+	int ret = execute_cmd(CMD_GETID, 0, address);
+	if(ret != -1 && ret == tid) {
+		alt_putstr("[TEST PASS]\n");
+		alt_printf("-Thread ID = %x\n", tid);
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200d24:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+00200d28 <test_10>:
+		alt_printf(" Removed = %x, new Thread ID = %x;\n", ret, tid);
+	}
+
+}
+
+void test_10() {
+  200d28:	deffff04 	addi	sp,sp,-4
+	alt_putstr("\nTEST: 10\n");
+  200d2c:	01000834 	movhi	r4,32
+  200d30:	2106a704 	addi	r4,r4,6812
+		alt_printf(" Removed = %x, new Thread ID = %x;\n", ret, tid);
+	}
+
+}
+
+void test_10() {
+  200d34:	dfc00015 	stw	ra,0(sp)
+	alt_putstr("\nTEST: 10\n");
+  200d38:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Get ID return error if not created ");
+  200d3c:	01000834 	movhi	r4,32
+  200d40:	2106aa04 	addi	r4,r4,6824
+  200d44:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  200d48:	000b883a 	mov	r5,zero
+  200d4c:	010003c4 	movi	r4,15
+  200d50:	000d883a 	mov	r6,zero
+  200d54:	02001d80 	call	2001d8 <execute_cmd>
+
+	int ret = execute_cmd(CMD_GETID, 0, 100);
+  200d58:	010002c4 	movi	r4,11
+  200d5c:	000b883a 	mov	r5,zero
+  200d60:	01801904 	movi	r6,100
+  200d64:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+  200d68:	00ffffc4 	movi	r3,-1
+		alt_putstr("[TEST PASS]\n");
+  200d6c:	01000834 	movhi	r4,32
+  200d70:	2105be04 	addi	r4,r4,5880
+	alt_putstr("\nTEST: 10\n");
+	alt_putstr("Get ID return error if not created ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int ret = execute_cmd(CMD_GETID, 0, 100);
+	if(ret == -1) {
+  200d74:	10c00226 	beq	r2,r3,200d80 <test_10+0x58>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200d78:	01000834 	movhi	r4,32
+  200d7c:	2105c204 	addi	r4,r4,5896
+	}
+}
+  200d80:	dfc00017 	ldw	ra,0(sp)
+  200d84:	dec00104 	addi	sp,sp,4
+
+	int ret = execute_cmd(CMD_GETID, 0, 100);
+	if(ret == -1) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200d88:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+00200d8c <test_9>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_9() {
+  200d8c:	defffd04 	addi	sp,sp,-12
+	alt_putstr("\nTEST: 9\n");
+  200d90:	01000834 	movhi	r4,32
+  200d94:	2106b304 	addi	r4,r4,6860
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_9() {
+  200d98:	dfc00215 	stw	ra,8(sp)
+  200d9c:	dc000015 	stw	r16,0(sp)
+  200da0:	dc400115 	stw	r17,4(sp)
+	alt_putstr("\nTEST: 9\n");
+  200da4:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Create Thread after destroy 1 of 8 ");
+  200da8:	01000834 	movhi	r4,32
+  200dac:	2106b604 	addi	r4,r4,6872
+  200db0:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  200db4:	000b883a 	mov	r5,zero
+  200db8:	010003c4 	movi	r4,15
+  200dbc:	000d883a 	mov	r6,zero
+  200dc0:	02001d80 	call	2001d8 <execute_cmd>
+  200dc4:	04001904 	movi	r16,100
+
+	int i = 0;
+	int ret = 0;
+	for(i = 1; i<9; i++) {
+		ret = execute_cmd(CMD_CREATE, 1, i*100);
+  200dc8:	01000044 	movi	r4,1
+  200dcc:	800d883a 	mov	r6,r16
+  200dd0:	200b883a 	mov	r5,r4
+  200dd4:	02001d80 	call	2001d8 <execute_cmd>
+		if(ret == -1) {
+  200dd8:	047fffc4 	movi	r17,-1
+			alt_putstr("[TEST FAIL]\n");
+  200ddc:	84001904 	addi	r16,r16,100
+
+	int i = 0;
+	int ret = 0;
+	for(i = 1; i<9; i++) {
+		ret = execute_cmd(CMD_CREATE, 1, i*100);
+		if(ret == -1) {
+  200de0:	14400c26 	beq	r2,r17,200e14 <test_9+0x88>
+	alt_putstr("Create Thread after destroy 1 of 8 ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int i = 0;
+	int ret = 0;
+	for(i = 1; i<9; i++) {
+  200de4:	0080e104 	movi	r2,900
+  200de8:	80bff71e 	bne	r16,r2,200dc8 <test_9+0x3c>
+			alt_putstr("[TEST FAIL]\n");
+			return;
+		}
+	}
+	int tid = 3;
+	execute_cmd(CMD_DESTROY, 0, tid);
+  200dec:	01000084 	movi	r4,2
+  200df0:	000b883a 	mov	r5,zero
+  200df4:	018000c4 	movi	r6,3
+  200df8:	02001d80 	call	2001d8 <execute_cmd>
+	ret = execute_cmd(CMD_CREATE, 1, 900);
+  200dfc:	01000044 	movi	r4,1
+  200e00:	800d883a 	mov	r6,r16
+  200e04:	200b883a 	mov	r5,r4
+  200e08:	02001d80 	call	2001d8 <execute_cmd>
+  200e0c:	1021883a 	mov	r16,r2
+
+	if(ret == -1 && ret != tid) {
+  200e10:	1440071e 	bne	r2,r17,200e30 <test_9+0xa4>
+		alt_putstr("[TEST FAIL]\n");
+  200e14:	01000834 	movhi	r4,32
+  200e18:	2105c204 	addi	r4,r4,5896
+	} else {
+		alt_putstr("[TEST PASS]\n");
+		alt_printf(" Removed = %x, new Thread ID = %x;\n", ret, tid);
+	}
+
+}
+  200e1c:	dfc00217 	ldw	ra,8(sp)
+  200e20:	dc400117 	ldw	r17,4(sp)
+  200e24:	dc000017 	ldw	r16,0(sp)
+  200e28:	dec00304 	addi	sp,sp,12
+	int tid = 3;
+	execute_cmd(CMD_DESTROY, 0, tid);
+	ret = execute_cmd(CMD_CREATE, 1, 900);
+
+	if(ret == -1 && ret != tid) {
+		alt_putstr("[TEST FAIL]\n");
+  200e2c:	02015c41 	jmpi	2015c4 <alt_putstr>
+	} else {
+		alt_putstr("[TEST PASS]\n");
+  200e30:	01000834 	movhi	r4,32
+  200e34:	2105be04 	addi	r4,r4,5880
+  200e38:	02015c40 	call	2015c4 <alt_putstr>
+		alt_printf(" Removed = %x, new Thread ID = %x;\n", ret, tid);
+  200e3c:	800b883a 	mov	r5,r16
+  200e40:	01000834 	movhi	r4,32
+  200e44:	2106bf04 	addi	r4,r4,6908
+  200e48:	018000c4 	movi	r6,3
+	}
+
+}
+  200e4c:	dfc00217 	ldw	ra,8(sp)
+  200e50:	dc400117 	ldw	r17,4(sp)
+  200e54:	dc000017 	ldw	r16,0(sp)
+  200e58:	dec00304 	addi	sp,sp,12
+
+	if(ret == -1 && ret != tid) {
+		alt_putstr("[TEST FAIL]\n");
+	} else {
+		alt_putstr("[TEST PASS]\n");
+		alt_printf(" Removed = %x, new Thread ID = %x;\n", ret, tid);
+  200e5c:	02014301 	jmpi	201430 <alt_printf>
+
+00200e60 <test_8>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_8() {
+  200e60:	defffd04 	addi	sp,sp,-12
+	alt_putstr("\nTEST: 8\n");
+  200e64:	01000834 	movhi	r4,32
+  200e68:	2106c804 	addi	r4,r4,6944
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_8() {
+  200e6c:	dfc00215 	stw	ra,8(sp)
+  200e70:	dc400115 	stw	r17,4(sp)
+  200e74:	dc000015 	stw	r16,0(sp)
+	alt_putstr("\nTEST: 8\n");
+  200e78:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Destroy an inserted thread");
+  200e7c:	01000834 	movhi	r4,32
+  200e80:	2106cb04 	addi	r4,r4,6956
+  200e84:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  200e88:	000b883a 	mov	r5,zero
+  200e8c:	010003c4 	movi	r4,15
+  200e90:	000d883a 	mov	r6,zero
+  200e94:	02001d80 	call	2001d8 <execute_cmd>
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+  200e98:	01000044 	movi	r4,1
+  200e9c:	200b883a 	mov	r5,r4
+  200ea0:	01801904 	movi	r6,100
+  200ea4:	02001d80 	call	2001d8 <execute_cmd>
+  200ea8:	1021883a 	mov	r16,r2
+	execute_cmd(CMD_INSERT, 1, tid);
+  200eac:	100d883a 	mov	r6,r2
+  200eb0:	010000c4 	movi	r4,3
+  200eb4:	01400044 	movi	r5,1
+	execute_cmd(CMD_DESTROY, 0, tid);
+  200eb8:	04400084 	movi	r17,2
+	alt_putstr("\nTEST: 8\n");
+	alt_putstr("Destroy an inserted thread");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+	execute_cmd(CMD_INSERT, 1, tid);
+  200ebc:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_DESTROY, 0, tid);
+  200ec0:	800d883a 	mov	r6,r16
+  200ec4:	8809883a 	mov	r4,r17
+  200ec8:	000b883a 	mov	r5,zero
+  200ecc:	02001d80 	call	2001d8 <execute_cmd>
+	int ret = execute_cmd(CMD_GETID, 0, 100);
+  200ed0:	010002c4 	movi	r4,11
+  200ed4:	000b883a 	mov	r5,zero
+  200ed8:	01801904 	movi	r6,100
+  200edc:	02001d80 	call	2001d8 <execute_cmd>
+	int empty = IORD_32DIRECT(ADDR_STATUS, 0) & STAT_EMPTY;
+  200ee0:	00c00404 	movi	r3,16
+  200ee4:	18c00037 	ldwio	r3,0(r3)
+	if(ret < 0 && empty == STAT_EMPTY) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200ee8:	01000834 	movhi	r4,32
+  200eec:	2105c204 	addi	r4,r4,5896
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+	execute_cmd(CMD_INSERT, 1, tid);
+	execute_cmd(CMD_DESTROY, 0, tid);
+	int ret = execute_cmd(CMD_GETID, 0, 100);
+	int empty = IORD_32DIRECT(ADDR_STATUS, 0) & STAT_EMPTY;
+	if(ret < 0 && empty == STAT_EMPTY) {
+  200ef0:	1c46703a 	and	r3,r3,r17
+  200ef4:	1000030e 	bge	r2,zero,200f04 <test_8+0xa4>
+  200ef8:	1c40021e 	bne	r3,r17,200f04 <test_8+0xa4>
+		alt_putstr("[TEST PASS]\n");
+  200efc:	01000834 	movhi	r4,32
+  200f00:	2105be04 	addi	r4,r4,5880
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+  200f04:	dfc00217 	ldw	ra,8(sp)
+  200f08:	dc400117 	ldw	r17,4(sp)
+  200f0c:	dc000017 	ldw	r16,0(sp)
+  200f10:	dec00304 	addi	sp,sp,12
+	int ret = execute_cmd(CMD_GETID, 0, 100);
+	int empty = IORD_32DIRECT(ADDR_STATUS, 0) & STAT_EMPTY;
+	if(ret < 0 && empty == STAT_EMPTY) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200f14:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+00200f18 <test_7>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_7() {
+  200f18:	deffff04 	addi	sp,sp,-4
+	alt_putstr("\nTEST: 7\n");
+  200f1c:	01000834 	movhi	r4,32
+  200f20:	2106d204 	addi	r4,r4,6984
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_7() {
+  200f24:	dfc00015 	stw	ra,0(sp)
+	alt_putstr("\nTEST: 7\n");
+  200f28:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Destroy a created thread");
+  200f2c:	01000834 	movhi	r4,32
+  200f30:	2106d504 	addi	r4,r4,6996
+  200f34:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  200f38:	000b883a 	mov	r5,zero
+  200f3c:	010003c4 	movi	r4,15
+  200f40:	000d883a 	mov	r6,zero
+  200f44:	02001d80 	call	2001d8 <execute_cmd>
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+  200f48:	01000044 	movi	r4,1
+  200f4c:	200b883a 	mov	r5,r4
+  200f50:	01801904 	movi	r6,100
+  200f54:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_DESTROY, 0, tid);
+  200f58:	100d883a 	mov	r6,r2
+  200f5c:	01000084 	movi	r4,2
+  200f60:	000b883a 	mov	r5,zero
+  200f64:	02001d80 	call	2001d8 <execute_cmd>
+	int ret = execute_cmd(CMD_GETID, 0, 1);
+  200f68:	010002c4 	movi	r4,11
+  200f6c:	000b883a 	mov	r5,zero
+  200f70:	01800044 	movi	r6,1
+  200f74:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret < 0) {
+		alt_putstr("[TEST PASS]\n");
+  200f78:	01000834 	movhi	r4,32
+  200f7c:	2105be04 	addi	r4,r4,5880
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+	execute_cmd(CMD_DESTROY, 0, tid);
+	int ret = execute_cmd(CMD_GETID, 0, 1);
+	if(ret < 0) {
+  200f80:	10000216 	blt	r2,zero,200f8c <test_7+0x74>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200f84:	01000834 	movhi	r4,32
+  200f88:	2105c204 	addi	r4,r4,5896
+	}
+}
+  200f8c:	dfc00017 	ldw	ra,0(sp)
+  200f90:	dec00104 	addi	sp,sp,4
+	execute_cmd(CMD_DESTROY, 0, tid);
+	int ret = execute_cmd(CMD_GETID, 0, 1);
+	if(ret < 0) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  200f94:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+00200f98 <test_6>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_6() {
+  200f98:	deffff04 	addi	sp,sp,-4
+	alt_putstr("\nTEST: 6\n");
+  200f9c:	01000834 	movhi	r4,32
+  200fa0:	2106dc04 	addi	r4,r4,7024
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_6() {
+  200fa4:	dfc00015 	stw	ra,0(sp)
+	alt_putstr("\nTEST: 6\n");
+  200fa8:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Check empty status after insert ");
+  200fac:	01000834 	movhi	r4,32
+  200fb0:	2106df04 	addi	r4,r4,7036
+  200fb4:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  200fb8:	000b883a 	mov	r5,zero
+  200fbc:	010003c4 	movi	r4,15
+  200fc0:	000d883a 	mov	r6,zero
+  200fc4:	02001d80 	call	2001d8 <execute_cmd>
+
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+  200fc8:	01000044 	movi	r4,1
+  200fcc:	200b883a 	mov	r5,r4
+  200fd0:	01801904 	movi	r6,100
+  200fd4:	02001d80 	call	2001d8 <execute_cmd>
+	execute_cmd(CMD_INSERT, 1, tid);
+  200fd8:	100d883a 	mov	r6,r2
+  200fdc:	010000c4 	movi	r4,3
+  200fe0:	01400044 	movi	r5,1
+  200fe4:	02001d80 	call	2001d8 <execute_cmd>
+
+	unsigned int status = IORD_32DIRECT(ADDR_STATUS, 0);
+  200fe8:	00800404 	movi	r2,16
+  200fec:	10800037 	ldwio	r2,0(r2)
+	int empty = status & STAT_EMPTY;
+	if(empty == 0) {
+		alt_putstr("[TEST PASS]\n");
+  200ff0:	01000834 	movhi	r4,32
+  200ff4:	2105be04 	addi	r4,r4,5880
+	int tid = execute_cmd(CMD_CREATE, 1, 100);
+	execute_cmd(CMD_INSERT, 1, tid);
+
+	unsigned int status = IORD_32DIRECT(ADDR_STATUS, 0);
+	int empty = status & STAT_EMPTY;
+	if(empty == 0) {
+  200ff8:	1080008c 	andi	r2,r2,2
+  200ffc:	10000226 	beq	r2,zero,201008 <test_6+0x70>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  201000:	01000834 	movhi	r4,32
+  201004:	2105c204 	addi	r4,r4,5896
+	}
+}
+  201008:	dfc00017 	ldw	ra,0(sp)
+  20100c:	dec00104 	addi	sp,sp,4
+	unsigned int status = IORD_32DIRECT(ADDR_STATUS, 0);
+	int empty = status & STAT_EMPTY;
+	if(empty == 0) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  201010:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+00201014 <test_5>:
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_5() {
+  201014:	deffff04 	addi	sp,sp,-4
+	alt_putstr("\nTEST: 5\n");
+  201018:	01000834 	movhi	r4,32
+  20101c:	2106e804 	addi	r4,r4,7072
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+
+void test_5() {
+  201020:	dfc00015 	stw	ra,0(sp)
+	alt_putstr("\nTEST: 5\n");
+  201024:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Check empty status after create");
+  201028:	01000834 	movhi	r4,32
+  20102c:	2106eb04 	addi	r4,r4,7084
+  201030:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  201034:	000b883a 	mov	r5,zero
+  201038:	010003c4 	movi	r4,15
+  20103c:	000d883a 	mov	r6,zero
+  201040:	02001d80 	call	2001d8 <execute_cmd>
+
+	execute_cmd(CMD_CREATE, 1, 100);
+  201044:	01000044 	movi	r4,1
+  201048:	200b883a 	mov	r5,r4
+  20104c:	01801904 	movi	r6,100
+  201050:	02001d80 	call	2001d8 <execute_cmd>
+	unsigned int status = IORD_32DIRECT(ADDR_STATUS, 0);
+  201054:	00800404 	movi	r2,16
+  201058:	10800037 	ldwio	r2,0(r2)
+	int empty = status & STAT_EMPTY;
+	if(empty == 2) {
+		alt_putstr("[TEST PASS]\n");
+  20105c:	01000834 	movhi	r4,32
+  201060:	2105be04 	addi	r4,r4,5880
+	execute_cmd(CMD_RESET, 0, 0);
+
+	execute_cmd(CMD_CREATE, 1, 100);
+	unsigned int status = IORD_32DIRECT(ADDR_STATUS, 0);
+	int empty = status & STAT_EMPTY;
+	if(empty == 2) {
+  201064:	1080008c 	andi	r2,r2,2
+  201068:	1000021e 	bne	r2,zero,201074 <test_5+0x60>
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  20106c:	01000834 	movhi	r4,32
+  201070:	2105c204 	addi	r4,r4,5896
+	}
+}
+  201074:	dfc00017 	ldw	ra,0(sp)
+  201078:	dec00104 	addi	sp,sp,4
+	unsigned int status = IORD_32DIRECT(ADDR_STATUS, 0);
+	int empty = status & STAT_EMPTY;
+	if(empty == 2) {
+		alt_putstr("[TEST PASS]\n");
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  20107c:	02015c41 	jmpi	2015c4 <alt_putstr>
+
+00201080 <test_3>:
+
+	alt_putstr("[TEST PASS]\n");
+	alt_printf("Thread ID %x;\n", IORD_32DIRECT(ADDR_RETURN, 0) );
+}
+
+void test_3() {
+  201080:	defffd04 	addi	sp,sp,-12
+	//criacao ate estourar o espaco disponivel
+	alt_putstr("\nTEST: 3\n");
+  201084:	01000834 	movhi	r4,32
+  201088:	2106f304 	addi	r4,r4,7116
+
+	alt_putstr("[TEST PASS]\n");
+	alt_printf("Thread ID %x;\n", IORD_32DIRECT(ADDR_RETURN, 0) );
+}
+
+void test_3() {
+  20108c:	dfc00215 	stw	ra,8(sp)
+  201090:	dc000015 	stw	r16,0(sp)
+  201094:	dc400115 	stw	r17,4(sp)
+	//criacao ate estourar o espaco disponivel
+	alt_putstr("\nTEST: 3\n");
+  201098:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Expected error on 9th thread creation ");
+  20109c:	01000834 	movhi	r4,32
+  2010a0:	2106f604 	addi	r4,r4,7128
+  2010a4:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  2010a8:	000b883a 	mov	r5,zero
+  2010ac:	010003c4 	movi	r4,15
+  2010b0:	000d883a 	mov	r6,zero
+  2010b4:	02001d80 	call	2001d8 <execute_cmd>
+  2010b8:	04001904 	movi	r16,100
+
+	int i = 0;
+	int ret = 0;
+	for(i = 1; i<9; i++) {
+		ret = execute_cmd(CMD_CREATE, 1, i*100);
+  2010bc:	01000044 	movi	r4,1
+  2010c0:	800d883a 	mov	r6,r16
+  2010c4:	200b883a 	mov	r5,r4
+  2010c8:	02001d80 	call	2001d8 <execute_cmd>
+		if(ret == -1) {
+  2010cc:	047fffc4 	movi	r17,-1
+			alt_putstr("[TEST FAIL]\n");
+  2010d0:	84001904 	addi	r16,r16,100
+
+	int i = 0;
+	int ret = 0;
+	for(i = 1; i<9; i++) {
+		ret = execute_cmd(CMD_CREATE, 1, i*100);
+		if(ret == -1) {
+  2010d4:	14400e26 	beq	r2,r17,201110 <test_3+0x90>
+	alt_putstr("Expected error on 9th thread creation ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int i = 0;
+	int ret = 0;
+	for(i = 1; i<9; i++) {
+  2010d8:	0080e104 	movi	r2,900
+  2010dc:	80bff71e 	bne	r16,r2,2010bc <test_3+0x3c>
+		if(ret == -1) {
+			alt_putstr("[TEST FAIL]\n");
+			return;
+		}
+	}
+	ret = execute_cmd(CMD_CREATE, 1, 900);
+  2010e0:	01000044 	movi	r4,1
+  2010e4:	800d883a 	mov	r6,r16
+  2010e8:	200b883a 	mov	r5,r4
+  2010ec:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+  2010f0:	1440071e 	bne	r2,r17,201110 <test_3+0x90>
+		alt_putstr("[TEST PASS]\n");
+  2010f4:	01000834 	movhi	r4,32
+  2010f8:	2105be04 	addi	r4,r4,5880
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+	}
+}
+  2010fc:	dfc00217 	ldw	ra,8(sp)
+  201100:	dc400117 	ldw	r17,4(sp)
+  201104:	dc000017 	ldw	r16,0(sp)
+  201108:	dec00304 	addi	sp,sp,12
+			return;
+		}
+	}
+	ret = execute_cmd(CMD_CREATE, 1, 900);
+	if(ret == -1) {
+		alt_putstr("[TEST PASS]\n");
+  20110c:	02015c41 	jmpi	2015c4 <alt_putstr>
+	} else {
+		alt_putstr("[TEST FAIL]\n");
+  201110:	01000834 	movhi	r4,32
+  201114:	2105c204 	addi	r4,r4,5896
+  201118:	003ff806 	br	2010fc <test_3+0x7c>
+
+0020111c <test_2>:
+		alt_putstr("[TEST PASS]\n");
+		alt_printf("-Thread ID %x;\n", IORD_32DIRECT(ADDR_RETURN, 0) );
+	}
+}
+
+void test_2() {
+  20111c:	defffe04 	addi	sp,sp,-8
+	//criacao ate estourar o espaco disponivel
+	alt_putstr("\nTEST: 2\n");
+  201120:	01000834 	movhi	r4,32
+  201124:	21070004 	addi	r4,r4,7168
+		alt_putstr("[TEST PASS]\n");
+		alt_printf("-Thread ID %x;\n", IORD_32DIRECT(ADDR_RETURN, 0) );
+	}
+}
+
+void test_2() {
+  201128:	dfc00115 	stw	ra,4(sp)
+  20112c:	dc000015 	stw	r16,0(sp)
+	//criacao ate estourar o espaco disponivel
+	alt_putstr("\nTEST: 2\n");
+  201130:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("8th thread creation ");
+  201134:	01000834 	movhi	r4,32
+  201138:	21070304 	addi	r4,r4,7180
+  20113c:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  201140:	000b883a 	mov	r5,zero
+  201144:	010003c4 	movi	r4,15
+  201148:	000d883a 	mov	r6,zero
+  20114c:	02001d80 	call	2001d8 <execute_cmd>
+  201150:	04001904 	movi	r16,100
+
+	int i = 0;
+	int ret = 0;
+	for(i = 1; i<9; i++) {
+		ret = execute_cmd(CMD_CREATE, 1, i*100);
+  201154:	01000044 	movi	r4,1
+  201158:	800d883a 	mov	r6,r16
+  20115c:	200b883a 	mov	r5,r4
+  201160:	02001d80 	call	2001d8 <execute_cmd>
+		if(ret == -1) {
+  201164:	00ffffc4 	movi	r3,-1
+			alt_putstr("[TEST FAIL]\n");
+  201168:	84001904 	addi	r16,r16,100
+
+	int i = 0;
+	int ret = 0;
+	for(i = 1; i<9; i++) {
+		ret = execute_cmd(CMD_CREATE, 1, i*100);
+		if(ret == -1) {
+  20116c:	10c0061e 	bne	r2,r3,201188 <test_2+0x6c>
+			alt_putstr("[TEST FAIL]\n");
+  201170:	01000834 	movhi	r4,32
+  201174:	2105c204 	addi	r4,r4,5896
+		}
+	}
+
+	alt_putstr("[TEST PASS]\n");
+	alt_printf("Thread ID %x;\n", IORD_32DIRECT(ADDR_RETURN, 0) );
+}
+  201178:	dfc00117 	ldw	ra,4(sp)
+  20117c:	dc000017 	ldw	r16,0(sp)
+  201180:	dec00204 	addi	sp,sp,8
+	int i = 0;
+	int ret = 0;
+	for(i = 1; i<9; i++) {
+		ret = execute_cmd(CMD_CREATE, 1, i*100);
+		if(ret == -1) {
+			alt_putstr("[TEST FAIL]\n");
+  201184:	02015c41 	jmpi	2015c4 <alt_putstr>
+	alt_putstr("8th thread creation ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int i = 0;
+	int ret = 0;
+	for(i = 1; i<9; i++) {
+  201188:	0080e104 	movi	r2,900
+  20118c:	80bff11e 	bne	r16,r2,201154 <test_2+0x38>
+			alt_putstr("[TEST FAIL]\n");
+			return;
+		}
+	}
+
+	alt_putstr("[TEST PASS]\n");
+  201190:	01000834 	movhi	r4,32
+  201194:	2105be04 	addi	r4,r4,5880
+  201198:	02015c40 	call	2015c4 <alt_putstr>
+	alt_printf("Thread ID %x;\n", IORD_32DIRECT(ADDR_RETURN, 0) );
+  20119c:	00800304 	movi	r2,12
+  2011a0:	11400037 	ldwio	r5,0(r2)
+  2011a4:	01000834 	movhi	r4,32
+  2011a8:	21070904 	addi	r4,r4,7204
+}
+  2011ac:	dfc00117 	ldw	ra,4(sp)
+  2011b0:	dc000017 	ldw	r16,0(sp)
+  2011b4:	dec00204 	addi	sp,sp,8
+			return;
+		}
+	}
+
+	alt_putstr("[TEST PASS]\n");
+	alt_printf("Thread ID %x;\n", IORD_32DIRECT(ADDR_RETURN, 0) );
+  2011b8:	02014301 	jmpi	201430 <alt_printf>
+
+002011bc <test_1>:
+	}
+	//se necessário, tratar status co contexto de quem invocou este método.
+	return IORD_32DIRECT(ADDR_RETURN, 0);
+}
+
+void test_1() {
+  2011bc:	deffff04 	addi	sp,sp,-4
+	//criacao de uma thread
+	alt_putstr("\nTEST: 1\n");
+  2011c0:	01000834 	movhi	r4,32
+  2011c4:	21070d04 	addi	r4,r4,7220
+	}
+	//se necessário, tratar status co contexto de quem invocou este método.
+	return IORD_32DIRECT(ADDR_RETURN, 0);
+}
+
+void test_1() {
+  2011c8:	dfc00015 	stw	ra,0(sp)
+	//criacao de uma thread
+	alt_putstr("\nTEST: 1\n");
+  2011cc:	02015c40 	call	2015c4 <alt_putstr>
+	alt_putstr("Create single thread ");
+  2011d0:	01000834 	movhi	r4,32
+  2011d4:	21071004 	addi	r4,r4,7232
+  2011d8:	02015c40 	call	2015c4 <alt_putstr>
+	execute_cmd(CMD_RESET, 0, 0);
+  2011dc:	000b883a 	mov	r5,zero
+  2011e0:	010003c4 	movi	r4,15
+  2011e4:	000d883a 	mov	r6,zero
+  2011e8:	02001d80 	call	2001d8 <execute_cmd>
+
+	int ret = execute_cmd(CMD_CREATE, 1, 100);
+  2011ec:	01000044 	movi	r4,1
+  2011f0:	200b883a 	mov	r5,r4
+  2011f4:	01801904 	movi	r6,100
+  2011f8:	02001d80 	call	2001d8 <execute_cmd>
+	if(ret == -1) {
+  2011fc:	00ffffc4 	movi	r3,-1
+		alt_putstr("[TEST FAIL]\n");
+	} else {
+		alt_putstr("[TEST PASS]\n");
+  201200:	01000834 	movhi	r4,32
+  201204:	2105be04 	addi	r4,r4,5880
+	alt_putstr("\nTEST: 1\n");
+	alt_putstr("Create single thread ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int ret = execute_cmd(CMD_CREATE, 1, 100);
+	if(ret == -1) {
+  201208:	10c0051e 	bne	r2,r3,201220 <test_1+0x64>
+		alt_putstr("[TEST FAIL]\n");
+  20120c:	01000834 	movhi	r4,32
+  201210:	2105c204 	addi	r4,r4,5896
+	} else {
+		alt_putstr("[TEST PASS]\n");
+		alt_printf("-Thread ID %x;\n", IORD_32DIRECT(ADDR_RETURN, 0) );
+	}
+}
+  201214:	dfc00017 	ldw	ra,0(sp)
+  201218:	dec00104 	addi	sp,sp,4
+	alt_putstr("Create single thread ");
+	execute_cmd(CMD_RESET, 0, 0);
+
+	int ret = execute_cmd(CMD_CREATE, 1, 100);
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL]\n");
+  20121c:	02015c41 	jmpi	2015c4 <alt_putstr>
+	} else {
+		alt_putstr("[TEST PASS]\n");
+  201220:	02015c40 	call	2015c4 <alt_putstr>
+		alt_printf("-Thread ID %x;\n", IORD_32DIRECT(ADDR_RETURN, 0) );
+  201224:	00800304 	movi	r2,12
+  201228:	11400037 	ldwio	r5,0(r2)
+  20122c:	01000834 	movhi	r4,32
+  201230:	21071604 	addi	r4,r4,7256
+	}
+}
+  201234:	dfc00017 	ldw	ra,0(sp)
+  201238:	dec00104 	addi	sp,sp,4
+	int ret = execute_cmd(CMD_CREATE, 1, 100);
+	if(ret == -1) {
+		alt_putstr("[TEST FAIL]\n");
+	} else {
+		alt_putstr("[TEST PASS]\n");
+		alt_printf("-Thread ID %x;\n", IORD_32DIRECT(ADDR_RETURN, 0) );
+  20123c:	02014301 	jmpi	201430 <alt_printf>
+
+00201240 <main>:
+	execute_cmd(CMD_INT_ACK, 0, 0);
+	alt_printf ("\n=================\ninterrupt occurred\n=================\n");
+}
+
+int main()
+{ 
+  201240:	deffff04 	addi	sp,sp,-4
+	alt_putstr("Hello from Nios II! :D\n");
+  201244:	01000834 	movhi	r4,32
+  201248:	21071a04 	addi	r4,r4,7272
+	execute_cmd(CMD_INT_ACK, 0, 0);
+	alt_printf ("\n=================\ninterrupt occurred\n=================\n");
+}
+
+int main()
+{ 
+  20124c:	dfc00015 	stw	ra,0(sp)
+	alt_putstr("Hello from Nios II! :D\n");
+  201250:	02015c40 	call	2015c4 <alt_putstr>
+	test_1();
+  201254:	02011bc0 	call	2011bc <test_1>
+	test_2();
+  201258:	020111c0 	call	20111c <test_2>
+	test_3();
+  20125c:	02010800 	call	201080 <test_3>
+	test_4();
+  201260:	020018c0 	call	20018c <test_4>
+	test_5();
+  201264:	02010140 	call	201014 <test_5>
+	test_6();
+  201268:	0200f980 	call	200f98 <test_6>
+	test_7();
+  20126c:	0200f180 	call	200f18 <test_7>
+	test_8();
+  201270:	0200e600 	call	200e60 <test_8>
+	test_9();
+  201274:	0200d8c0 	call	200d8c <test_9>
+	test_10();
+  201278:	0200d280 	call	200d28 <test_10>
+	test_11();
+  20127c:	0200c740 	call	200c74 <test_11>
+	test_12();
+  201280:	0200c100 	call	200c10 <test_12>
+	test_13();
+  201284:	0200b940 	call	200b94 <test_13>
+	test_14();
+  201288:	0200b100 	call	200b10 <test_14>
+	test_15();
+  20128c:	0200a680 	call	200a68 <test_15>
+	test_16();
+  201290:	02009c00 	call	2009c0 <test_16>
+	test_17();
+  201294:	020090c0 	call	20090c <test_17>
+	test_18();
+  201298:	02008680 	call	200868 <test_18>
+	test_19();
+  20129c:	02007d00 	call	2007d0 <test_19>
+
+	test_22();
+  2012a0:	02005800 	call	200580 <test_22>
+	test_23();
+  2012a4:	020049c0 	call	20049c <test_23>
+	test_24();
+  2012a8:	020043c0 	call	20043c <test_24>
+	test_25();
+  2012ac:	02003800 	call	200380 <test_25>
+	test_26();
+  2012b0:	020024c0 	call	20024c <test_26>
+
+//	executar testes de interrupcao separadamente
+//  problema para tratar fim da interrupcao
+	alt_irq_register( SCHEDULER_0_IRQ, 0, (void*)irqhandler_1);
+  2012b4:	01000044 	movi	r4,1
+  2012b8:	000b883a 	mov	r5,zero
+  2012bc:	01800834 	movhi	r6,32
+  2012c0:	31808804 	addi	r6,r6,544
+  2012c4:	02012d80 	call	2012d8 <alt_irq_register>
+//	test_20();
+//	test_21();
+
+	alt_putstr("\n[DONE]\n");
+  2012c8:	01000834 	movhi	r4,32
+  2012cc:	21062d04 	addi	r4,r4,6324
+  2012d0:	02015c40 	call	2015c4 <alt_putstr>
+  2012d4:	003fff06 	br	2012d4 <main+0x94>
+
+002012d8 <alt_irq_register>:
+  2012d8:	008007c4 	movi	r2,31
+  2012dc:	200f883a 	mov	r7,r4
+  2012e0:	00fffa84 	movi	r3,-22
+  2012e4:	11002236 	bltu	r2,r4,201370 <alt_irq_register+0x98>
+  2012e8:	0015303a 	rdctl	r10,status
+  2012ec:	027fff84 	movi	r9,-2
+  2012f0:	5244703a 	and	r2,r10,r9
+  2012f4:	1001703a 	wrctl	status,r2
+  2012f8:	200490fa 	slli	r2,r4,3
+  2012fc:	00c00834 	movhi	r3,32
+  201300:	18c72804 	addi	r3,r3,7328
+  201304:	02000834 	movhi	r8,32
+  201308:	42072404 	addi	r8,r8,7312
+  20130c:	10c5883a 	add	r2,r2,r3
+  201310:	11400115 	stw	r5,4(r2)
+  201314:	11800015 	stw	r6,0(r2)
+  201318:	30000826 	beq	r6,zero,20133c <alt_irq_register+0x64>
+  20131c:	0009303a 	rdctl	r4,status
+  201320:	2244703a 	and	r2,r4,r9
+  201324:	1001703a 	wrctl	status,r2
+  201328:	00c00044 	movi	r3,1
+  20132c:	19c6983a 	sll	r3,r3,r7
+  201330:	40800017 	ldw	r2,0(r8)
+  201334:	10c4b03a 	or	r2,r2,r3
+  201338:	00000706 	br	201358 <alt_irq_register+0x80>
+  20133c:	0009303a 	rdctl	r4,status
+  201340:	2244703a 	and	r2,r4,r9
+  201344:	1001703a 	wrctl	status,r2
+  201348:	00ffff84 	movi	r3,-2
+  20134c:	19c6183a 	rol	r3,r3,r7
+  201350:	40800017 	ldw	r2,0(r8)
+  201354:	10c4703a 	and	r2,r2,r3
+  201358:	40800015 	stw	r2,0(r8)
+  20135c:	40800017 	ldw	r2,0(r8)
+  201360:	100170fa 	wrctl	ienable,r2
+  201364:	2001703a 	wrctl	status,r4
+  201368:	5001703a 	wrctl	status,r10
+  20136c:	0007883a 	mov	r3,zero
+  201370:	1805883a 	mov	r2,r3
+  201374:	f800283a 	ret
+
+00201378 <alt_load_section>:
+  201378:	2900051e 	bne	r5,r4,201390 <alt_load_section+0x18>
+  20137c:	f800283a 	ret
+  201380:	20800017 	ldw	r2,0(r4)
+  201384:	21000104 	addi	r4,r4,4
+  201388:	28800015 	stw	r2,0(r5)
+  20138c:	29400104 	addi	r5,r5,4
+  201390:	29bffb1e 	bne	r5,r6,201380 <alt_load_section+0x8>
+  201394:	f800283a 	ret
+
+00201398 <alt_load>:
+  201398:	deffff04 	addi	sp,sp,-4
+  20139c:	01000834 	movhi	r4,32
+  2013a0:	21072204 	addi	r4,r4,7304
+  2013a4:	01400834 	movhi	r5,32
+  2013a8:	29472004 	addi	r5,r5,7296
+  2013ac:	01800834 	movhi	r6,32
+  2013b0:	31872204 	addi	r6,r6,7304
+  2013b4:	dfc00015 	stw	ra,0(sp)
+  2013b8:	02013780 	call	201378 <alt_load_section>
+  2013bc:	01000834 	movhi	r4,32
+  2013c0:	21000804 	addi	r4,r4,32
+  2013c4:	01400834 	movhi	r5,32
+  2013c8:	29400804 	addi	r5,r5,32
+  2013cc:	01800834 	movhi	r6,32
+  2013d0:	31805004 	addi	r6,r6,320
+  2013d4:	02013780 	call	201378 <alt_load_section>
+  2013d8:	01000834 	movhi	r4,32
+  2013dc:	2105b604 	addi	r4,r4,5848
+  2013e0:	01400834 	movhi	r5,32
+  2013e4:	2945b604 	addi	r5,r5,5848
+  2013e8:	01800834 	movhi	r6,32
+  2013ec:	31872004 	addi	r6,r6,7296
+  2013f0:	02013780 	call	201378 <alt_load_section>
+  2013f4:	02016540 	call	201654 <alt_dcache_flush_all>
+  2013f8:	dfc00017 	ldw	ra,0(sp)
+  2013fc:	dec00104 	addi	sp,sp,4
+  201400:	020166c1 	jmpi	20166c <alt_icache_flush_all>
+
+00201404 <alt_main>:
+  201404:	deffff04 	addi	sp,sp,-4
+  201408:	0009883a 	mov	r4,zero
+  20140c:	dfc00015 	stw	ra,0(sp)
+  201410:	02016000 	call	201600 <alt_irq_init>
+  201414:	02015fc0 	call	2015fc <alt_sys_init>
+  201418:	d1200517 	ldw	r4,-32748(gp)
+  20141c:	d1600617 	ldw	r5,-32744(gp)
+  201420:	d1a00717 	ldw	r6,-32740(gp)
+  201424:	dfc00017 	ldw	ra,0(sp)
+  201428:	dec00104 	addi	sp,sp,4
+  20142c:	02012401 	jmpi	201240 <main>
+
+00201430 <alt_printf>:
+  201430:	defff804 	addi	sp,sp,-32
+  201434:	dfc00415 	stw	ra,16(sp)
+  201438:	dc800315 	stw	r18,12(sp)
+  20143c:	dc400215 	stw	r17,8(sp)
+  201440:	dc000115 	stw	r16,4(sp)
+  201444:	d9400515 	stw	r5,20(sp)
+  201448:	d9800615 	stw	r6,24(sp)
+  20144c:	d9c00715 	stw	r7,28(sp)
+  201450:	d8800504 	addi	r2,sp,20
+  201454:	2025883a 	mov	r18,r4
+  201458:	d8800015 	stw	r2,0(sp)
+  20145c:	00003d06 	br	201554 <alt_printf+0x124>
+  201460:	00800944 	movi	r2,37
+  201464:	94800044 	addi	r18,r18,1
+  201468:	18800226 	beq	r3,r2,201474 <alt_printf+0x44>
+  20146c:	1809883a 	mov	r4,r3
+  201470:	00000a06 	br	20149c <alt_printf+0x6c>
+  201474:	91000007 	ldb	r4,0(r18)
+  201478:	94800044 	addi	r18,r18,1
+  20147c:	20003726 	beq	r4,zero,20155c <alt_printf+0x12c>
+  201480:	20c00626 	beq	r4,r3,20149c <alt_printf+0x6c>
+  201484:	008018c4 	movi	r2,99
+  201488:	2080061e 	bne	r4,r2,2014a4 <alt_printf+0x74>
+  20148c:	d8800017 	ldw	r2,0(sp)
+  201490:	11000017 	ldw	r4,0(r2)
+  201494:	10800104 	addi	r2,r2,4
+  201498:	d8800015 	stw	r2,0(sp)
+  20149c:	02015740 	call	201574 <alt_putchar>
+  2014a0:	00002c06 	br	201554 <alt_printf+0x124>
+  2014a4:	00801e04 	movi	r2,120
+  2014a8:	20801e1e 	bne	r4,r2,201524 <alt_printf+0xf4>
+  2014ac:	d8800017 	ldw	r2,0(sp)
+  2014b0:	14400017 	ldw	r17,0(r2)
+  2014b4:	10800104 	addi	r2,r2,4
+  2014b8:	d8800015 	stw	r2,0(sp)
+  2014bc:	88000226 	beq	r17,zero,2014c8 <alt_printf+0x98>
+  2014c0:	04000704 	movi	r16,28
+  2014c4:	00000306 	br	2014d4 <alt_printf+0xa4>
+  2014c8:	01000c04 	movi	r4,48
+  2014cc:	003ff306 	br	20149c <alt_printf+0x6c>
+  2014d0:	843fff04 	addi	r16,r16,-4
+  2014d4:	008003c4 	movi	r2,15
+  2014d8:	1404983a 	sll	r2,r2,r16
+  2014dc:	8884703a 	and	r2,r17,r2
+  2014e0:	103ffb26 	beq	r2,zero,2014d0 <alt_printf+0xa0>
+  2014e4:	00000b06 	br	201514 <alt_printf+0xe4>
+  2014e8:	8884703a 	and	r2,r17,r2
+  2014ec:	1406d83a 	srl	r3,r2,r16
+  2014f0:	00800244 	movi	r2,9
+  2014f4:	19000c04 	addi	r4,r3,48
+  2014f8:	10c0012e 	bgeu	r2,r3,201500 <alt_printf+0xd0>
+  2014fc:	190015c4 	addi	r4,r3,87
+  201500:	21003fcc 	andi	r4,r4,255
+  201504:	2100201c 	xori	r4,r4,128
+  201508:	213fe004 	addi	r4,r4,-128
+  20150c:	843fff04 	addi	r16,r16,-4
+  201510:	02015740 	call	201574 <alt_putchar>
+  201514:	008003c4 	movi	r2,15
+  201518:	1404983a 	sll	r2,r2,r16
+  20151c:	803ff20e 	bge	r16,zero,2014e8 <alt_printf+0xb8>
+  201520:	00000c06 	br	201554 <alt_printf+0x124>
+  201524:	00801cc4 	movi	r2,115
+  201528:	20800a1e 	bne	r4,r2,201554 <alt_printf+0x124>
+  20152c:	d8800017 	ldw	r2,0(sp)
+  201530:	14000017 	ldw	r16,0(r2)
+  201534:	10800104 	addi	r2,r2,4
+  201538:	d8800015 	stw	r2,0(sp)
+  20153c:	00000106 	br	201544 <alt_printf+0x114>
+  201540:	02015740 	call	201574 <alt_putchar>
+  201544:	80800007 	ldb	r2,0(r16)
+  201548:	84000044 	addi	r16,r16,1
+  20154c:	1009883a 	mov	r4,r2
+  201550:	103ffb1e 	bne	r2,zero,201540 <alt_printf+0x110>
+  201554:	90c00007 	ldb	r3,0(r18)
+  201558:	183fc11e 	bne	r3,zero,201460 <alt_printf+0x30>
+  20155c:	dfc00417 	ldw	ra,16(sp)
+  201560:	dc800317 	ldw	r18,12(sp)
+  201564:	dc400217 	ldw	r17,8(sp)
+  201568:	dc000117 	ldw	r16,4(sp)
+  20156c:	dec00804 	addi	sp,sp,32
+  201570:	f800283a 	ret
+
+00201574 <alt_putchar>:
+  201574:	defffd04 	addi	sp,sp,-12
+  201578:	dc000115 	stw	r16,4(sp)
+  20157c:	d80b883a 	mov	r5,sp
+  201580:	2021883a 	mov	r16,r4
+  201584:	01800044 	movi	r6,1
+  201588:	01000834 	movhi	r4,32
+  20158c:	21072104 	addi	r4,r4,7300
+  201590:	000f883a 	mov	r7,zero
+  201594:	dfc00215 	stw	ra,8(sp)
+  201598:	dc000005 	stb	r16,0(sp)
+  20159c:	02016200 	call	201620 <altera_avalon_jtag_uart_write>
+  2015a0:	1009883a 	mov	r4,r2
+  2015a4:	00bfffc4 	movi	r2,-1
+  2015a8:	2080011e 	bne	r4,r2,2015b0 <alt_putchar+0x3c>
+  2015ac:	2021883a 	mov	r16,r4
+  2015b0:	8005883a 	mov	r2,r16
+  2015b4:	dfc00217 	ldw	ra,8(sp)
+  2015b8:	dc000117 	ldw	r16,4(sp)
+  2015bc:	dec00304 	addi	sp,sp,12
+  2015c0:	f800283a 	ret
+
+002015c4 <alt_putstr>:
+  2015c4:	defffe04 	addi	sp,sp,-8
+  2015c8:	dc000015 	stw	r16,0(sp)
+  2015cc:	dfc00115 	stw	ra,4(sp)
+  2015d0:	2021883a 	mov	r16,r4
+  2015d4:	02016b80 	call	2016b8 <strlen>
+  2015d8:	800b883a 	mov	r5,r16
+  2015dc:	100d883a 	mov	r6,r2
+  2015e0:	01000834 	movhi	r4,32
+  2015e4:	21072104 	addi	r4,r4,7300
+  2015e8:	000f883a 	mov	r7,zero
+  2015ec:	dfc00117 	ldw	ra,4(sp)
+  2015f0:	dc000017 	ldw	r16,0(sp)
+  2015f4:	dec00204 	addi	sp,sp,8
+  2015f8:	02016201 	jmpi	201620 <altera_avalon_jtag_uart_write>
+
+002015fc <alt_sys_init>:
+  2015fc:	f800283a 	ret
+
+00201600 <alt_irq_init>:
+  201600:	deffff04 	addi	sp,sp,-4
+  201604:	dfc00015 	stw	ra,0(sp)
+  201608:	02016780 	call	201678 <altera_nios2_qsys_irq_init>
+  20160c:	00800044 	movi	r2,1
+  201610:	1001703a 	wrctl	status,r2
+  201614:	dfc00017 	ldw	ra,0(sp)
+  201618:	dec00104 	addi	sp,sp,4
+  20161c:	f800283a 	ret
+
+00201620 <altera_avalon_jtag_uart_write>:
+  201620:	21000017 	ldw	r4,0(r4)
+  201624:	298f883a 	add	r7,r5,r6
+  201628:	20c00104 	addi	r3,r4,4
+  20162c:	00000606 	br	201648 <altera_avalon_jtag_uart_write+0x28>
+  201630:	18800037 	ldwio	r2,0(r3)
+  201634:	10bfffec 	andhi	r2,r2,65535
+  201638:	10000326 	beq	r2,zero,201648 <altera_avalon_jtag_uart_write+0x28>
+  20163c:	28800007 	ldb	r2,0(r5)
+  201640:	29400044 	addi	r5,r5,1
+  201644:	20800035 	stwio	r2,0(r4)
+  201648:	29fff936 	bltu	r5,r7,201630 <altera_avalon_jtag_uart_write+0x10>
+  20164c:	3005883a 	mov	r2,r6
+  201650:	f800283a 	ret
+
+00201654 <alt_dcache_flush_all>:
+  201654:	0005883a 	mov	r2,zero
+  201658:	00c20004 	movi	r3,2048
+  20165c:	1000003b 	flushd	0(r2)
+  201660:	10800804 	addi	r2,r2,32
+  201664:	10fffd1e 	bne	r2,r3,20165c <alt_dcache_flush_all+0x8>
+  201668:	f800283a 	ret
+
+0020166c <alt_icache_flush_all>:
+  20166c:	0009883a 	mov	r4,zero
+  201670:	01440004 	movi	r5,4096
+  201674:	02016801 	jmpi	201680 <alt_icache_flush>
+
+00201678 <altera_nios2_qsys_irq_init>:
+  201678:	000170fa 	wrctl	ienable,zero
+  20167c:	f800283a 	ret
+
+00201680 <alt_icache_flush>:
+  201680:	00840004 	movi	r2,4096
+  201684:	2007883a 	mov	r3,r4
+  201688:	1140012e 	bgeu	r2,r5,201690 <alt_icache_flush+0x10>
+  20168c:	100b883a 	mov	r5,r2
+  201690:	194b883a 	add	r5,r3,r5
+  201694:	00000206 	br	2016a0 <alt_icache_flush+0x20>
+  201698:	1800603a 	flushi	r3
+  20169c:	18c00804 	addi	r3,r3,32
+  2016a0:	197ffd36 	bltu	r3,r5,201698 <alt_icache_flush+0x18>
+  2016a4:	208007cc 	andi	r2,r4,31
+  2016a8:	10000126 	beq	r2,zero,2016b0 <alt_icache_flush+0x30>
+  2016ac:	1800603a 	flushi	r3
+  2016b0:	0000203a 	flushp
+  2016b4:	f800283a 	ret
+
+002016b8 <strlen>:
+  2016b8:	20800007 	ldb	r2,0(r4)
+  2016bc:	10000526 	beq	r2,zero,2016d4 <strlen+0x1c>
+  2016c0:	2007883a 	mov	r3,r4
+  2016c4:	18c00044 	addi	r3,r3,1
+  2016c8:	18800007 	ldb	r2,0(r3)
+  2016cc:	103ffd1e 	bne	r2,zero,2016c4 <strlen+0xc>
+  2016d0:	1905c83a 	sub	r2,r3,r4
+  2016d4:	f800283a 	ret

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="toFPGA">
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_ic_data_module:arquitetura_nios2_qsys_0_ic_data|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_qed1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_register_bank_b_module:arquitetura_nios2_qsys_0_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_h6h1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_onchip_memory2_0:onchip_memory2_0|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_2dd1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_jtag_uart_0:jtag_uart_0|arquitetura_jtag_uart_0_scfifo_w:the_arquitetura_jtag_uart_0_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_1n21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_bht_module:arquitetura_nios2_qsys_0_bht|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_goh1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_dc_data_module:arquitetura_nios2_qsys_0_dc_data|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_29f1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_dc_tag_module:arquitetura_nios2_qsys_0_dc_tag|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_4dh1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_dc_victim_module:arquitetura_nios2_qsys_0_dc_victim|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_9vc1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_mult_cell:the_arquitetura_nios2_qsys_0_mult_cell|altera_mult_add:the_altmult_add_part_1" CBX_FILE_NAME="altera_mult_add_mpt2.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_mult_cell:the_arquitetura_nios2_qsys_0_mult_cell|altera_mult_add:the_altmult_add_part_2|altera_mult_add_opt2:auto_generated|altera_mult_add_rtl:altera_mult_add_rtl1|ama_multiplier_function:multiplier_block|lpm_mult:Mult0" CBX_FILE_NAME="mult_1s01.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_register_bank_a_module:arquitetura_nios2_qsys_0_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_g6h1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_jtag_uart_0:jtag_uart_0|arquitetura_jtag_uart_0_scfifo_r:the_arquitetura_jtag_uart_0_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_1n21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_mult_cell:the_arquitetura_nios2_qsys_0_mult_cell|altera_mult_add:the_altmult_add_part_1|altera_mult_add_mpt2:auto_generated|altera_mult_add_rtl:altera_mult_add_rtl1|ama_multiplier_function:multiplier_block|lpm_mult:Mult0" CBX_FILE_NAME="mult_1l01.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_mult_cell:the_arquitetura_nios2_qsys_0_mult_cell|altera_mult_add:the_altmult_add_part_2" CBX_FILE_NAME="altera_mult_add_opt2.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|lpm_add_sub:Add18" CBX_FILE_NAME="add_sub_8ri.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_ic_tag_module:arquitetura_nios2_qsys_0_ic_tag|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_15i1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|toFPGA|arquitetura:U0|arquitetura_nios2_qsys_0:nios2_qsys_0|arquitetura_nios2_qsys_0_nios2_oci:the_arquitetura_nios2_qsys_0_nios2_oci|arquitetura_nios2_qsys_0_nios2_ocimem:the_arquitetura_nios2_qsys_0_nios2_ocimem|arquitetura_nios2_qsys_0_ociram_sp_ram_module:arquitetura_nios2_qsys_0_ociram_sp_ram|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_bn81.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
